@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		951203251F0F6E29009F4E4C /* XZGroupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 951203231F0F6E29009F4E4C /* XZGroupVC.m */; };
+		951203261F0F6E29009F4E4C /* XZGroupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 951203241F0F6E29009F4E4C /* XZGroupVC.xib */; };
+		951203291F0F7154009F4E4C /* XZGroupDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 951203281F0F7154009F4E4C /* XZGroupDataView.m */; };
+		9512032B1F0F7169009F4E4C /* XZGroupDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9512032A1F0F7169009F4E4C /* XZGroupDataView.xib */; };
+		9512032E1F0F7225009F4E4C /* XZGroundDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9512032D1F0F7225009F4E4C /* XZGroundDataView.m */; };
+		951203301F0F723E009F4E4C /* XZGroundDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9512032F1F0F723E009F4E4C /* XZGroundDataView.xib */; };
 		C04F30121F0E850300DCBC2B /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C04F30111F0E850300DCBC2B /* libsqlite3.0.tbd */; };
 		C04F30151F0E85F100DCBC2B /* ArcheryTable.m in Sources */ = {isa = PBXBuildFile; fileRef = C04F30141F0E85F100DCBC2B /* ArcheryTable.m */; };
 		C04F30181F0E863000DCBC2B /* UserDBManager+ArcheryTable.m in Sources */ = {isa = PBXBuildFile; fileRef = C04F30171F0E863000DCBC2B /* UserDBManager+ArcheryTable.m */; };
@@ -77,6 +83,15 @@
 /* Begin PBXFileReference section */
 		085BFB28FC0445ACCC29F8F5 /* Pods-XZArcheryBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XZArcheryBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XZArcheryBook/Pods-XZArcheryBook.debug.xcconfig"; sourceTree = "<group>"; };
 		6BC1630348BD2C9AE8E73AD5 /* libPods-XZArcheryBook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XZArcheryBook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		951203221F0F6E29009F4E4C /* XZGroupVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZGroupVC.h; sourceTree = "<group>"; };
+		951203231F0F6E29009F4E4C /* XZGroupVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZGroupVC.m; sourceTree = "<group>"; };
+		951203241F0F6E29009F4E4C /* XZGroupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XZGroupVC.xib; sourceTree = "<group>"; };
+		951203271F0F7154009F4E4C /* XZGroupDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZGroupDataView.h; sourceTree = "<group>"; };
+		951203281F0F7154009F4E4C /* XZGroupDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZGroupDataView.m; sourceTree = "<group>"; };
+		9512032A1F0F7169009F4E4C /* XZGroupDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XZGroupDataView.xib; sourceTree = "<group>"; };
+		9512032C1F0F7225009F4E4C /* XZGroundDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZGroundDataView.h; sourceTree = "<group>"; };
+		9512032D1F0F7225009F4E4C /* XZGroundDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZGroundDataView.m; sourceTree = "<group>"; };
+		9512032F1F0F723E009F4E4C /* XZGroundDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XZGroundDataView.xib; sourceTree = "<group>"; };
 		C04F30111F0E850300DCBC2B /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		C04F30131F0E85F100DCBC2B /* ArcheryTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArcheryTable.h; sourceTree = "<group>"; };
 		C04F30141F0E85F100DCBC2B /* ArcheryTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArcheryTable.m; sourceTree = "<group>"; };
@@ -250,6 +265,9 @@
 				C0A7AA631F0BC9C500ED1444 /* XZHomeVC.h */,
 				C0A7AA641F0BC9C500ED1444 /* XZHomeVC.m */,
 				C0A7AA651F0BC9C500ED1444 /* XZHomeVC.xib */,
+				951203221F0F6E29009F4E4C /* XZGroupVC.h */,
+				951203231F0F6E29009F4E4C /* XZGroupVC.m */,
+				951203241F0F6E29009F4E4C /* XZGroupVC.xib */,
 				C0A7AA681F0BCC0600ED1444 /* View */,
 				C0C3F3BD1F0E822900820BB7 /* Model */,
 				C05E82D81F0D31CB00C93C21 /* Other */,
@@ -327,6 +345,12 @@
 			children = (
 				C0C3F3BA1F0E79C900820BB7 /* XZHomeView.h */,
 				C0C3F3BB1F0E79C900820BB7 /* XZHomeView.m */,
+				951203271F0F7154009F4E4C /* XZGroupDataView.h */,
+				951203281F0F7154009F4E4C /* XZGroupDataView.m */,
+				9512032A1F0F7169009F4E4C /* XZGroupDataView.xib */,
+				9512032C1F0F7225009F4E4C /* XZGroundDataView.h */,
+				9512032D1F0F7225009F4E4C /* XZGroundDataView.m */,
+				9512032F1F0F723E009F4E4C /* XZGroundDataView.xib */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -528,9 +552,12 @@
 				C0A7AA671F0BC9C500ED1444 /* XZHomeVC.xib in Resources */,
 				C0C3F3B61F0E797200820BB7 /* XZHeaderView.xib in Resources */,
 				C0C3F3B41F0E797200820BB7 /* XZGroupView.xib in Resources */,
+				9512032B1F0F7169009F4E4C /* XZGroupDataView.xib in Resources */,
 				C0A7AA3D1F0BC3A200ED1444 /* Assets.xcassets in Resources */,
+				951203261F0F6E29009F4E4C /* XZGroupVC.xib in Resources */,
 				C0A7AA3B1F0BC3A200ED1444 /* Main.storyboard in Resources */,
 				C0C3F3B01F0E797200820BB7 /* XZGroundNumView.xib in Resources */,
+				951203301F0F723E009F4E4C /* XZGroundDataView.xib in Resources */,
 				C0C3F3AE1F0E797200820BB7 /* XZDateView.xib in Resources */,
 				C0C3F3B81F0E797200820BB7 /* XZTrainNotes.xib in Resources */,
 				C0C3F3B21F0E797200820BB7 /* XZGroundView.xib in Resources */,
@@ -610,7 +637,9 @@
 				C0C3F3B51F0E797200820BB7 /* XZHeaderView.m in Sources */,
 				C0A7AA381F0BC3A200ED1444 /* ViewController.m in Sources */,
 				C0C3F4001F0E82BC00820BB7 /* UIColor-SQLitePersistentObject.m in Sources */,
+				951203291F0F7154009F4E4C /* XZGroupDataView.m in Sources */,
 				C0C3F3FF1F0E82BC00820BB7 /* SQLitePersistentObject.m in Sources */,
+				9512032E1F0F7225009F4E4C /* XZGroundDataView.m in Sources */,
 				C0C3F3FE1F0E82BC00820BB7 /* SQLiteInstanceManager.m in Sources */,
 				C0C3F3F21F0E82BC00820BB7 /* NSData-SQLitePersistence.m in Sources */,
 				C04F301F1F0E8FCB00DCBC2B /* UIScreen+Extension.m in Sources */,
@@ -630,6 +659,7 @@
 				C0C3F3F91F0E82BC00820BB7 /* NSObject-SQLitePersistence.m in Sources */,
 				C0C3F3F51F0E82BC00820BB7 /* NSMutableData-SQLitePersistence.m in Sources */,
 				C0C3F3C01F0E825A00820BB7 /* XZArcheryModel.m in Sources */,
+				951203251F0F6E29009F4E4C /* XZGroupVC.m in Sources */,
 				C0C3F3FD1F0E82BC00820BB7 /* NSString-UppercaseFirst.m in Sources */,
 				C0A7AA351F0BC3A200ED1444 /* AppDelegate.m in Sources */,
 				C0A7AA321F0BC3A200ED1444 /* main.m in Sources */,
