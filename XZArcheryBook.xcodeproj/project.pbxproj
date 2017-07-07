@@ -60,6 +60,7 @@
 		C0C3F4011F0E82BC00820BB7 /* UIImage-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3F3EA1F0E82BC00820BB7 /* UIImage-SQLitePersistence.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C0C3F4081F0E833000820BB7 /* UserDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3F4051F0E833000820BB7 /* UserDBManager.m */; };
 		C0C3F4091F0E833000820BB7 /* UserPersistentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3F4071F0E833000820BB7 /* UserPersistentObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E4ECB1C61F0FC01A00DD4B9C /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ECB1C51F0FC01A00DD4B9C /* TestViewController.swift */; };
 		F0C7435FCF9380A23E428AB6 /* libPods-XZArcheryBook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC1630348BD2C9AE8E73AD5 /* libPods-XZArcheryBook.a */; };
 /* End PBXBuildFile section */
 
@@ -180,6 +181,8 @@
 		C0C3F4051F0E833000820BB7 /* UserDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDBManager.m; sourceTree = "<group>"; };
 		C0C3F4061F0E833000820BB7 /* UserPersistentObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPersistentObject.h; sourceTree = "<group>"; };
 		C0C3F4071F0E833000820BB7 /* UserPersistentObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPersistentObject.m; sourceTree = "<group>"; };
+		E4ECB1C41F0FC01900DD4B9C /* XZArcheryBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XZArcheryBook-Bridging-Header.h"; sourceTree = "<group>"; };
+		E4ECB1C51F0FC01A00DD4B9C /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		EEA61FEC189F1C08E3D1DC0A /* Pods-XZArcheryBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XZArcheryBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-XZArcheryBook/Pods-XZArcheryBook.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -257,6 +260,7 @@
 		C0A7AA2F1F0BC3A200ED1444 /* XZArcheryBook */ = {
 			isa = PBXGroup;
 			children = (
+				E4ECB1C31F0FBFF200DD4B9C /* Controllers */,
 				C0A7AA331F0BC3A200ED1444 /* AppDelegate.h */,
 				C0A7AA341F0BC3A200ED1444 /* AppDelegate.m */,
 				C0A7AA361F0BC3A200ED1444 /* ViewController.h */,
@@ -436,6 +440,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E4ECB1C31F0FBFF200DD4B9C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E4ECB1C51F0FC01A00DD4B9C /* TestViewController.swift */,
+				E4ECB1C41F0FC01900DD4B9C /* XZArcheryBook-Bridging-Header.h */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -507,6 +520,7 @@
 					C0A7AA2C1F0BC3A200ED1444 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 76364BYDWJ;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					C0A7AA451F0BC3A200ED1444 = {
@@ -653,6 +667,7 @@
 				C0C3F3FC1F0E82BC00820BB7 /* NSString-SQLitePersistence.m in Sources */,
 				C0C3F3FB1F0E82BC00820BB7 /* NSString-SQLiteColumnName.m in Sources */,
 				C0C3F3B31F0E797200820BB7 /* XZGroupView.m in Sources */,
+				E4ECB1C61F0FC01A00DD4B9C /* TestViewController.swift in Sources */,
 				C0C3F3AF1F0E797200820BB7 /* XZGroundNumView.m in Sources */,
 				C0C3F3F31F0E82BC00820BB7 /* NSDate-SQLitePersistence.m in Sources */,
 				C0A7AA661F0BC9C500ED1444 /* XZHomeVC.m in Sources */,
@@ -821,12 +836,16 @@
 			baseConfigurationReference = 085BFB28FC0445ACCC29F8F5 /* Pods-XZArcheryBook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 76364BYDWJ;
 				INFOPLIST_FILE = XZArcheryBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lwx.XZArcheryBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "XZArcheryBook/XZArcheryBook-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -835,18 +854,22 @@
 			baseConfigurationReference = EEA61FEC189F1C08E3D1DC0A /* Pods-XZArcheryBook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 76364BYDWJ;
 				INFOPLIST_FILE = XZArcheryBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lwx.XZArcheryBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "XZArcheryBook/XZArcheryBook-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		C0A7AA5E1F0BC3A200ED1444 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = T76SE52533;
 				INFOPLIST_FILE = XZArcheryBookTests/Info.plist;
@@ -860,6 +883,7 @@
 		C0A7AA5F1F0BC3A200ED1444 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = T76SE52533;
 				INFOPLIST_FILE = XZArcheryBookTests/Info.plist;
@@ -873,6 +897,7 @@
 		C0A7AA611F0BC3A200ED1444 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = T76SE52533;
 				INFOPLIST_FILE = XZArcheryBookUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -885,6 +910,7 @@
 		C0A7AA621F0BC3A200ED1444 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = T76SE52533;
 				INFOPLIST_FILE = XZArcheryBookUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

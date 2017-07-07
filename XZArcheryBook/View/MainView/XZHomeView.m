@@ -8,8 +8,6 @@
 
 #import "XZHomeView.h"
 
-#import "XZHeaderView.h"
-#import "XZTrainNotes.h"
 #import "XZDateView.h"
 #import "XZGroundView.h"
 #import "XZGroupView.h"
@@ -22,11 +20,6 @@
 @property (weak, nonatomic) UIScrollView *scrollView;
 
 @property (weak, nonatomic) UIView *contentView;
-
-
-@property (weak, nonatomic) XZHeaderView *headerView;
-
-@property (weak, nonatomic) XZTrainNotes *trainNotes;
 
 
 @end

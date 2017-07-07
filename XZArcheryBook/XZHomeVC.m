@@ -9,8 +9,9 @@
 #import "XZHomeVC.h"
 
 #import "XZHomeView.h"
+#import "XZArcheryBook-Swift.h"
 
-@interface XZHomeVC ()
+@interface XZHomeVC ()<XZHeaderViewDelegate>
 
 
 @property (strong, nonatomic) IBOutlet XZHomeView *homeView;
@@ -20,12 +21,17 @@
 
 @implementation XZHomeVC
 
+- (void)headerView:(XZHeaderView *)headerView isGroup:(BOOL)isGroup {
+    TestViewController *con = [[TestViewController alloc] init];
+    [self.navigationController pushViewController:con animated:true];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
     [self configHomeViewData];
-    
+    self.homeView.headerView.delegate = self;
     
 }
 
