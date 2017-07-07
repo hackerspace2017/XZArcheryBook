@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 
+#import "XZHomeVC.h"
+
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +20,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    XZHomeVC *homeVC = [[XZHomeVC alloc] init];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homeVC];
+    
+    self.window.rootViewController = nav;
+    
     return YES;
 }
 
