@@ -8,6 +8,9 @@
 
 #import "XZGroupVC.h"
 
+#import "XZGroupDataView.h"
+#import "XZGroundDataView.h"
+
 @interface XZGroupVC ()
 
 @end
@@ -17,6 +20,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+//    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    [self configDataView];
+    
+}
+
+- (void)configDataView
+{
+    if (self.isGroup) {
+        XZGroupDataView *groupDataView = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([XZGroupDataView class]) owner:self options:nil].firstObject;
+        
+        [self.view addSubview:groupDataView];
+    }
+    else
+    {
+        XZGroundDataView *groundDataView = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([XZGroundDataView class]) owner:self options:nil].firstObject;
+        
+        [self.view addSubview:groundDataView];
+        
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

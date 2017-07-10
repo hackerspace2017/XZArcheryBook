@@ -8,6 +8,8 @@
 
 #import "XZHomeVC.h"
 
+#import "XZGroupVC.h"
+
 #import "XZHomeView.h"
 #import "XZArcheryBook-Swift.h"
 
@@ -21,10 +23,6 @@
 
 @implementation XZHomeVC
 
-- (void)headerView:(XZHeaderView *)headerView isGroup:(BOOL)isGroup {
-    TestViewController *con = [[TestViewController alloc] init];
-    [self.navigationController pushViewController:con animated:true];
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,6 +40,20 @@
     XZArcheryModel *archeryModel = [[XZArcheryModel alloc] init];
     
     self.homeView.archeryModel = archeryModel;
+    
+}
+
+
+#pragma mark - XZHeaderViewDelegate
+- (void)headerView:(XZHeaderView *)headerView isGroup:(BOOL)isGroup {
+//    TestViewController *con = [[TestViewController alloc] init];
+//    [self.navigationController pushViewController:con animated:true];
+    
+    XZGroupVC *groupVC = [[XZGroupVC alloc] init];
+    
+    groupVC.isGroup = isGroup;
+    
+    [self.navigationController pushViewController:groupVC animated:YES];
     
 }
 

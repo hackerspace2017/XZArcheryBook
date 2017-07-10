@@ -10,6 +10,8 @@
 
 @interface XZGroupVC : UIViewController
 
+/** 是否为记一组数据   YES:记一组数据   NO:记一场数据 */
+@property (nonatomic , assign) BOOL isGroup;
 
 
 @end
