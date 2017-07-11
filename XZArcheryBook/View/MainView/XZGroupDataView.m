@@ -36,8 +36,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *textField5;
 @property (weak, nonatomic) IBOutlet UITextField *textField6;
 
-
-
+@property (weak, nonatomic) IBOutlet UIView *dataView1;
+@property (weak, nonatomic) IBOutlet UIView *dataView2;
+@property (weak, nonatomic) IBOutlet UIView *dataView3;
+@property (weak, nonatomic) IBOutlet UIView *dataView4;
+@property (weak, nonatomic) IBOutlet UIView *dataView5;
+@property (weak, nonatomic) IBOutlet UIView *dataView6;
 
 
 @end
@@ -47,14 +51,28 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
+    // 默认第一个textField为输入状态
+    self.dataView1.backgroundColor = RGB(255, 245, 170);
+    [self.textField1 becomeFirstResponder];
+    
     self.textField1.delegate = self;
+    self.textField1.returnKeyType = UIReturnKeyNext;
+    
     self.textField2.delegate = self;
+    self.textField2.returnKeyType = UIReturnKeyNext;
+    
     self.textField3.delegate = self;
+    self.textField3.returnKeyType = UIReturnKeyNext;
+    
     self.textField4.delegate = self;
+    self.textField4.returnKeyType = UIReturnKeyNext;
+    
     self.textField5.delegate = self;
+    self.textField5.returnKeyType = UIReturnKeyNext;
+    
     self.textField6.delegate = self;
-
-
+    self.textField6.returnKeyType = UIReturnKeyDone;
+    
     
     self.scrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     
@@ -98,47 +116,86 @@
 
 - (void)textFieldChange:(NSNotification *)obj
 {
-    UITextField *tempTextField = (UITextField *)obj.object;
+    self.dataView1.backgroundColor = HQClearColor;
+    self.dataView2.backgroundColor = HQClearColor;
+    self.dataView3.backgroundColor = HQClearColor;
+    self.dataView4.backgroundColor = HQClearColor;
+    self.dataView5.backgroundColor = HQClearColor;
+    self.dataView6.backgroundColor = HQClearColor;
     
-    if ([tempTextField.text integerValue] > 10) {
-        
-//        textField.text = string;
-    }
+    
+    UITextField *tempTextField = (UITextField *)obj.object;
     
     switch (tempTextField.tag) {
         case 1000:
         {
-            self.gradeOne = tempTextField.text;
+            self.textField1.text = self.gradeOne;
+            
+            [self.textField2 becomeFirstResponder];
+            
+            self.dataView2.backgroundColor = RGB(255, 245, 170);
+            
+//            self.gradeOne = tempTextField.text;
             
         }
             break;
         case 1001:
         {
-            self.gradeTwo = tempTextField.text;
+            self.textField2.text = self.gradeTwo;
+            
+            [self.textField3 becomeFirstResponder];
+            
+            self.dataView3.backgroundColor = RGB(255, 245, 170);
+            
+//            self.gradeTwo = tempTextField.text;
             
         }
             break;
         case 1002:
         {
-            self.gradeThree = tempTextField.text;
+            self.textField3.text = self.gradeThree;
+            
+            [self.textField4 becomeFirstResponder];
+            
+            self.dataView4.backgroundColor = RGB(255, 245, 170);
+            
+//            self.gradeThree = tempTextField.text;
             
         }
             break;
         case 1003:
         {
-            self.gradeFour = tempTextField.text;
+            self.textField4.text = self.gradeFour;
+            
+            [self.textField5 becomeFirstResponder];
+            
+            self.dataView5.backgroundColor = RGB(255, 245, 170);
+            
+//            self.gradeFour = tempTextField.text;
             
         }
             break;
         case 1004:
         {
-            self.gradeFive = tempTextField.text;
+            self.textField5.text = self.gradeFive;
+            
+            [self.textField6 becomeFirstResponder];
+            
+            self.dataView6.backgroundColor = RGB(255, 245, 170);
+            
+//            self.gradeFive = tempTextField.text;
             
         }
             break;
         case 1005:
         {
-            self.gradeSix = tempTextField.text;
+            self.textField6.text = self.gradeSix;
+            
+            self.dataView6.backgroundColor = RGB(255, 245, 170);
+            
+//            [self.textField2 becomeFirstResponder];
+            
+//            self.gradeSix = tempTextField.text;
             
         }
             break;
@@ -164,65 +221,94 @@
         
     }
     
+    if ([string isEqualToString:@"0"] && ![textField.text isEqualToString:@"1"]) {
+        
+        return NO;
+    }
     
     switch (textField.tag) {
         case 1000:
         {
-            if ([textField.text integerValue] > 10) {
+            
+            self.gradeOne = [NSString stringWithFormat:@"%@%@", textField.text, string];
+            
+            if ([[NSString stringWithFormat:@"%@%@", textField.text, string] integerValue] > 10) {
                 
-                textField.text = string;
+//                self.textField1.text = string;
+                
+                self.gradeOne = string;
             }
-//            self.gradeOne = textField.text;
+            
             
         }
             break;
         case 1001:
         {
-            if ([textField.text integerValue] > 10) {
+            
+            self.gradeTwo = [NSString stringWithFormat:@"%@%@", textField.text, string];
+            
+            if ([[NSString stringWithFormat:@"%@%@", textField.text, string] integerValue] > 10) {
                 
-                textField.text = string;
+//                self.textField2.text = string;
+                
+                self.gradeTwo = string;
             }
-//            self.gradeTwo = textField.text;
             
         }
             break;
         case 1002:
         {
-            if ([textField.text integerValue] > 10) {
+            
+            self.gradeThree = [NSString stringWithFormat:@"%@%@", textField.text, string];
+            
+            if ([[NSString stringWithFormat:@"%@%@", textField.text, string] integerValue] > 10) {
                 
-                textField.text = string;
+//                self.textField3.text = string;
+                
+                self.gradeThree = string;
             }
-//            self.gradeThree = textField.text;
             
         }
             break;
         case 1003:
         {
-            if ([textField.text integerValue] > 10) {
+            
+            self.gradeFour = [NSString stringWithFormat:@"%@%@", textField.text, string];
+            
+            if ([[NSString stringWithFormat:@"%@%@", textField.text, string] integerValue] > 10) {
                 
-                textField.text = string;
+//                self.textField4.text = string;
+                
+                self.gradeFour = string;
             }
-//            self.gradeFour = textField.text;
             
         }
             break;
         case 1004:
         {
-            if ([textField.text integerValue] > 10) {
+            
+            self.gradeFive = [NSString stringWithFormat:@"%@%@", textField.text, string];
+            
+            if ([[NSString stringWithFormat:@"%@%@", textField.text, string] integerValue] > 10) {
                 
-                textField.text = string;
+//                self.textField5.text = string;
+                
+                self.gradeFive = string;
             }
-//            self.gradeFive = textField.text;
             
         }
             break;
         case 1005:
         {
-            if ([textField.text integerValue] > 10) {
+            
+            self.gradeSix = [NSString stringWithFormat:@"%@%@", textField.text, string];
+            
+            if ([[NSString stringWithFormat:@"%@%@", textField.text, string] integerValue] > 10) {
                 
-                textField.text = string;
+//                self.textField6.text = string;
+                
+                self.gradeSix = string;
             }
-//            self.gradeSix = textField.text;
             
         }
             break;
@@ -234,49 +320,53 @@
     return YES;
 }
 
-
-
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     
-    switch (textField.tag) {
+    self.dataView1.backgroundColor = HQClearColor;
+    self.dataView2.backgroundColor = HQClearColor;
+    self.dataView3.backgroundColor = HQClearColor;
+    self.dataView4.backgroundColor = HQClearColor;
+    self.dataView5.backgroundColor = HQClearColor;
+    self.dataView6.backgroundColor = HQClearColor;
+    
+    
+    UITextField *tempTextField = textField;
+    
+    switch (tempTextField.tag) {
         case 1000:
         {
-            if ([textField.text integerValue] > 10) {
-                
-//                textField.text = 
-            }
-//            self.gradeOne = tempTextField.text;
+            self.dataView1.backgroundColor = RGB(255, 245, 170);
             
         }
             break;
         case 1001:
         {
-//            self.gradeTwo = tempTextField.text;
+            self.dataView2.backgroundColor = RGB(255, 245, 170);
             
         }
             break;
         case 1002:
         {
-//            self.gradeThree = tempTextField.text;
+            self.dataView3.backgroundColor = RGB(255, 245, 170);
             
         }
             break;
         case 1003:
         {
-//            self.gradeFour = tempTextField.text;
+            self.dataView4.backgroundColor = RGB(255, 245, 170);
             
         }
             break;
         case 1004:
         {
-//            self.gradeFive = tempTextField.text;
+            self.dataView5.backgroundColor = RGB(255, 245, 170);
             
         }
             break;
         case 1005:
         {
-//            self.gradeSix = tempTextField.text;
+            self.dataView6.backgroundColor = RGB(255, 245, 170);
             
         }
             break;
@@ -284,26 +374,63 @@
         default:
             break;
     }
-
     
 }
+
+// 取消第一响应者  退出键盘
+- (void)resignAllFirstResponser
+{
+    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder)
+                                               to:nil
+                                             from:nil
+                                         forEvent:nil];
+    
+//    if (self.textField1.isFirstResponder) {
+//        [self.textField1 resignFirstResponder];
+//    }
+//    
+//    if (self.textField2.isFirstResponder) {
+//        [self.textField2 resignFirstResponder];
+//    }
+//    
+//    if (self.textField3.isFirstResponder) {
+//        [self.textField3 resignFirstResponder];
+//    }
+//    
+//    if (self.textField4.isFirstResponder) {
+//        [self.textField4 resignFirstResponder];
+//    }
+//    
+//    if (self.textField5.isFirstResponder) {
+//        [self.textField5 resignFirstResponder];
+//    }
+//    
+//    if (self.textField6.isFirstResponder) {
+//        [self.textField6 resignFirstResponder];
+//    }
+    
+}
+
 
 
 // 弓箭类型选择
 - (IBAction)archeryTypeView:(id)sender {
     
+    [self resignAllFirstResponser];
     
 }
 
 // 射击距离选择
 - (IBAction)distanceView:(id)sender {
     
+    [self resignAllFirstResponser];
     
 }
 
 // 射击环数选择
 - (IBAction)loopNumView:(id)sender {
     
+    [self resignAllFirstResponser];
     
 }
 
