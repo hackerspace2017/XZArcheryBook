@@ -29,7 +29,7 @@ static const void * const kPublicQueueSpecificKey = &kPublicQueueSpecificKey;
 {
     self = [super init];
     if (self) {
-        dbOperationQueue = dispatch_queue_create("HQUserDBManager.DBOperationQueue", DISPATCH_QUEUE_SERIAL);
+        dbOperationQueue = dispatch_queue_create("XZUserDBManager.DBOperationQueue", DISPATCH_QUEUE_SERIAL);
         
         dispatch_queue_set_specific(dbOperationQueue, kPublicQueueSpecificKey, (__bridge void *)self, NULL);
     }

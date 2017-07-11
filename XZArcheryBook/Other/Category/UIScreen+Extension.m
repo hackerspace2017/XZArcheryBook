@@ -2,8 +2,8 @@
 //  UIScreen+Extension.m
 //  ExcellentLearning
 //
-//  Created by hjp on 16/11/3.
-//  Copyright © 2016年 西安恒谦教育科技股份有限公司. All rights reserved.
+//  Created by liwenxiang on 2017/4/16.
+//  Copyright © 2017年 祥子. All rights reserved.
 //
 
 #import "UIScreen+Extension.h"

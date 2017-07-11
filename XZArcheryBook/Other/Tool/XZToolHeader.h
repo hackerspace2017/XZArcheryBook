@@ -11,9 +11,11 @@
 
 #import "UIScreen+Extension.h"
 
-#import "HQMacro.h"
+#import "XZMacro.h"
 
 #import <Masonry.h>
+
+#import "HQStaticInlineFunctionConst.h"
 
 
 #endif /* XZToolHeader_h */

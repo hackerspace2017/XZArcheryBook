@@ -116,12 +116,12 @@
 
 - (void)textFieldChange:(NSNotification *)obj
 {
-    self.dataView1.backgroundColor = HQClearColor;
-    self.dataView2.backgroundColor = HQClearColor;
-    self.dataView3.backgroundColor = HQClearColor;
-    self.dataView4.backgroundColor = HQClearColor;
-    self.dataView5.backgroundColor = HQClearColor;
-    self.dataView6.backgroundColor = HQClearColor;
+    self.dataView1.backgroundColor = XZClearColor;
+    self.dataView2.backgroundColor = XZClearColor;
+    self.dataView3.backgroundColor = XZClearColor;
+    self.dataView4.backgroundColor = XZClearColor;
+    self.dataView5.backgroundColor = XZClearColor;
+    self.dataView6.backgroundColor = XZClearColor;
     
     
     UITextField *tempTextField = (UITextField *)obj.object;
@@ -323,12 +323,12 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     
-    self.dataView1.backgroundColor = HQClearColor;
-    self.dataView2.backgroundColor = HQClearColor;
-    self.dataView3.backgroundColor = HQClearColor;
-    self.dataView4.backgroundColor = HQClearColor;
-    self.dataView5.backgroundColor = HQClearColor;
-    self.dataView6.backgroundColor = HQClearColor;
+    self.dataView1.backgroundColor = XZClearColor;
+    self.dataView2.backgroundColor = XZClearColor;
+    self.dataView3.backgroundColor = XZClearColor;
+    self.dataView4.backgroundColor = XZClearColor;
+    self.dataView5.backgroundColor = XZClearColor;
+    self.dataView6.backgroundColor = XZClearColor;
     
     
     UITextField *tempTextField = textField;
@@ -418,12 +418,20 @@
     
     [self resignAllFirstResponser];
     
+    if ([self.delegate respondsToSelector:@selector(groupDataView:basicOptionsType:)]) {
+        [self.delegate groupDataView:self basicOptionsType:XZBasicOptionsTypeArcheryType];
+    }
+    
 }
 
 // 射击距离选择
 - (IBAction)distanceView:(id)sender {
     
     [self resignAllFirstResponser];
+    
+    if ([self.delegate respondsToSelector:@selector(groupDataView:basicOptionsType:)]) {
+        [self.delegate groupDataView:self basicOptionsType:XZBasicOptionsTypeDistance];
+    }
     
 }
 
@@ -432,6 +440,9 @@
     
     [self resignAllFirstResponser];
     
+    if ([self.delegate respondsToSelector:@selector(groupDataView:basicOptionsType:)]) {
+        [self.delegate groupDataView:self basicOptionsType:XZBasicOptionsTypeLoopNum];
+    }
 }
 
 

@@ -1,13 +1,13 @@
 //
-//  HQMacro.h
+//  XZMacro.h
 //  ExcellentLearning
 //
 //  Created by liwenxiang on 2017/4/16.
 //  Copyright © 2017年 祥子. All rights reserved.
 //
 
-#ifndef HQMacro_h
-#define HQMacro_h
+#ifndef XZMacro_h
+#define XZMacro_h
 
 #pragma mark - Security
 
@@ -15,8 +15,8 @@
 
 //*******************************************************************************
 
-#pragma mark -- HQColorMacro
-/********************************* HQColorMacro ****************************************/
+#pragma mark -- XZColorMacro
+/********************************* XZColorMacro ****************************************/
 
 #define RGBHex(rgbValue)         [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF00))/255.0 alpha:1.0]
 
@@ -26,7 +26,7 @@
 #define RGBA(r, g, b, a)          [UIColor colorWithRed:(r)/255.f    green:(g)/255.f    blue:(b)/255.f    alpha:(a)]
 #define PureColor(equalValue)     RGB(equalValue,equalValue,equalValue)
 
-#define  HQClearColor             [UIColor clearColor]
+#define  XZClearColor             [UIColor clearColor]
 #define  WhiteColor                RGB(255,255,255)//#ffffff
 #define  BrownColor               [UIColor colorWithRed:170.0/255.0  green: 90.0/255.0  blue: 60.0/255.0  alpha:1]
 #define  GreeColor                [UIColor colorWithRed: 87.0/255.0  green:159.0/255.0  blue:179.0/255.0  alpha:1]
@@ -35,47 +35,47 @@
 #define  RedColorRF               [UIColor colorWithRed:240.0/255.0  green: 65.0/255.0  blue: 19.0/255.0  alpha:1]
 #define  LineColor                [UIColor colorWithRed:224.0/255.0  green: 224.0/255.0 blue: 224.0/255.0 alpha:1]
 
-#define HQMainFrameColor                    RGB(3,169,244)  //RGBHex(0X03a9f4)       //主题色
-#define HQDangerousOperationColor           RGB(234,62,49)  //RGBHex(0Xea3e31)       //危险操作
-#define HQImportantWordsColor               RGB(52,52,52) //RGBHex(0X343434)         //重要文字
-#define HQGeneralWordsColor                 RGB(128,128,128) //RGBHex(0X808080)      //一般文字
+#define XZMainFrameColor                    RGB(3,169,244)  //RGBHex(0X03a9f4)       //主题色
+#define XZDangerousOperationColor           RGB(234,62,49)  //RGBHex(0Xea3e31)       //危险操作
+#define XZImportantWordsColor               RGB(52,52,52) //RGBHex(0X343434)         //重要文字
+#define XZGeneralWordsColor                 RGB(128,128,128) //RGBHex(0X808080)      //一般文字
 #define ReservedWordsColor                  RGB(153,153,153) //RGBHex(0X999999)      //预留文字
-#define HQSeparationOfContentColor          RGB(221,221,221) //RGBHex(0Xdddddd)      //内容区域上的分割线
-#define HQHighLightColor                    RGB(12,130,185) //RGBHex(0X0c82b9)      //按钮点击时的颜色
+#define XZSeparationOfContentColor          RGB(221,221,221) //RGBHex(0Xdddddd)      //内容区域上的分割线
+#define XZHighLightColor                    RGB(12,130,185) //RGBHex(0X0c82b9)      //按钮点击时的颜色
 
-#define HQSeparationColor                   RGB(229,229,229) //RGBHex(0Xe5e5e5)      //分割线
-#define HQBgSeparationColor                 RGB(243,243,243) //RGBHex(0Xf3f3f3)      //部分背景色/分割线 列表间隔距离 白色背景上的分割线
-#define HQContentBgColor                    RGB(247,247,247)  //RGBHex(0Xf7f7f7)     //内容区域底色
-#define HQEmptyViewTextBgColor        RGB(191,204,225)  //RGBHex(0Xf7f7f7)     //空白页面文字色
-#define HQEmptyViewTextLightBgColor    RGB(46,169,242)  //RGBHex(0Xf7f7f7)     //空白页面蓝色文字色
+#define XZSeparationColor                   RGB(229,229,229) //RGBHex(0Xe5e5e5)      //分割线
+#define XZBgSeparationColor                 RGB(243,243,243) //RGBHex(0Xf3f3f3)      //部分背景色/分割线 列表间隔距离 白色背景上的分割线
+#define XZContentBgColor                    RGB(247,247,247)  //RGBHex(0Xf7f7f7)     //内容区域底色
+#define XZEmptyViewTextBgColor        RGB(191,204,225)  //RGBHex(0Xf7f7f7)     //空白页面文字色
+#define XZEmptyViewTextLightBgColor    RGB(46,169,242)  //RGBHex(0Xf7f7f7)     //空白页面蓝色文字色
 
 
 // Tabbar Tint Color
-#define HQTabbarTintColor   RGB(0, 153, 219)
+#define XZTabbarTintColor   RGB(0, 153, 219)
 
 // SegmentedControl Tint Color
-#define HQTabbarSegmentControlTintColor   RGB(0, 184, 236)
+#define XZTabbarSegmentControlTintColor   RGB(0, 184, 236)
 
 // 所有页面背景颜色
-#define HQBackgroundColor RGB(240, 240, 240)
+#define XZBackgroundColor RGB(240, 240, 240)
 
 
-/********************************* HQFontMacro ****************************************/
+/********************************* XZFontMacro ****************************************/
 
-#define HQFont(fontSize) [UIFont systemFontOfSize:fontSize]
+#define XZFont(fontSize) [UIFont systemFontOfSize:fontSize]
 
-#define HQFont_Bold(fontBold) [UIFont boldSystemFontOfSize:fontBold]
+#define XZFont_Bold(fontBold) [UIFont boldSystemFontOfSize:fontBold]
 
 
-#pragma mark -- HQOSMacro
-/********************************* HQOSMacro ****************************************/
+#pragma mark -- XZOSMacro
+/********************************* XZOSMacro ****************************************/
 
 
 #define iOSUserDefaults                        [NSUserDefaults standardUserDefaults]
 #define iOSFileManager                         [NSFileManager defaultManager]
 #define iOSNotificationCenter                  [NSNotificationCenter defaultCenter]
 
-#define HQDeprecatedReason(Description) NS_DEPRECATED(2_0, 2_0, 2_0, 2_0, Description)
+#define XZDeprecatedReason(Description) NS_DEPRECATED(2_0, 2_0, 2_0, 2_0, Description)
 
 //消除警告
 
@@ -134,12 +134,12 @@ _Pragma("clang diagnostic pop") \
 
 
 
-#pragma mark -- HQRectMacro
-/********************************* HQRectMacro ****************************************/
+#pragma mark -- XZRectMacro
+/********************************* XZRectMacro ****************************************/
 
 
 #define DegreesToRadians(x) ((x) * (M_PI / 180.0))
 
 
 
-#endif /* HQMacro_h */
+#endif /* XZMacro_h */
