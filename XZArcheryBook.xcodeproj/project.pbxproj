@@ -60,6 +60,9 @@
 		C0C3F4011F0E82BC00820BB7 /* UIImage-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3F3EA1F0E82BC00820BB7 /* UIImage-SQLitePersistence.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C0C3F4081F0E833000820BB7 /* UserDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3F4051F0E833000820BB7 /* UserDBManager.m */; };
 		C0C3F4091F0E833000820BB7 /* UserPersistentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3F4071F0E833000820BB7 /* UserPersistentObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E4B5F5E61F14CA6100F6D752 /* TargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F5E51F14CA6100F6D752 /* TargetView.swift */; };
+		E4B5F5EA1F14CC5D00F6D752 /* TargetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F5E91F14CC5D00F6D752 /* TargetViewController.swift */; };
+		E4B5F5ED1F14D22000F6D752 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F5EC1F14D22000F6D752 /* Extensions.swift */; };
 		E4ECB1C61F0FC01A00DD4B9C /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ECB1C51F0FC01A00DD4B9C /* TestViewController.swift */; };
 		F0C7435FCF9380A23E428AB6 /* libPods-XZArcheryBook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC1630348BD2C9AE8E73AD5 /* libPods-XZArcheryBook.a */; };
 /* End PBXBuildFile section */
@@ -181,8 +184,11 @@
 		C0C3F4051F0E833000820BB7 /* UserDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDBManager.m; sourceTree = "<group>"; };
 		C0C3F4061F0E833000820BB7 /* UserPersistentObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPersistentObject.h; sourceTree = "<group>"; };
 		C0C3F4071F0E833000820BB7 /* UserPersistentObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPersistentObject.m; sourceTree = "<group>"; };
-		E4ECB1C41F0FC01900DD4B9C /* XZArcheryBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XZArcheryBook-Bridging-Header.h"; sourceTree = "<group>"; };
-		E4ECB1C51F0FC01A00DD4B9C /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		E4B5F5E51F14CA6100F6D752 /* TargetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetView.swift; sourceTree = "<group>"; };
+		E4B5F5E91F14CC5D00F6D752 /* TargetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetViewController.swift; sourceTree = "<group>"; };
+		E4B5F5EC1F14D22000F6D752 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E4ECB1C41F0FC01900DD4B9C /* XZArcheryBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "XZArcheryBook-Bridging-Header.h"; path = "../XZArcheryBook-Bridging-Header.h"; sourceTree = "<group>"; };
+		E4ECB1C51F0FC01A00DD4B9C /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestViewController.swift; path = ../TestViewController.swift; sourceTree = "<group>"; };
 		EEA61FEC189F1C08E3D1DC0A /* Pods-XZArcheryBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XZArcheryBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-XZArcheryBook/Pods-XZArcheryBook.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -260,25 +266,14 @@
 		C0A7AA2F1F0BC3A200ED1444 /* XZArcheryBook */ = {
 			isa = PBXGroup;
 			children = (
+				E4B5F5E41F14CA4200F6D752 /* Swift */,
 				E4ECB1C31F0FBFF200DD4B9C /* Controllers */,
-				C0A7AA331F0BC3A200ED1444 /* AppDelegate.h */,
-				C0A7AA341F0BC3A200ED1444 /* AppDelegate.m */,
-				C0A7AA361F0BC3A200ED1444 /* ViewController.h */,
-				C0A7AA371F0BC3A200ED1444 /* ViewController.m */,
 				C0A7AA391F0BC3A200ED1444 /* Main.storyboard */,
-				C0A7AA631F0BC9C500ED1444 /* XZHomeVC.h */,
-				C0A7AA641F0BC9C500ED1444 /* XZHomeVC.m */,
-				C0A7AA651F0BC9C500ED1444 /* XZHomeVC.xib */,
-				951203221F0F6E29009F4E4C /* XZGroupVC.h */,
-				951203231F0F6E29009F4E4C /* XZGroupVC.m */,
-				951203241F0F6E29009F4E4C /* XZGroupVC.xib */,
 				C0A7AA681F0BCC0600ED1444 /* View */,
 				C0C3F3BD1F0E822900820BB7 /* Model */,
 				C05E82D81F0D31CB00C93C21 /* Other */,
 				C0C3F3C11F0E82BC00820BB7 /* Database */,
 				C0A7AA3C1F0BC3A200ED1444 /* Assets.xcassets */,
-				C0A7AA3E1F0BC3A200ED1444 /* LaunchScreen.storyboard */,
-				C0A7AA411F0BC3A200ED1444 /* Info.plist */,
 				C0A7AA301F0BC3A200ED1444 /* Supporting Files */,
 			);
 			path = XZArcheryBook;
@@ -287,6 +282,10 @@
 		C0A7AA301F0BC3A200ED1444 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C0A7AA331F0BC3A200ED1444 /* AppDelegate.h */,
+				C0A7AA341F0BC3A200ED1444 /* AppDelegate.m */,
+				C0A7AA3E1F0BC3A200ED1444 /* LaunchScreen.storyboard */,
+				C0A7AA411F0BC3A200ED1444 /* Info.plist */,
 				C0A7AA311F0BC3A200ED1444 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -440,11 +439,54 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		E4ECB1C31F0FBFF200DD4B9C /* Controllers */ = {
+		E4B5F5E41F14CA4200F6D752 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				E4B5F5EB1F14D21100F6D752 /* Utilities */,
+				E4B5F5E81F14CC0E00F6D752 /* Views */,
+				E4B5F5E71F14CBFB00F6D752 /* Controllers */,
+				E4ECB1C41F0FC01900DD4B9C /* XZArcheryBook-Bridging-Header.h */,
+			);
+			name = Swift;
+			path = View;
+			sourceTree = "<group>";
+		};
+		E4B5F5E71F14CBFB00F6D752 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				E4ECB1C51F0FC01A00DD4B9C /* TestViewController.swift */,
-				E4ECB1C41F0FC01900DD4B9C /* XZArcheryBook-Bridging-Header.h */,
+				E4B5F5E91F14CC5D00F6D752 /* TargetViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E4B5F5E81F14CC0E00F6D752 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E4B5F5E51F14CA6100F6D752 /* TargetView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E4B5F5EB1F14D21100F6D752 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E4B5F5EC1F14D22000F6D752 /* Extensions.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		E4ECB1C31F0FBFF200DD4B9C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C0A7AA361F0BC3A200ED1444 /* ViewController.h */,
+				C0A7AA371F0BC3A200ED1444 /* ViewController.m */,
+				C0A7AA631F0BC9C500ED1444 /* XZHomeVC.h */,
+				C0A7AA641F0BC9C500ED1444 /* XZHomeVC.m */,
+				C0A7AA651F0BC9C500ED1444 /* XZHomeVC.xib */,
+				951203221F0F6E29009F4E4C /* XZGroupVC.h */,
+				951203231F0F6E29009F4E4C /* XZGroupVC.m */,
+				951203241F0F6E29009F4E4C /* XZGroupVC.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -658,6 +700,7 @@
 				C0C3F3F21F0E82BC00820BB7 /* NSData-SQLitePersistence.m in Sources */,
 				C04F301F1F0E8FCB00DCBC2B /* UIScreen+Extension.m in Sources */,
 				C0C3F3F61F0E82BC00820BB7 /* NSNumber-SQLitePersistence.m in Sources */,
+				E4B5F5EA1F14CC5D00F6D752 /* TargetViewController.swift in Sources */,
 				C04F30221F0E900800DCBC2B /* NSString+SQLPath.m in Sources */,
 				C0C3F3B71F0E797200820BB7 /* XZTrainNotes.m in Sources */,
 				C0C3F4081F0E833000820BB7 /* UserDBManager.m in Sources */,
@@ -670,9 +713,11 @@
 				E4ECB1C61F0FC01A00DD4B9C /* TestViewController.swift in Sources */,
 				C0C3F3AF1F0E797200820BB7 /* XZGroundNumView.m in Sources */,
 				C0C3F3F31F0E82BC00820BB7 /* NSDate-SQLitePersistence.m in Sources */,
+				E4B5F5ED1F14D22000F6D752 /* Extensions.swift in Sources */,
 				C0A7AA661F0BC9C500ED1444 /* XZHomeVC.m in Sources */,
 				C0C3F3F91F0E82BC00820BB7 /* NSObject-SQLitePersistence.m in Sources */,
 				C0C3F3F51F0E82BC00820BB7 /* NSMutableData-SQLitePersistence.m in Sources */,
+				E4B5F5E61F14CA6100F6D752 /* TargetView.swift in Sources */,
 				C0C3F3C01F0E825A00820BB7 /* XZArcheryModel.m in Sources */,
 				951203251F0F6E29009F4E4C /* XZGroupVC.m in Sources */,
 				C0C3F3FD1F0E82BC00820BB7 /* NSString-UppercaseFirst.m in Sources */,
