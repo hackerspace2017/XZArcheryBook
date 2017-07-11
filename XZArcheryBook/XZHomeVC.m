@@ -46,8 +46,12 @@
 
 #pragma mark - XZHeaderViewDelegate
 - (void)headerView:(XZHeaderView *)headerView isGroup:(BOOL)isGroup {
-//    TestViewController *con = [[TestViewController alloc] init];
-//    [self.navigationController pushViewController:con animated:true];
+    
+    if (isGroup == false) {
+        TargetViewController *controller = [[TargetViewController alloc] init];
+        [self.navigationController pushViewController:controller animated:true];
+        return;
+    }
     
     XZGroupVC *groupVC = [[XZGroupVC alloc] init];
     
