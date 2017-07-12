@@ -29,4 +29,7 @@
 /** 选择码表代理 */
 @property (nonatomic , weak) id <XZGroupDataViewDelegate> delegate;
 
+/** 数据Model */
+@property (nonatomic , strong) XZArcheryModel * archeryModel;
+
 @end

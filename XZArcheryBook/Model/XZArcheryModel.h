@@ -37,5 +37,41 @@ typedef NS_ENUM(NSInteger, XZBasicOptionsType) {
 //@property (nonatomic , strong) NSMutableArray * <#变量名#>;
 
 
+// 基本选项配置
+
+/** 弓箭类型 */
+@property (copy , nonatomic) NSString *archeryType;
+
+/** 射击距离 */
+@property (copy , nonatomic) NSString *distance;
+
+/** 射击环数 */
+@property (copy , nonatomic) NSString *loopNum;
+
+/** 射箭数量统计 */
+@property (copy , nonatomic) NSString *archeryNum;
+
+
+
+/** 数据1 */
+@property (copy , nonatomic) NSString *dataOne;
+
+/** 数据2 */
+@property (copy , nonatomic) NSString *dataTwo;
+
+/** 数据3 */
+@property (copy , nonatomic) NSString *dataThree;
+
+/** 数据4 */
+@property (copy , nonatomic) NSString *dataFour;
+
+/** 数据5 */
+@property (copy , nonatomic) NSString *dataFive;
+
+/** 数据6 */
+@property (copy , nonatomic) NSString *dataSix;
+
+
+
 
 @end

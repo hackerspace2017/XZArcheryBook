@@ -20,7 +20,6 @@
         return;
     }
     
-    
     [loopNumTable save];
     
 }
@@ -31,6 +30,17 @@
     NSArray *loopNumArray =  [LoopNumTable allObjects];
     
     return loopNumArray;
+}
+
+/** 获取默认射箭圈数 */
+- (NSString *)getDefaultLoopNum
+{
+    NSArray *loopNumArray =  [LoopNumTable allObjects];
+    
+    LoopNumTable *loopNumTable = loopNumArray.firstObject;
+    
+    return loopNumTable.loopNum;
+    
 }
 
 

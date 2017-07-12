@@ -20,5 +20,7 @@
 /** 获取所有射箭距离 */
 - (NSArray *)getAllDistanceTable;
 
+/** 获取默认射箭距离 */
+- (NSString *)getDefaultDistance;
 
 @end

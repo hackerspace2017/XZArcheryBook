@@ -20,4 +20,9 @@
 /** 获取所有  组数/每组射箭支数/共多少支箭 */
 - (NSArray *)getAllArcheryGroupNumTable;
 
+
+/** 获取默认  组数/每组射箭支数/共多少支箭 */
+- (NSString *)getDefaultArcheryGroupNum;
+
+
 @end

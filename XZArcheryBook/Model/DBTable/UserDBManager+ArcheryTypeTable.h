@@ -21,6 +21,7 @@
 /** 获取所有射箭类型 */
 - (NSArray *)getAllArcheryTypeTable;
 
-
+/** 获取默认射箭类型名字 */
+- (NSString *)getDefaultArcheryType;
 
 @end

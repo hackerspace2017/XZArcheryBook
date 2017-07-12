@@ -25,7 +25,7 @@ const CGFloat pickerHeight = 260.0;
 /** 控件颜色*/
 #define COLOR_MASKING_VIEW_BACKGROUND    [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.6]
 
-@interface XZCustomPickerView ()<UIGestureRecognizerDelegate>
+@interface XZCustomPickerView ()<UIGestureRecognizerDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UIPickerView *customPickerView; // pickerView
 
@@ -68,6 +68,7 @@ const CGFloat pickerHeight = 260.0;
     self = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([XZCustomPickerView class]) owner:self options:nil] objectAtIndex:0];
     
     self.pickViewType = type;
+    self.pickerViewObject = [[PickerViewObject alloc] init];
     
     if (type == XZCustomPickerViewTypeGradeOneComponent)
     {
@@ -98,17 +99,17 @@ const CGFloat pickerHeight = 260.0;
             
         case XZCustomPickerViewTypeGradeOneComponent: /**< 0：1个组 */
         {
-            [self loadGradeOnePlistData];
+            [self loadGradeOneData];
         }
             break;
         case XZCustomPickerViewTypeGradeTwoComponent: /**< 1：2个组 */
         {
-            [self loadGradeTwoPlistData];
+            [self loadGradeTwoData];
         }
             break;
         case XZCustomPickerViewTypeGradeThreeComponent: /**< 2：3个组 */
         {
-            [self loadGradeThreePlistData];
+            [self loadGradeThreeData];
         }
             break;
             
@@ -180,7 +181,7 @@ const CGFloat pickerHeight = 260.0;
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    NSUInteger componentsNum = 0;
+    NSUInteger componentsNum = 1;
     
     switch (self.pickViewType)
     {
@@ -458,16 +459,17 @@ const CGFloat pickerHeight = 260.0;
 /**
  *  加载一组数据
  */
-- (void)loadGradeOnePlistData
+- (void)loadGradeOneData
 {
-    
+    self.pickerViewObject.pickerCode = nil;
+    self.pickerViewObject.pickerName = self.oneDataArray.count?self.oneDataArray.firstObject:nil;;
     
 }
 
 /**
  *  加载两组数据
  */
-- (void)loadGradeTwoPlistData
+- (void)loadGradeTwoData
 {
     
     
@@ -476,7 +478,7 @@ const CGFloat pickerHeight = 260.0;
 /**
  *  加载三组数据
  */
-- (void)loadGradeThreePlistData
+- (void)loadGradeThreeData
 {
     
     

@@ -33,4 +33,17 @@
 }
 
 
+/** 获取默认  组数/每组射箭支数/共多少支箭 */
+- (NSString *)getDefaultArcheryGroupNum
+{
+    NSArray *archeryGroupNumArray =  [ArcheryGroupNumTable allObjects];
+    
+    ArcheryGroupNumTable *archeryGroupNumTable = archeryGroupNumArray.firstObject;
+    
+    return archeryGroupNumTable.archeryGroupNum;
+    
+}
+
+
+
 @end

@@ -13,21 +13,13 @@
 @interface XZGroupDataView ()<UITextFieldDelegate>
 
 
-/** 成绩1 */
-@property (nonatomic , copy) NSString * gradeOne;
-/** 成绩2 */
-@property (nonatomic , copy) NSString * gradeTwo;
-/** 成绩3 */
-@property (nonatomic , copy) NSString * gradeThree;
-/** 成绩4 */
-@property (nonatomic , copy) NSString * gradeFour;
-/** 成绩5 */
-@property (nonatomic , copy) NSString * gradeFive;
-/** 成绩6 */
-@property (nonatomic , copy) NSString * gradeSix;
-
-
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
+@property (weak, nonatomic) IBOutlet UILabel *archeryTypeLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *LoopNumLabel;
 
 @property (weak, nonatomic) IBOutlet UITextField *textField1;
 @property (weak, nonatomic) IBOutlet UITextField *textField2;
@@ -84,32 +76,22 @@
 {
     [iOSNotificationCenter addObserver:self selector:@selector(textFieldChange:) name:UITextFieldTextDidChangeNotification object:nil];
     
-//    [iOSNotificationCenter addObserver:self selector:@selector(textFieldChange:) name:UITextFieldTextDidChangeNotification object:self.textField2];
-//
-//    [iOSNotificationCenter addObserver:self selector:@selector(textFieldChange:) name:UITextFieldTextDidChangeNotification object:self.textField3];
-//
-//    [iOSNotificationCenter addObserver:self selector:@selector(textFieldChange:) name:UITextFieldTextDidChangeNotification object:self.textField4];
-//
-//    [iOSNotificationCenter addObserver:self selector:@selector(textFieldChange:) name:UITextFieldTextDidChangeNotification object:self.textField5];
-//
-//    [iOSNotificationCenter addObserver:self selector:@selector(textFieldChange:) name:UITextFieldTextDidChangeNotification object:self.textField6];
-
-    
 }
 
 - (void)dealloc
 {
     [iOSNotificationCenter removeObserver:self name:UITextFieldTextDidChangeNotification object:nil];
     
-//    [iOSNotificationCenter removeObserver:self name:UITextFieldTextDidChangeNotification object:self.textField2];
-//    
-//    [iOSNotificationCenter removeObserver:self name:UITextFieldTextDidChangeNotification object:self.textField3];
-//    
-//    [iOSNotificationCenter removeObserver:self name:UITextFieldTextDidChangeNotification object:self.textField4];
-//    
-//    [iOSNotificationCenter removeObserver:self name:UITextFieldTextDidChangeNotification object:self.textField5];
-//    
-//    [iOSNotificationCenter removeObserver:self name:UITextFieldTextDidChangeNotification object:self.textField6];
+}
+
+
+- (void)setArcheryModel:(XZArcheryModel *)archeryModel
+{
+    _archeryModel = archeryModel;
+    
+    self.archeryTypeLabel.text = archeryModel.archeryType;
+    self.distanceLabel.text = archeryModel.distance;
+    self.LoopNumLabel.text = archeryModel.loopNum;
     
 }
 
@@ -129,73 +111,65 @@
     switch (tempTextField.tag) {
         case 1000:
         {
-            self.textField1.text = self.gradeOne;
+            self.textField1.text = self.archeryModel.dataOne;
             
             [self.textField2 becomeFirstResponder];
             
             self.dataView2.backgroundColor = RGB(255, 245, 170);
             
-//            self.gradeOne = tempTextField.text;
             
         }
             break;
         case 1001:
         {
-            self.textField2.text = self.gradeTwo;
+            self.textField2.text = self.archeryModel.dataTwo;
             
             [self.textField3 becomeFirstResponder];
             
             self.dataView3.backgroundColor = RGB(255, 245, 170);
             
-//            self.gradeTwo = tempTextField.text;
             
         }
             break;
         case 1002:
         {
-            self.textField3.text = self.gradeThree;
+            self.textField3.text = self.archeryModel.dataThree;
             
             [self.textField4 becomeFirstResponder];
             
             self.dataView4.backgroundColor = RGB(255, 245, 170);
             
-//            self.gradeThree = tempTextField.text;
             
         }
             break;
         case 1003:
         {
-            self.textField4.text = self.gradeFour;
+            self.textField4.text = self.archeryModel.dataFour;
             
             [self.textField5 becomeFirstResponder];
             
             self.dataView5.backgroundColor = RGB(255, 245, 170);
             
-//            self.gradeFour = tempTextField.text;
             
         }
             break;
         case 1004:
         {
-            self.textField5.text = self.gradeFive;
+            self.textField5.text = self.archeryModel.dataFive;
             
             [self.textField6 becomeFirstResponder];
             
             self.dataView6.backgroundColor = RGB(255, 245, 170);
             
-//            self.gradeFive = tempTextField.text;
             
         }
             break;
         case 1005:
         {
-            self.textField6.text = self.gradeSix;
+            self.textField6.text = self.archeryModel.dataSix;
             
             self.dataView6.backgroundColor = RGB(255, 245, 170);
             
-//            [self.textField2 becomeFirstResponder];
-            
-//            self.gradeSix = tempTextField.text;
             
         }
             break;
@@ -230,13 +204,11 @@
         case 1000:
         {
             
-            self.gradeOne = [NSString stringWithFormat:@"%@%@", textField.text, string];
+            self.archeryModel.dataOne = [NSString stringWithFormat:@"%@%@", textField.text, string];
             
             if ([[NSString stringWithFormat:@"%@%@", textField.text, string] integerValue] > 10) {
                 
-//                self.textField1.text = string;
-                
-                self.gradeOne = string;
+                self.archeryModel.dataOne = string;
             }
             
             
@@ -245,13 +217,11 @@
         case 1001:
         {
             
-            self.gradeTwo = [NSString stringWithFormat:@"%@%@", textField.text, string];
+            self.archeryModel.dataTwo = [NSString stringWithFormat:@"%@%@", textField.text, string];
             
             if ([[NSString stringWithFormat:@"%@%@", textField.text, string] integerValue] > 10) {
                 
-//                self.textField2.text = string;
-                
-                self.gradeTwo = string;
+                self.archeryModel.dataTwo = string;
             }
             
         }
@@ -259,13 +229,11 @@
         case 1002:
         {
             
-            self.gradeThree = [NSString stringWithFormat:@"%@%@", textField.text, string];
+            self.archeryModel.dataThree = [NSString stringWithFormat:@"%@%@", textField.text, string];
             
             if ([[NSString stringWithFormat:@"%@%@", textField.text, string] integerValue] > 10) {
                 
-//                self.textField3.text = string;
-                
-                self.gradeThree = string;
+                self.archeryModel.dataThree = string;
             }
             
         }
@@ -273,13 +241,11 @@
         case 1003:
         {
             
-            self.gradeFour = [NSString stringWithFormat:@"%@%@", textField.text, string];
+            self.archeryModel.dataFour = [NSString stringWithFormat:@"%@%@", textField.text, string];
             
             if ([[NSString stringWithFormat:@"%@%@", textField.text, string] integerValue] > 10) {
                 
-//                self.textField4.text = string;
-                
-                self.gradeFour = string;
+                self.archeryModel.dataFour = string;
             }
             
         }
@@ -287,13 +253,11 @@
         case 1004:
         {
             
-            self.gradeFive = [NSString stringWithFormat:@"%@%@", textField.text, string];
+            self.archeryModel.dataFive = [NSString stringWithFormat:@"%@%@", textField.text, string];
             
             if ([[NSString stringWithFormat:@"%@%@", textField.text, string] integerValue] > 10) {
                 
-//                self.textField5.text = string;
-                
-                self.gradeFive = string;
+                self.archeryModel.dataFive = string;
             }
             
         }
@@ -301,13 +265,11 @@
         case 1005:
         {
             
-            self.gradeSix = [NSString stringWithFormat:@"%@%@", textField.text, string];
+            self.archeryModel.dataSix = [NSString stringWithFormat:@"%@%@", textField.text, string];
             
             if ([[NSString stringWithFormat:@"%@%@", textField.text, string] integerValue] > 10) {
                 
-//                self.textField6.text = string;
-                
-                self.gradeSix = string;
+                self.archeryModel.dataSix = string;
             }
             
         }
@@ -384,30 +346,6 @@
                                                to:nil
                                              from:nil
                                          forEvent:nil];
-    
-//    if (self.textField1.isFirstResponder) {
-//        [self.textField1 resignFirstResponder];
-//    }
-//    
-//    if (self.textField2.isFirstResponder) {
-//        [self.textField2 resignFirstResponder];
-//    }
-//    
-//    if (self.textField3.isFirstResponder) {
-//        [self.textField3 resignFirstResponder];
-//    }
-//    
-//    if (self.textField4.isFirstResponder) {
-//        [self.textField4 resignFirstResponder];
-//    }
-//    
-//    if (self.textField5.isFirstResponder) {
-//        [self.textField5 resignFirstResponder];
-//    }
-//    
-//    if (self.textField6.isFirstResponder) {
-//        [self.textField6 resignFirstResponder];
-//    }
     
 }
 

@@ -17,5 +17,7 @@
 
 #import "HQStaticInlineFunctionConst.h"
 
+#import "ToolsFunction.h"
+
 
 #endif /* XZToolHeader_h */

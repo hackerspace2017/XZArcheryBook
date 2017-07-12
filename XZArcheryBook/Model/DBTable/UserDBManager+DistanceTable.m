@@ -33,5 +33,16 @@
     return distanceArray;
 }
 
+/** 获取默认射箭距离 */
+- (NSString *)getDefaultDistance
+{
+    NSArray *distanceArray =  [DistanceTable allObjects];
+    
+    DistanceTable *distanceTable = distanceArray.firstObject;
+    
+    return distanceTable.distance;
+    
+}
+
 
 @end

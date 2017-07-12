@@ -430,12 +430,15 @@
                 <constraint firstAttribute="trailing" secondItem="9Of-XI-ANf" secondAttribute="trailing" id="juI-CU-XBB"/>
             </constraints>
             <connections>
+                <outlet property="LoopNumLabel" destination="Xbf-eB-TiX" id="iZb-im-ShE"/>
+                <outlet property="archeryTypeLabel" destination="t5l-mg-WPO" id="iJG-a6-AIS"/>
                 <outlet property="dataView1" destination="fVq-Kc-WUj" id="abm-nI-WFU"/>
                 <outlet property="dataView2" destination="k6T-jB-sJg" id="gZ0-uL-RGF"/>
                 <outlet property="dataView3" destination="Dx7-ld-moY" id="wFw-eW-cQE"/>
                 <outlet property="dataView4" destination="yJh-Th-gDF" id="qja-b1-OUu"/>
                 <outlet property="dataView5" destination="auF-q3-Z35" id="utq-sd-stl"/>
                 <outlet property="dataView6" destination="ca7-gA-tam" id="3QA-MK-Lvq"/>
+                <outlet property="distanceLabel" destination="Pgc-8E-4NO" id="lph-dM-73o"/>
                 <outlet property="scrollView" destination="9Of-XI-ANf" id="Hlf-Hx-gcM"/>
                 <outlet property="textField1" destination="8z2-x7-R9d" id="Oqm-gt-9Si"/>
                 <outlet property="textField2" destination="LYw-Mg-dRV" id="33Y-BU-Fmr"/>

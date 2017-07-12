@@ -28,6 +28,9 @@
     
     interfaceLayer();
     
+    //设置自定义弹框显得的父view
+    [XZCustomWindowManager shareManager].defuatSuperView = self.window;
+    
     // 先把数据库创建出来 这个是UserDB数据库
     if (!serverLayer().userDatabase.isOpenSuccess) {
         
@@ -98,8 +101,8 @@
                 
                 LoopNumTable *loopNumTable = [[LoopNumTable alloc] init];
                 
-                loopNumTable.LoopNum = loopNumArr[i];
-                loopNumTable.LoopNumCode = [NSString stringWithFormat:@"%d", 10000 + i];
+                loopNumTable.loopNum = loopNumArr[i];
+                loopNumTable.loopNumCode = [NSString stringWithFormat:@"%d", 10000 + i];
                 
                 [serverLayer().userDatabase saveLoopNumTable:loopNumTable];
                 

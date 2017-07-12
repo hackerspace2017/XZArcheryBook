@@ -13,6 +13,19 @@
 		9512032B1F0F7169009F4E4C /* XZGroupDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9512032A1F0F7169009F4E4C /* XZGroupDataView.xib */; };
 		9512032E1F0F7225009F4E4C /* XZGroundDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9512032D1F0F7225009F4E4C /* XZGroundDataView.m */; };
 		951203301F0F723E009F4E4C /* XZGroundDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9512032F1F0F723E009F4E4C /* XZGroundDataView.xib */; };
+		954C43441F15BDF8005152D1 /* ArcheryDataTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 954C432C1F15BDF8005152D1 /* ArcheryDataTable.m */; };
+		954C43451F15BDF8005152D1 /* ArcheryGroupNumTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 954C432E1F15BDF8005152D1 /* ArcheryGroupNumTable.m */; };
+		954C43461F15BDF8005152D1 /* ArcheryTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 954C43301F15BDF8005152D1 /* ArcheryTable.m */; };
+		954C43471F15BDF8005152D1 /* ArcheryTypeTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 954C43321F15BDF8005152D1 /* ArcheryTypeTable.m */; };
+		954C43481F15BDF8005152D1 /* DistanceTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 954C43351F15BDF8005152D1 /* DistanceTable.m */; };
+		954C43491F15BDF8005152D1 /* LoopNumTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 954C43371F15BDF8005152D1 /* LoopNumTable.m */; };
+		954C434A1F15BDF8005152D1 /* UserDBManager+ArcheryDataTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 954C43391F15BDF8005152D1 /* UserDBManager+ArcheryDataTable.m */; };
+		954C434B1F15BDF8005152D1 /* UserDBManager+ArcheryGroupNumTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 954C433B1F15BDF8005152D1 /* UserDBManager+ArcheryGroupNumTable.m */; };
+		954C434C1F15BDF8005152D1 /* UserDBManager+ArcheryTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 954C433D1F15BDF8005152D1 /* UserDBManager+ArcheryTable.m */; };
+		954C434D1F15BDF8005152D1 /* UserDBManager+ArcheryTypeTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 954C433F1F15BDF8005152D1 /* UserDBManager+ArcheryTypeTable.m */; };
+		954C434E1F15BDF8005152D1 /* UserDBManager+DistanceTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 954C43411F15BDF8005152D1 /* UserDBManager+DistanceTable.m */; };
+		954C434F1F15BDF8005152D1 /* UserDBManager+LoopNumTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 954C43431F15BDF8005152D1 /* UserDBManager+LoopNumTable.m */; };
+		954C43521F15C5CD005152D1 /* ToolsFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 954C43511F15C5CD005152D1 /* ToolsFunction.m */; };
 		95BC54C41F149FEE00F8D3AD /* NSString+SQLPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BC54BE1F149FEE00F8D3AD /* NSString+SQLPath.m */; };
 		95BC54C51F149FEE00F8D3AD /* UIScreen+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BC54C01F149FEE00F8D3AD /* UIScreen+Extension.m */; };
 		95BC54CA1F14A04E00F8D3AD /* XZCustomPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BC54C81F14A04E00F8D3AD /* XZCustomPickerView.m */; };
@@ -21,24 +34,12 @@
 		95BC54E51F14AB8C00F8D3AD /* UIImage+XZResize.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BC54E21F14AB8C00F8D3AD /* UIImage+XZResize.m */; };
 		95BC54E61F14AB8C00F8D3AD /* UIImage+XZUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BC54E41F14AB8C00F8D3AD /* UIImage+XZUtils.m */; };
 		95BC54EA1F14B03F00F8D3AD /* PickerViewObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BC54E91F14B03F00F8D3AD /* PickerViewObject.m */; };
-		95BC54ED1F14B53C00F8D3AD /* ArcheryTypeTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BC54EC1F14B53C00F8D3AD /* ArcheryTypeTable.m */; };
-		95BC54F01F14B56800F8D3AD /* UserDBManager+ArcheryTypeTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BC54EF1F14B56800F8D3AD /* UserDBManager+ArcheryTypeTable.m */; };
-		95BC54F31F14B5C900F8D3AD /* UserDBManager+DistanceTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BC54F21F14B5C900F8D3AD /* UserDBManager+DistanceTable.m */; };
-		95BC54F61F14B5D300F8D3AD /* DistanceTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BC54F51F14B5D300F8D3AD /* DistanceTable.m */; };
-		95BC54F91F14B66800F8D3AD /* LoopNumTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BC54F81F14B66800F8D3AD /* LoopNumTable.m */; };
-		95BC54FC1F14B67400F8D3AD /* UserDBManager+LoopNumTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BC54FB1F14B67400F8D3AD /* UserDBManager+LoopNumTable.m */; };
-		95BC54FF1F14B6B000F8D3AD /* ArcheryGroupNumTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BC54FE1F14B6B000F8D3AD /* ArcheryGroupNumTable.m */; };
-		95BC55021F14B6BC00F8D3AD /* UserDBManager+ArcheryGroupNumTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BC55011F14B6BC00F8D3AD /* UserDBManager+ArcheryGroupNumTable.m */; };
 		95BC551F1F14D54200F8D3AD /* XZCusomViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BC55171F14D54200F8D3AD /* XZCusomViewModel.m */; };
 		95BC55201F14D54200F8D3AD /* XZCustomViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BC55191F14D54200F8D3AD /* XZCustomViewManager.m */; };
 		95BC55211F14D54200F8D3AD /* XZCustomWindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BC551B1F14D54200F8D3AD /* XZCustomWindowManager.m */; };
 		95BC55221F14D54200F8D3AD /* XZUIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BC551E1F14D54200F8D3AD /* XZUIManager.m */; };
-		95BC55251F14DFA600F8D3AD /* ArcheryDataTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BC55241F14DFA600F8D3AD /* ArcheryDataTable.m */; };
-		95BC55281F14DFC300F8D3AD /* UserDBManager+ArcheryDataTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BC55271F14DFC300F8D3AD /* UserDBManager+ArcheryDataTable.m */; };
 		95BC552C1F14EC1B00F8D3AD /* SQLServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BC552B1F14EC1B00F8D3AD /* SQLServerManager.m */; };
 		C04F30121F0E850300DCBC2B /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C04F30111F0E850300DCBC2B /* libsqlite3.0.tbd */; };
-		C04F30151F0E85F100DCBC2B /* ArcheryTable.m in Sources */ = {isa = PBXBuildFile; fileRef = C04F30141F0E85F100DCBC2B /* ArcheryTable.m */; };
-		C04F30181F0E863000DCBC2B /* UserDBManager+ArcheryTable.m in Sources */ = {isa = PBXBuildFile; fileRef = C04F30171F0E863000DCBC2B /* UserDBManager+ArcheryTable.m */; };
 		C0A7AA321F0BC3A200ED1444 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A7AA311F0BC3A200ED1444 /* main.m */; };
 		C0A7AA351F0BC3A200ED1444 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A7AA341F0BC3A200ED1444 /* AppDelegate.m */; };
 		C0A7AA381F0BC3A200ED1444 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A7AA371F0BC3A200ED1444 /* ViewController.m */; };
@@ -117,6 +118,33 @@
 		9512032C1F0F7225009F4E4C /* XZGroundDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZGroundDataView.h; sourceTree = "<group>"; };
 		9512032D1F0F7225009F4E4C /* XZGroundDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZGroundDataView.m; sourceTree = "<group>"; };
 		9512032F1F0F723E009F4E4C /* XZGroundDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XZGroundDataView.xib; sourceTree = "<group>"; };
+		954C432B1F15BDF8005152D1 /* ArcheryDataTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArcheryDataTable.h; sourceTree = "<group>"; };
+		954C432C1F15BDF8005152D1 /* ArcheryDataTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArcheryDataTable.m; sourceTree = "<group>"; };
+		954C432D1F15BDF8005152D1 /* ArcheryGroupNumTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArcheryGroupNumTable.h; sourceTree = "<group>"; };
+		954C432E1F15BDF8005152D1 /* ArcheryGroupNumTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArcheryGroupNumTable.m; sourceTree = "<group>"; };
+		954C432F1F15BDF8005152D1 /* ArcheryTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArcheryTable.h; sourceTree = "<group>"; };
+		954C43301F15BDF8005152D1 /* ArcheryTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArcheryTable.m; sourceTree = "<group>"; };
+		954C43311F15BDF8005152D1 /* ArcheryTypeTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArcheryTypeTable.h; sourceTree = "<group>"; };
+		954C43321F15BDF8005152D1 /* ArcheryTypeTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArcheryTypeTable.m; sourceTree = "<group>"; };
+		954C43331F15BDF8005152D1 /* DBTableHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTableHeader.h; sourceTree = "<group>"; };
+		954C43341F15BDF8005152D1 /* DistanceTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistanceTable.h; sourceTree = "<group>"; };
+		954C43351F15BDF8005152D1 /* DistanceTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistanceTable.m; sourceTree = "<group>"; };
+		954C43361F15BDF8005152D1 /* LoopNumTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopNumTable.h; sourceTree = "<group>"; };
+		954C43371F15BDF8005152D1 /* LoopNumTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopNumTable.m; sourceTree = "<group>"; };
+		954C43381F15BDF8005152D1 /* UserDBManager+ArcheryDataTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserDBManager+ArcheryDataTable.h"; sourceTree = "<group>"; };
+		954C43391F15BDF8005152D1 /* UserDBManager+ArcheryDataTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserDBManager+ArcheryDataTable.m"; sourceTree = "<group>"; };
+		954C433A1F15BDF8005152D1 /* UserDBManager+ArcheryGroupNumTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserDBManager+ArcheryGroupNumTable.h"; sourceTree = "<group>"; };
+		954C433B1F15BDF8005152D1 /* UserDBManager+ArcheryGroupNumTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserDBManager+ArcheryGroupNumTable.m"; sourceTree = "<group>"; };
+		954C433C1F15BDF8005152D1 /* UserDBManager+ArcheryTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserDBManager+ArcheryTable.h"; sourceTree = "<group>"; };
+		954C433D1F15BDF8005152D1 /* UserDBManager+ArcheryTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserDBManager+ArcheryTable.m"; sourceTree = "<group>"; };
+		954C433E1F15BDF8005152D1 /* UserDBManager+ArcheryTypeTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserDBManager+ArcheryTypeTable.h"; sourceTree = "<group>"; };
+		954C433F1F15BDF8005152D1 /* UserDBManager+ArcheryTypeTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserDBManager+ArcheryTypeTable.m"; sourceTree = "<group>"; };
+		954C43401F15BDF8005152D1 /* UserDBManager+DistanceTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserDBManager+DistanceTable.h"; sourceTree = "<group>"; };
+		954C43411F15BDF8005152D1 /* UserDBManager+DistanceTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserDBManager+DistanceTable.m"; sourceTree = "<group>"; };
+		954C43421F15BDF8005152D1 /* UserDBManager+LoopNumTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserDBManager+LoopNumTable.h"; sourceTree = "<group>"; };
+		954C43431F15BDF8005152D1 /* UserDBManager+LoopNumTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserDBManager+LoopNumTable.m"; sourceTree = "<group>"; };
+		954C43501F15C5CD005152D1 /* ToolsFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolsFunction.h; sourceTree = "<group>"; };
+		954C43511F15C5CD005152D1 /* ToolsFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolsFunction.m; sourceTree = "<group>"; };
 		95BC54BD1F149FEE00F8D3AD /* NSString+SQLPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SQLPath.h"; sourceTree = "<group>"; };
 		95BC54BE1F149FEE00F8D3AD /* NSString+SQLPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SQLPath.m"; sourceTree = "<group>"; };
 		95BC54BF1F149FEE00F8D3AD /* UIScreen+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+Extension.h"; sourceTree = "<group>"; };
@@ -136,23 +164,6 @@
 		95BC54E41F14AB8C00F8D3AD /* UIImage+XZUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XZUtils.m"; sourceTree = "<group>"; };
 		95BC54E81F14B03F00F8D3AD /* PickerViewObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewObject.h; sourceTree = "<group>"; };
 		95BC54E91F14B03F00F8D3AD /* PickerViewObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewObject.m; sourceTree = "<group>"; };
-		95BC54EB1F14B53C00F8D3AD /* ArcheryTypeTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArcheryTypeTable.h; sourceTree = "<group>"; };
-		95BC54EC1F14B53C00F8D3AD /* ArcheryTypeTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArcheryTypeTable.m; sourceTree = "<group>"; };
-		95BC54EE1F14B56800F8D3AD /* UserDBManager+ArcheryTypeTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserDBManager+ArcheryTypeTable.h"; sourceTree = "<group>"; };
-		95BC54EF1F14B56800F8D3AD /* UserDBManager+ArcheryTypeTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserDBManager+ArcheryTypeTable.m"; sourceTree = "<group>"; };
-		95BC54F11F14B5C900F8D3AD /* UserDBManager+DistanceTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserDBManager+DistanceTable.h"; sourceTree = "<group>"; };
-		95BC54F21F14B5C900F8D3AD /* UserDBManager+DistanceTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserDBManager+DistanceTable.m"; sourceTree = "<group>"; };
-		95BC54F41F14B5D300F8D3AD /* DistanceTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistanceTable.h; sourceTree = "<group>"; };
-		95BC54F51F14B5D300F8D3AD /* DistanceTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistanceTable.m; sourceTree = "<group>"; };
-		95BC54F71F14B66800F8D3AD /* LoopNumTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopNumTable.h; sourceTree = "<group>"; };
-		95BC54F81F14B66800F8D3AD /* LoopNumTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopNumTable.m; sourceTree = "<group>"; };
-		95BC54FA1F14B67400F8D3AD /* UserDBManager+LoopNumTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserDBManager+LoopNumTable.h"; sourceTree = "<group>"; };
-		95BC54FB1F14B67400F8D3AD /* UserDBManager+LoopNumTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserDBManager+LoopNumTable.m"; sourceTree = "<group>"; };
-		95BC54FD1F14B6B000F8D3AD /* ArcheryGroupNumTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArcheryGroupNumTable.h; sourceTree = "<group>"; };
-		95BC54FE1F14B6B000F8D3AD /* ArcheryGroupNumTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArcheryGroupNumTable.m; sourceTree = "<group>"; };
-		95BC55001F14B6BB00F8D3AD /* UserDBManager+ArcheryGroupNumTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserDBManager+ArcheryGroupNumTable.h"; sourceTree = "<group>"; };
-		95BC55011F14B6BC00F8D3AD /* UserDBManager+ArcheryGroupNumTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserDBManager+ArcheryGroupNumTable.m"; sourceTree = "<group>"; };
-		95BC55031F14BE1A00F8D3AD /* DBTableHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTableHeader.h; sourceTree = "<group>"; };
 		95BC55131F14C71400F8D3AD /* HQStaticInlineFunctionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQStaticInlineFunctionConst.h; sourceTree = "<group>"; };
 		95BC55161F14D54200F8D3AD /* XZCusomViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZCusomViewModel.h; sourceTree = "<group>"; };
 		95BC55171F14D54200F8D3AD /* XZCusomViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZCusomViewModel.m; sourceTree = "<group>"; };
@@ -162,17 +173,9 @@
 		95BC551B1F14D54200F8D3AD /* XZCustomWindowManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZCustomWindowManager.m; sourceTree = "<group>"; };
 		95BC551D1F14D54200F8D3AD /* XZUIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZUIManager.h; sourceTree = "<group>"; };
 		95BC551E1F14D54200F8D3AD /* XZUIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZUIManager.m; sourceTree = "<group>"; };
-		95BC55231F14DFA600F8D3AD /* ArcheryDataTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArcheryDataTable.h; sourceTree = "<group>"; };
-		95BC55241F14DFA600F8D3AD /* ArcheryDataTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArcheryDataTable.m; sourceTree = "<group>"; };
-		95BC55261F14DFC300F8D3AD /* UserDBManager+ArcheryDataTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserDBManager+ArcheryDataTable.h"; sourceTree = "<group>"; };
-		95BC55271F14DFC300F8D3AD /* UserDBManager+ArcheryDataTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserDBManager+ArcheryDataTable.m"; sourceTree = "<group>"; };
 		95BC552A1F14EC1B00F8D3AD /* SQLServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLServerManager.h; sourceTree = "<group>"; };
 		95BC552B1F14EC1B00F8D3AD /* SQLServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLServerManager.m; sourceTree = "<group>"; };
 		C04F30111F0E850300DCBC2B /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
-		C04F30131F0E85F100DCBC2B /* ArcheryTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArcheryTable.h; sourceTree = "<group>"; };
-		C04F30141F0E85F100DCBC2B /* ArcheryTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArcheryTable.m; sourceTree = "<group>"; };
-		C04F30161F0E863000DCBC2B /* UserDBManager+ArcheryTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserDBManager+ArcheryTable.h"; sourceTree = "<group>"; };
-		C04F30171F0E863000DCBC2B /* UserDBManager+ArcheryTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserDBManager+ArcheryTable.m"; sourceTree = "<group>"; };
 		C0A7AA2D1F0BC3A200ED1444 /* XZArcheryBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XZArcheryBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A7AA311F0BC3A200ED1444 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C0A7AA331F0BC3A200ED1444 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -285,6 +288,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		954C432A1F15BDF8005152D1 /* DBTable */ = {
+			isa = PBXGroup;
+			children = (
+				954C43331F15BDF8005152D1 /* DBTableHeader.h */,
+				954C432F1F15BDF8005152D1 /* ArcheryTable.h */,
+				954C43301F15BDF8005152D1 /* ArcheryTable.m */,
+				954C433C1F15BDF8005152D1 /* UserDBManager+ArcheryTable.h */,
+				954C433D1F15BDF8005152D1 /* UserDBManager+ArcheryTable.m */,
+				954C432B1F15BDF8005152D1 /* ArcheryDataTable.h */,
+				954C432C1F15BDF8005152D1 /* ArcheryDataTable.m */,
+				954C43381F15BDF8005152D1 /* UserDBManager+ArcheryDataTable.h */,
+				954C43391F15BDF8005152D1 /* UserDBManager+ArcheryDataTable.m */,
+				954C43311F15BDF8005152D1 /* ArcheryTypeTable.h */,
+				954C43321F15BDF8005152D1 /* ArcheryTypeTable.m */,
+				954C433E1F15BDF8005152D1 /* UserDBManager+ArcheryTypeTable.h */,
+				954C433F1F15BDF8005152D1 /* UserDBManager+ArcheryTypeTable.m */,
+				954C43341F15BDF8005152D1 /* DistanceTable.h */,
+				954C43351F15BDF8005152D1 /* DistanceTable.m */,
+				954C43401F15BDF8005152D1 /* UserDBManager+DistanceTable.h */,
+				954C43411F15BDF8005152D1 /* UserDBManager+DistanceTable.m */,
+				954C43361F15BDF8005152D1 /* LoopNumTable.h */,
+				954C43371F15BDF8005152D1 /* LoopNumTable.m */,
+				954C43421F15BDF8005152D1 /* UserDBManager+LoopNumTable.h */,
+				954C43431F15BDF8005152D1 /* UserDBManager+LoopNumTable.m */,
+				954C432D1F15BDF8005152D1 /* ArcheryGroupNumTable.h */,
+				954C432E1F15BDF8005152D1 /* ArcheryGroupNumTable.m */,
+				954C433A1F15BDF8005152D1 /* UserDBManager+ArcheryGroupNumTable.h */,
+				954C433B1F15BDF8005152D1 /* UserDBManager+ArcheryGroupNumTable.m */,
+			);
+			path = DBTable;
+			sourceTree = "<group>";
+		};
 		95BC54BB1F149FEE00F8D3AD /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +353,8 @@
 				95BC54D01F14A54600F8D3AD /* Singleton.h */,
 				95BC54C21F149FEE00F8D3AD /* XZMacro.h */,
 				95BC55131F14C71400F8D3AD /* HQStaticInlineFunctionConst.h */,
+				954C43501F15C5CD005152D1 /* ToolsFunction.h */,
+				954C43511F15C5CD005152D1 /* ToolsFunction.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -427,8 +464,8 @@
 				951203221F0F6E29009F4E4C /* XZGroupVC.h */,
 				951203231F0F6E29009F4E4C /* XZGroupVC.m */,
 				951203241F0F6E29009F4E4C /* XZGroupVC.xib */,
-				95BC55141F14D54200F8D3AD /* Manager */,
 				C0A7AA681F0BCC0600ED1444 /* View */,
+				95BC55141F14D54200F8D3AD /* Manager */,
 				C0C3F3BD1F0E822900820BB7 /* Model */,
 				95BC54BB1F149FEE00F8D3AD /* Other */,
 				C0C3F3C11F0E82BC00820BB7 /* Database */,
@@ -523,31 +560,7 @@
 			children = (
 				C0C3F3BE1F0E825A00820BB7 /* XZArcheryModel.h */,
 				C0C3F3BF1F0E825A00820BB7 /* XZArcheryModel.m */,
-				95BC55031F14BE1A00F8D3AD /* DBTableHeader.h */,
-				C04F30131F0E85F100DCBC2B /* ArcheryTable.h */,
-				C04F30141F0E85F100DCBC2B /* ArcheryTable.m */,
-				C04F30161F0E863000DCBC2B /* UserDBManager+ArcheryTable.h */,
-				C04F30171F0E863000DCBC2B /* UserDBManager+ArcheryTable.m */,
-				95BC55231F14DFA600F8D3AD /* ArcheryDataTable.h */,
-				95BC55241F14DFA600F8D3AD /* ArcheryDataTable.m */,
-				95BC55261F14DFC300F8D3AD /* UserDBManager+ArcheryDataTable.h */,
-				95BC55271F14DFC300F8D3AD /* UserDBManager+ArcheryDataTable.m */,
-				95BC54EB1F14B53C00F8D3AD /* ArcheryTypeTable.h */,
-				95BC54EC1F14B53C00F8D3AD /* ArcheryTypeTable.m */,
-				95BC54EE1F14B56800F8D3AD /* UserDBManager+ArcheryTypeTable.h */,
-				95BC54EF1F14B56800F8D3AD /* UserDBManager+ArcheryTypeTable.m */,
-				95BC54F41F14B5D300F8D3AD /* DistanceTable.h */,
-				95BC54F51F14B5D300F8D3AD /* DistanceTable.m */,
-				95BC54F11F14B5C900F8D3AD /* UserDBManager+DistanceTable.h */,
-				95BC54F21F14B5C900F8D3AD /* UserDBManager+DistanceTable.m */,
-				95BC54F71F14B66800F8D3AD /* LoopNumTable.h */,
-				95BC54F81F14B66800F8D3AD /* LoopNumTable.m */,
-				95BC54FA1F14B67400F8D3AD /* UserDBManager+LoopNumTable.h */,
-				95BC54FB1F14B67400F8D3AD /* UserDBManager+LoopNumTable.m */,
-				95BC54FD1F14B6B000F8D3AD /* ArcheryGroupNumTable.h */,
-				95BC54FE1F14B6B000F8D3AD /* ArcheryGroupNumTable.m */,
-				95BC55001F14B6BB00F8D3AD /* UserDBManager+ArcheryGroupNumTable.h */,
-				95BC55011F14B6BC00F8D3AD /* UserDBManager+ArcheryGroupNumTable.m */,
+				954C432A1F15BDF8005152D1 /* DBTable */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -662,12 +675,6 @@
 			children = (
 				C0A7AA361F0BC3A200ED1444 /* ViewController.h */,
 				C0A7AA371F0BC3A200ED1444 /* ViewController.m */,
-				C0A7AA631F0BC9C500ED1444 /* XZHomeVC.h */,
-				C0A7AA641F0BC9C500ED1444 /* XZHomeVC.m */,
-				C0A7AA651F0BC9C500ED1444 /* XZHomeVC.xib */,
-				951203221F0F6E29009F4E4C /* XZGroupVC.h */,
-				951203231F0F6E29009F4E4C /* XZGroupVC.m */,
-				951203241F0F6E29009F4E4C /* XZGroupVC.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -871,41 +878,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95BC54F31F14B5C900F8D3AD /* UserDBManager+DistanceTable.m in Sources */,
 				C0C3F3BC1F0E79C900820BB7 /* XZHomeView.m in Sources */,
 				C0C3F3B51F0E797200820BB7 /* XZHeaderView.m in Sources */,
 				95BC55221F14D54200F8D3AD /* XZUIManager.m in Sources */,
 				C0A7AA381F0BC3A200ED1444 /* ViewController.m in Sources */,
 				C0C3F4001F0E82BC00820BB7 /* UIColor-SQLitePersistentObject.m in Sources */,
 				95BC54C41F149FEE00F8D3AD /* NSString+SQLPath.m in Sources */,
-				95BC54FF1F14B6B000F8D3AD /* ArcheryGroupNumTable.m in Sources */,
 				951203291F0F7154009F4E4C /* XZGroupDataView.m in Sources */,
 				C0C3F3FF1F0E82BC00820BB7 /* SQLitePersistentObject.m in Sources */,
 				9512032E1F0F7225009F4E4C /* XZGroundDataView.m in Sources */,
-				95BC54F61F14B5D300F8D3AD /* DistanceTable.m in Sources */,
 				C0C3F3FE1F0E82BC00820BB7 /* SQLiteInstanceManager.m in Sources */,
+				954C434E1F15BDF8005152D1 /* UserDBManager+DistanceTable.m in Sources */,
 				95BC54E01F14A85400F8D3AD /* XZCustomActionSheetView.m in Sources */,
 				C0C3F3F21F0E82BC00820BB7 /* NSData-SQLitePersistence.m in Sources */,
 				C0C3F3F61F0E82BC00820BB7 /* NSNumber-SQLitePersistence.m in Sources */,
 				E4B5F5EA1F14CC5D00F6D752 /* TargetViewController.swift in Sources */,
-				C04F30221F0E900800DCBC2B /* NSString+SQLPath.m in Sources */,
 				C0C3F3B71F0E797200820BB7 /* XZTrainNotes.m in Sources */,
 				95BC54E61F14AB8C00F8D3AD /* UIImage+XZUtils.m in Sources */,
 				C0C3F4081F0E833000820BB7 /* UserDBManager.m in Sources */,
 				C0C3F3F71F0E82BC00820BB7 /* NSObject-ClassName.m in Sources */,
 				95BC551F1F14D54200F8D3AD /* XZCusomViewModel.m in Sources */,
+				954C43441F15BDF8005152D1 /* ArcheryDataTable.m in Sources */,
+				954C434A1F15BDF8005152D1 /* UserDBManager+ArcheryDataTable.m in Sources */,
 				C0C3F4091F0E833000820BB7 /* UserPersistentObject.m in Sources */,
+				954C43481F15BDF8005152D1 /* DistanceTable.m in Sources */,
 				95BC55201F14D54200F8D3AD /* XZCustomViewManager.m in Sources */,
+				954C434C1F15BDF8005152D1 /* UserDBManager+ArcheryTable.m in Sources */,
+				954C434D1F15BDF8005152D1 /* UserDBManager+ArcheryTypeTable.m in Sources */,
 				C0C3F3AD1F0E797200820BB7 /* XZDateView.m in Sources */,
 				C0C3F3FC1F0E82BC00820BB7 /* NSString-SQLitePersistence.m in Sources */,
 				95BC55211F14D54200F8D3AD /* XZCustomWindowManager.m in Sources */,
 				C0C3F3FB1F0E82BC00820BB7 /* NSString-SQLiteColumnName.m in Sources */,
 				95BC552C1F14EC1B00F8D3AD /* SQLServerManager.m in Sources */,
+				954C43491F15BDF8005152D1 /* LoopNumTable.m in Sources */,
 				C0C3F3B31F0E797200820BB7 /* XZGroupView.m in Sources */,
-				95BC54ED1F14B53C00F8D3AD /* ArcheryTypeTable.m in Sources */,
 				E4ECB1C61F0FC01A00DD4B9C /* TestViewController.swift in Sources */,
 				C0C3F3AF1F0E797200820BB7 /* XZGroundNumView.m in Sources */,
 				C0C3F3F31F0E82BC00820BB7 /* NSDate-SQLitePersistence.m in Sources */,
+				954C43521F15C5CD005152D1 /* ToolsFunction.m in Sources */,
+				954C43461F15BDF8005152D1 /* ArcheryTable.m in Sources */,
 				E4B5F5ED1F14D22000F6D752 /* Extensions.swift in Sources */,
 				C0A7AA661F0BC9C500ED1444 /* XZHomeVC.m in Sources */,
 				95BC54EA1F14B03F00F8D3AD /* PickerViewObject.m in Sources */,
@@ -915,24 +926,20 @@
 				C0C3F3C01F0E825A00820BB7 /* XZArcheryModel.m in Sources */,
 				951203251F0F6E29009F4E4C /* XZGroupVC.m in Sources */,
 				C0C3F3FD1F0E82BC00820BB7 /* NSString-UppercaseFirst.m in Sources */,
+				954C434B1F15BDF8005152D1 /* UserDBManager+ArcheryGroupNumTable.m in Sources */,
 				C0A7AA351F0BC3A200ED1444 /* AppDelegate.m in Sources */,
 				C0A7AA321F0BC3A200ED1444 /* main.m in Sources */,
+				954C43451F15BDF8005152D1 /* ArcheryGroupNumTable.m in Sources */,
 				95BC54CA1F14A04E00F8D3AD /* XZCustomPickerView.m in Sources */,
 				C0C3F3B11F0E797200820BB7 /* XZGroundView.m in Sources */,
-				C04F30181F0E863000DCBC2B /* UserDBManager+ArcheryTable.m in Sources */,
-				95BC55251F14DFA600F8D3AD /* ArcheryDataTable.m in Sources */,
 				C0C3F3F41F0E82BC00820BB7 /* NSMutableArray-MultipleSort.m in Sources */,
+				954C43471F15BDF8005152D1 /* ArcheryTypeTable.m in Sources */,
 				C0C3F3F81F0E82BC00820BB7 /* NSObject-MissingKV.m in Sources */,
 				C0C3F4011F0E82BC00820BB7 /* UIImage-SQLitePersistence.m in Sources */,
+				954C434F1F15BDF8005152D1 /* UserDBManager+LoopNumTable.m in Sources */,
 				95BC54E51F14AB8C00F8D3AD /* UIImage+XZResize.m in Sources */,
-				95BC55021F14B6BC00F8D3AD /* UserDBManager+ArcheryGroupNumTable.m in Sources */,
-				95BC54FC1F14B67400F8D3AD /* UserDBManager+LoopNumTable.m in Sources */,
-				95BC54F01F14B56800F8D3AD /* UserDBManager+ArcheryTypeTable.m in Sources */,
 				C0C3F3FA1F0E82BC00820BB7 /* NSString-NumberStuff.m in Sources */,
-				95BC55281F14DFC300F8D3AD /* UserDBManager+ArcheryDataTable.m in Sources */,
-				C04F30151F0E85F100DCBC2B /* ArcheryTable.m in Sources */,
 				95BC54C51F149FEE00F8D3AD /* UIScreen+Extension.m in Sources */,
-				95BC54F91F14B66800F8D3AD /* LoopNumTable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

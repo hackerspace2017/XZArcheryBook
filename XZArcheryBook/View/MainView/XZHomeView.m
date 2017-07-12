@@ -123,7 +123,6 @@
             make.top.equalTo(self.trainNotes.mas_bottom).offset(dataHeight);
             make.left.equalTo(self.contentView);
             make.right.equalTo(self.contentView);
-//            make.bottom.equalTo(self.contentView);
             make.height.mas_equalTo(35);
         }];
         
@@ -144,7 +143,6 @@
                     make.top.equalTo(dateView.mas_bottom).offset(dayHeight);
                     make.left.equalTo(self.contentView);
                     make.right.equalTo(self.contentView);
-//                    make.bottom.equalTo(self.contentView);
                     make.height.mas_equalTo(240);
                     
                 }];
@@ -164,7 +162,6 @@
                     make.top.equalTo(dateView.mas_bottom).offset(dayHeight);
                     make.left.equalTo(self.contentView);
                     make.right.equalTo(self.contentView);
-//                    make.bottom.equalTo(self.contentView);
                     make.height.mas_equalTo(100);
                     
                 }];

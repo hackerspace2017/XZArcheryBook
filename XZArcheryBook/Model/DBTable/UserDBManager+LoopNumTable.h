@@ -20,4 +20,9 @@
 /** 获取所有射箭圈数 */
 - (NSArray *)getAllLoopNumTable;
 
+
+/** 获取默认射箭圈数 */
+- (NSString *)getDefaultLoopNum;
+
+
 @end

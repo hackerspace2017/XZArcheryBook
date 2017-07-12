@@ -43,7 +43,24 @@
     
     NSString *filterString = [[NSString alloc] initWithFormat:@"where is_history = 1"];
     
-    attactArray =  [ArcheryDataTable findByCriteria:filterString];
+    attactArray = [ArcheryTable findByCriteria:filterString];
+    
+    return attactArray.firstObject;
+    
+}
+
+// 通过Id查询某条数据
+- (ArcheryTable *)getArcheryTableWithArcheryId:(NSString *)archeryId
+{
+    if (archeryId.length == 0) {
+        return nil;
+    }
+    
+    NSArray * attactArray = nil;
+    
+    NSString *filterString = [[NSString alloc] initWithFormat:@"where archery_id = '%@'", archeryId];
+    
+    attactArray =  [ArcheryTable findByCriteria:filterString];
     
     return attactArray.firstObject;
     

@@ -11,9 +11,9 @@
 @interface LoopNumTable : UserPersistentObject
 
 /** 射击圈数 */
-@property (copy , nonatomic) NSString *LoopNum;
+@property (copy , nonatomic) NSString *loopNum;
 
 /** 数据库编号 */
-@property (copy , nonatomic) NSString *LoopNumCode;
+@property (copy , nonatomic) NSString *loopNumCode;
 
 @end

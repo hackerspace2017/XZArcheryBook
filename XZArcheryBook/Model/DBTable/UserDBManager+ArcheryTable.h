@@ -24,4 +24,7 @@
 // 获取历史成绩记录
 - (ArcheryTable *)getHistoryArcheryTable;
 
+// 通过Id查询某条数据
+- (ArcheryTable *)getArcheryTableWithArcheryId:(NSString *)archeryId;
+
 @end

@@ -21,10 +21,10 @@ typedef NS_ENUM(NSInteger, ArcheryTableType) {
 
 
 /** 数据记录Id */
-@property (copy , nonatomic) NSString *dataId;
+@property (copy , nonatomic) NSString *archeryId;
 
 /** 是否为历史数据 */
-@property (nonatomic , assign) BOOL isHistory;
+@property (nonatomic , assign) NSInteger isHistory;
 
 /** 数据类型 */
 @property (nonatomic , assign) ArcheryTableType type;
@@ -36,7 +36,7 @@ typedef NS_ENUM(NSInteger, ArcheryTableType) {
 @property (nonatomic , assign) NSInteger eachGroupNum;
 
 /** 数据表 */
-@property (nonatomic , strong) ArcheryDataTable * archeryDataTable;
+//@property (nonatomic , strong) ArcheryDataTable * archeryDataTable;
 
 
 // 基本选项配置

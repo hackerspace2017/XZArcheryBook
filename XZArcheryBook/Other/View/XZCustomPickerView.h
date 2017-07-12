@@ -34,7 +34,7 @@ typedef NS_OPTIONS(NSUInteger, XZCustomPickerViewType)
 
 
 //@class PickerViewObject,SubjectTable,XZAreaTable;
-@interface XZCustomPickerView : UIActionSheet <UIPickerViewDelegate, UIPickerViewDataSource>
+@interface XZCustomPickerView : UIActionSheet 
 
 
 @property (nonatomic, strong) PickerViewObject *pickerViewObject; // pickerView 选择的对象

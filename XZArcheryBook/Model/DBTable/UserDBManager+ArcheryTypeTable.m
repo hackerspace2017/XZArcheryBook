@@ -33,5 +33,16 @@
     return archeryTypeArray;
 }
 
+/** 获取默认射箭类型名字 */
+- (NSString *)getDefaultArcheryType
+{
+    NSArray *archeryTypeArray =  [ArcheryTypeTable allObjects];
+    
+    ArcheryTypeTable *archeryTypeTable = archeryTypeArray.firstObject;
+    
+    return archeryTypeTable.archeryName;
+    
+}
+
 
 @end
