@@ -10,4 +10,44 @@
 
 @implementation XZArcheryModel
 
+
+- (void)setArcheryTable:(ArcheryTable *)archeryTable
+{
+    _archeryTable = archeryTable;
+    
+    switch (archeryTable.type) {
+        case ArcheryTableTypeGroup:
+        {
+            
+            
+        }
+            break;
+        case ArcheryTableTypeGround:
+        {
+            
+            
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+}
+
+// 配置组数据
+- (void)configGroupData
+{
+    self
+    
+}
+
+// 配置场数据
+- (void)configGroundData
+{
+    
+    
+}
+
+
 @end

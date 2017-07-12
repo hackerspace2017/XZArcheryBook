@@ -25,7 +25,7 @@
     
 }
 
-/** 获取所有射箭类型 */
+/** 获取所有射箭成绩 */
 - (NSArray *)getAllArcheryTable
 {
     NSArray *archeryeArray =  [ArcheryTable allObjects];

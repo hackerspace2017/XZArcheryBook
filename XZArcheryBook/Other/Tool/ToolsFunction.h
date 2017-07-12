@@ -18,6 +18,14 @@
 /// 得到当前的系统UINX时间戳(微妙)字符串
 + (NSString *)getCurrentSystemDateMicrosecondString;
 
+// 获取两个日期是否在同一天
++ (BOOL)sameDayDate:(NSDate *)oneDate andAnotherDate:(NSDate *)otherDate;
+
+//时间戳转时间
++ (NSDate *)getDateFormString:(NSString *)timeStamp;
+
+// 时间转换  显示为  xxxx年xx月xx日
++ (NSString *)getDateYearStr:(NSDate *)date isZh:(BOOL)isZh;
 
 
 @end

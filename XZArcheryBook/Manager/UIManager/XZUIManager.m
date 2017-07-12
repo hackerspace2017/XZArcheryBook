@@ -19,6 +19,25 @@
 }
 
 
+
++ (void)getAllArcheryData:(void(^)(NSMutableArray<XZArcheryModel *> *archeryModelArr))archeryModel
+{
+    NSMutableArray *archeryModelArr = [NSMutableArray new];
+    
+    NSArray *dataArray = [serverLayer().userDatabase getAllArcheryTable];
+    
+    for (ArcheryTable * archeryTable in dataArray) {
+        
+        XZArcheryModel *archeryModel = [[XZArcheryModel alloc] init];
+        
+        archeryModel.archeryTable = archeryTable;
+        
+        [archeryModelArr addObject:archeryModel];
+    }
+    
+}
+
+
 // 射箭成绩输入前的判断
 + (void)creatArcheryResult:(void(^)(XZArcheryModel *archeryModel))archeryResult
 {

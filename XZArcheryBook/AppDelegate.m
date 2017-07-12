@@ -38,6 +38,7 @@
         
     }
     
+    // 存储码表公共数据
     [self savePublicData];
     
     XZHomeVC *homeVC = [[XZHomeVC alloc] init];
