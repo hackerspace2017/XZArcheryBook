@@ -32,4 +32,11 @@
 /** 数据Model */
 @property (nonatomic , strong) XZArcheryModel * archeryModel;
 
+
+// 获得数据数组
+- (NSMutableArray *)getDataDic;
+
+
+
+
 @end

@@ -18,13 +18,15 @@
  */
 - (void)saveArcheryTable:(ArcheryTable *)archeryTable;
 
-/** 获取所有射箭类型 */
+/** 获取所有射箭成绩 */
 - (NSArray *)getAllArcheryTable;
 
-// 获取历史成绩记录
+
+/** 获取历史成绩记录 */
 - (ArcheryTable *)getHistoryArcheryTable;
 
-// 通过Id查询某条数据
+
+/** 通过Id查询某条数据 */
 - (ArcheryTable *)getArcheryTableWithArcheryId:(NSString *)archeryId;
 
 @end

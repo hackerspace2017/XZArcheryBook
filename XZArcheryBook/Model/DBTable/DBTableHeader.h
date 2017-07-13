@@ -24,5 +24,7 @@
 
 #import "UserDBManager+ArcheryGroupNumTable.h"
 
+#import "UserDBManager+SaveDateTable.h"
+
 
 #endif /* DBTableHeader_h */

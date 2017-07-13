@@ -10,6 +10,7 @@
 
 #import "ArcheryTable.h"
 
+#import "ArcheryDataTable.h"
 
 typedef NS_ENUM(NSInteger, XZBasicOptionsType) {
     
@@ -26,15 +27,19 @@ typedef NS_ENUM(NSInteger, XZBasicOptionsType) {
 @interface XZArcheryModel : NSObject
 
 
-/** 数据库表 */
+/** 数据库射箭记录表 */
 @property (nonatomic , strong) ArcheryTable * archeryTable;
 
-/** 年月日分组 */
-@property (nonatomic , strong) NSMutableArray * yearMomentDayArr;
+/** 数据库详细数据记录表 */
+@property (nonatomic , strong) NSMutableArray <ArcheryDataTable *> * archeryDataTables;
+
+/** 年月日分组  key:xxxx年xx月xx日  value:当天的数据数组 */
+@property (nonatomic , strong) NSMutableDictionary * yearMomentDayDic;
 
 
-///** 每天具体时间分组 */
-//@property (nonatomic , strong) NSMutableArray * <#变量名#>;
+/** 一天内射箭总数量和总组数  x支/z组 */
+@property (copy , nonatomic) NSString *numGroupSum;
+
 
 
 // 基本选项配置
@@ -48,28 +53,14 @@ typedef NS_ENUM(NSInteger, XZBasicOptionsType) {
 /** 射击环数 */
 @property (copy , nonatomic) NSString *loopNum;
 
-/** 射箭数量统计 */
+/** 射箭数量选择 */
 @property (copy , nonatomic) NSString *archeryNum;
 
 
 
-/** 数据1 */
-@property (copy , nonatomic) NSString *dataOne;
+/** 数据数组 */
+@property (nonatomic , strong) NSMutableArray * dataArray;
 
-/** 数据2 */
-@property (copy , nonatomic) NSString *dataTwo;
-
-/** 数据3 */
-@property (copy , nonatomic) NSString *dataThree;
-
-/** 数据4 */
-@property (copy , nonatomic) NSString *dataFour;
-
-/** 数据5 */
-@property (copy , nonatomic) NSString *dataFive;
-
-/** 数据6 */
-@property (copy , nonatomic) NSString *dataSix;
 
 
 

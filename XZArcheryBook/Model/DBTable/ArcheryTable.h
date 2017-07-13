@@ -20,7 +20,7 @@ typedef NS_ENUM(NSInteger, ArcheryTableType) {
 @interface ArcheryTable : UserPersistentObject
 
 
-/** 数据记录Id */
+/** 数据记录Id  以保存时间为Id 确保唯一性 */
 @property (copy , nonatomic) NSString *archeryId;
 
 /** 是否为历史数据 */
@@ -32,8 +32,7 @@ typedef NS_ENUM(NSInteger, ArcheryTableType) {
 /** 数据组数 */
 @property (nonatomic , assign) NSInteger dataGroupNum;
 
-/** 每组箭数量 */
-@property (nonatomic , assign) NSInteger eachGroupNum;
+
 
 /** 数据表 */
 //@property (nonatomic , strong) ArcheryDataTable * archeryDataTable;
@@ -50,7 +49,7 @@ typedef NS_ENUM(NSInteger, ArcheryTableType) {
 /** 射击环数 */
 @property (copy , nonatomic) NSString *loopNum;
 
-/** 射箭数量统计 */
+/** 射箭数量选择 */
 @property (copy , nonatomic) NSString *archeryNum;
 
 

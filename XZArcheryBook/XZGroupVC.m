@@ -92,8 +92,11 @@
     
 }
 
+#pragma mark - 保存射箭成绩单
 - (void)saveArcheryResult:(UIButton *)button
 {
+    
+    self.archeryModel.dataArray = [self.groupDataView getDataDic];
     
     [XZUIManager saveArcheryResultWithArcheryDataModel:self.archeryModel isGroup:self.isGroup isHistory:NO];
     
@@ -204,6 +207,8 @@
 - (void)backHomeVC:(UIButton *)button
 {
     [self.navigationController popViewControllerAnimated:YES];
+    
+    self.archeryModel.dataArray = [self.groupDataView getDataDic];
     
     [XZUIManager saveArcheryResultWithArcheryDataModel:self.archeryModel isGroup:self.isGroup isHistory:YES];
     

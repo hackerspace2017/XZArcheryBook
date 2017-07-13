@@ -20,8 +20,10 @@
 
 @interface XZUIManager : NSObject
 
-/** 用户自己的数据库*/
-//@property (nonatomic , weak) UserDBManager *userDatabase;
+
+
+// 首页获取数据列表
++ (void)getAllArcheryData:(void(^)(XZArcheryModel *archeryModel))archeryModel;
 
 
 // 射箭成绩输入前的判断

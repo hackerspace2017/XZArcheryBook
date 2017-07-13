@@ -36,9 +36,23 @@
 @property (weak, nonatomic) IBOutlet UIView *dataView6;
 
 
+/** 数据数组 */
+@property (nonatomic , strong) NSMutableDictionary * dataDic;
+
 @end
 
 @implementation XZGroupDataView
+
+- (NSMutableDictionary *)dataDic
+{
+    if (!_dataDic) {
+        NSMutableDictionary *dataDic = [[NSMutableDictionary alloc] init];
+        
+        _dataDic = dataDic;
+    }
+    return _dataDic;
+}
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -72,6 +86,7 @@
     
 }
 
+
 - (void)registerNotification
 {
     [iOSNotificationCenter addObserver:self selector:@selector(textFieldChange:) name:UITextFieldTextDidChangeNotification object:nil];
@@ -93,6 +108,24 @@
     self.distanceLabel.text = archeryModel.distance;
     self.LoopNumLabel.text = archeryModel.loopNum;
     
+    
+    
+    
+//    for (NSArray *tempArr in self.archeryModel.dataArray) {
+//        
+//        self.textField1.text = tempArr[1];
+//        
+//        self.textField2.text = tempArr[2];
+//        
+//        self.textField3.text = tempArr[3];
+//        
+//        self.textField4.text = tempArr[4];
+//        
+//        self.textField5.text = tempArr[5];
+//        
+//        self.textField6.text = tempArr[6];
+//    }
+    
 }
 
 
@@ -111,7 +144,7 @@
     switch (tempTextField.tag) {
         case 1000:
         {
-            self.textField1.text = self.archeryModel.dataOne;
+            self.textField1.text = [self.dataDic objectForKey:@"1"];
             
             [self.textField2 becomeFirstResponder];
             
@@ -122,7 +155,7 @@
             break;
         case 1001:
         {
-            self.textField2.text = self.archeryModel.dataTwo;
+            self.textField2.text = [self.dataDic objectForKey:@"2"];
             
             [self.textField3 becomeFirstResponder];
             
@@ -133,7 +166,7 @@
             break;
         case 1002:
         {
-            self.textField3.text = self.archeryModel.dataThree;
+            self.textField3.text = [self.dataDic objectForKey:@"3"];
             
             [self.textField4 becomeFirstResponder];
             
@@ -144,7 +177,7 @@
             break;
         case 1003:
         {
-            self.textField4.text = self.archeryModel.dataFour;
+            self.textField4.text = [self.dataDic objectForKey:@"4"];
             
             [self.textField5 becomeFirstResponder];
             
@@ -155,7 +188,7 @@
             break;
         case 1004:
         {
-            self.textField5.text = self.archeryModel.dataFive;
+            self.textField5.text = [self.dataDic objectForKey:@"5"];
             
             [self.textField6 becomeFirstResponder];
             
@@ -166,7 +199,7 @@
             break;
         case 1005:
         {
-            self.textField6.text = self.archeryModel.dataSix;
+            self.textField6.text = [self.dataDic objectForKey:@"6"];
             
             self.dataView6.backgroundColor = RGB(255, 245, 170);
             
@@ -204,74 +237,79 @@
         case 1000:
         {
             
-            self.archeryModel.dataOne = [NSString stringWithFormat:@"%@%@", textField.text, string];
+            NSString *dataOne = [NSString stringWithFormat:@"%@%@", textField.text, string];
             
             if ([[NSString stringWithFormat:@"%@%@", textField.text, string] integerValue] > 10) {
                 
-                self.archeryModel.dataOne = string;
+                dataOne = string;
             }
             
-            
+            [self.dataDic setValue:dataOne forKey:@"1"];
         }
             break;
         case 1001:
         {
             
-            self.archeryModel.dataTwo = [NSString stringWithFormat:@"%@%@", textField.text, string];
+            NSString *dataTwo = [NSString stringWithFormat:@"%@%@", textField.text, string];
             
             if ([[NSString stringWithFormat:@"%@%@", textField.text, string] integerValue] > 10) {
                 
-                self.archeryModel.dataTwo = string;
+                dataTwo = string;
             }
             
+            [self.dataDic setValue:dataTwo forKey:@"2"];
         }
             break;
         case 1002:
         {
             
-            self.archeryModel.dataThree = [NSString stringWithFormat:@"%@%@", textField.text, string];
+            NSString *dataThree = [NSString stringWithFormat:@"%@%@", textField.text, string];
             
             if ([[NSString stringWithFormat:@"%@%@", textField.text, string] integerValue] > 10) {
                 
-                self.archeryModel.dataThree = string;
+                dataThree = string;
             }
             
+            [self.dataDic setValue:dataThree forKey:@"3"];
         }
             break;
         case 1003:
         {
             
-            self.archeryModel.dataFour = [NSString stringWithFormat:@"%@%@", textField.text, string];
+            NSString *dataFour = [NSString stringWithFormat:@"%@%@", textField.text, string];
             
             if ([[NSString stringWithFormat:@"%@%@", textField.text, string] integerValue] > 10) {
                 
-                self.archeryModel.dataFour = string;
+                dataFour = string;
             }
             
+            [self.dataDic setValue:dataFour forKey:@"4"];
         }
             break;
         case 1004:
         {
             
-            self.archeryModel.dataFive = [NSString stringWithFormat:@"%@%@", textField.text, string];
+            NSString *dataFive = [NSString stringWithFormat:@"%@%@", textField.text, string];
             
             if ([[NSString stringWithFormat:@"%@%@", textField.text, string] integerValue] > 10) {
                 
-                self.archeryModel.dataFive = string;
+                dataFive = string;
             }
             
+            [self.dataDic setValue:dataFive forKey:@"5"];
         }
             break;
         case 1005:
         {
             
-            self.archeryModel.dataSix = [NSString stringWithFormat:@"%@%@", textField.text, string];
+            NSString *dataSix = [NSString stringWithFormat:@"%@%@", textField.text, string];
             
             if ([[NSString stringWithFormat:@"%@%@", textField.text, string] integerValue] > 10) {
                 
-                self.archeryModel.dataSix = string;
+                dataSix = string;
             }
             
+            [self.dataDic setValue:dataSix forKey:@"6"];
         }
             break;
             
@@ -338,6 +376,15 @@
     }
     
 }
+
+
+// 获得数据数组
+- (NSMutableArray *)getDataDic
+{
+    
+    return @[self.dataDic].mutableCopy;
+}
+
 
 // 取消第一响应者  退出键盘
 - (void)resignAllFirstResponser

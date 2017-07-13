@@ -8,6 +8,8 @@
 
 #import "XZGroupView.h"
 
+#import "XZArcheryModel.h"
+
 @implementation XZGroupView
 
 - (void)awakeFromNib {
@@ -15,6 +17,14 @@
     
 }
 
+
+- (void)setArcheryModel:(XZArcheryModel *)archeryModel
+{
+    _archeryModel = archeryModel;
+    
+    
+    
+}
 
 
 /*

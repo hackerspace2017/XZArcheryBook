@@ -21,10 +21,32 @@
 
 @property (weak, nonatomic) UIView *contentView;
 
+/** 日期View */
+@property (nonatomic , weak) XZDateView *dateView;
+
+/** 组数据View */
+@property (nonatomic , weak) XZGroupView *groupView;
+
+/** 场数据View */
+@property (nonatomic , weak) XZGroundView *groundView;
+
 
 @end
 
 @implementation XZHomeView
+
+//- (XZDateView *)dateView
+//{
+//    if (!_dateView) {
+//        
+//        XZDateView *dateView = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([XZDateView class]) owner:self options:nil] firstObject];
+//        
+//        [self.contentView addSubview:dateView];
+//        
+//        _dateView = dateView;
+//    }
+//    return _dateView;
+//}
 
 
 - (void)awakeFromNib {
@@ -98,11 +120,29 @@
 {
     _archeryModel = archeryModel;
     
-//    for (NSArray *dayArray in archeryModel.yearMomentDayArr) {
-//        
-//        
-//        
-//    }
+    NSMutableArray *subView = self.contentView.subviews.mutableCopy;
+    
+    
+    [subView removeObject:[XZHeaderView class]];
+    [subView removeObject:[XZTrainNotes class]];
+    
+    if (subView.count > 0) {
+        
+        [subView makeObjectsPerformSelector:@selector(removeFromSuperview)];
+        
+    }
+    
+    
+    [self configConstraintAndDataWithArcheryModel:archeryModel];
+    
+    
+}
+
+// 配置UI约束及界面数据
+- (void)configConstraintAndDataWithArcheryModel:(XZArcheryModel *)archeryModel
+{
+    
+    NSArray *timeDicKey = [archeryModel.yearMomentDayDic allKeys];
     
     // 记录每天数据View高度
     int dayHeight = 0;
@@ -110,10 +150,16 @@
     // 记录数据View总高度
     int dataHeight = 0;
     
-    for (int i = 0; i < 3; i ++) {
+    for (int i = 0; i < timeDicKey.count; i ++) {
+        
         
         XZDateView *dateView = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([XZDateView class]) owner:self options:nil] firstObject];
+        
         [self.contentView addSubview:dateView];
+        
+        self.dateView = dateView;
+        
+        dateView.dateLabel.text = archeryModel.numGroupSum;
         
         if (i > 0) {
             dataHeight -= 10;
@@ -126,49 +172,67 @@
             make.height.mas_equalTo(35);
         }];
         
+        
+        NSArray *dataModelArr = [archeryModel.yearMomentDayDic objectForKey:timeDicKey[i]];
+        
         // 一天的数据展示完后  要把记录的当天的View高度清零  用于下一天高度的计算
         dayHeight = 0;
         
         // 总高度是要一直累计  用于最后约束contentView的bottom
         dataHeight += 35;
         
-        for (int i = 0; i < 5; i ++) {
+        for (int i = 0; i < dataModelArr.count; i ++) {
             
-            if (i == 1 || i == 3) {
-                
-                XZGroundView *groundView = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([XZGroundView class]) owner:self options:nil] firstObject];
-                [self.contentView addSubview:groundView];
-                
-                [groundView mas_updateConstraints:^(MASConstraintMaker *make) {
-                    make.top.equalTo(dateView.mas_bottom).offset(dayHeight);
-                    make.left.equalTo(self.contentView);
-                    make.right.equalTo(self.contentView);
-                    make.height.mas_equalTo(240);
+            XZArcheryModel *archeryModel = dataModelArr[i];
+            
+            switch (archeryModel.archeryTable.type) {
+                case ArcheryTableTypeGroup:
+                {
                     
-                }];
-                
-                dayHeight += 250;
-                dataHeight += 250;
-            }
-            else
-            {
-                
-                XZGroupView *groupView = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([XZGroupView class]) owner:self options:nil] firstObject];
-                
-                [self.contentView addSubview:groupView];
-                
-                
-                [groupView mas_updateConstraints:^(MASConstraintMaker *make) {
-                    make.top.equalTo(dateView.mas_bottom).offset(dayHeight);
-                    make.left.equalTo(self.contentView);
-                    make.right.equalTo(self.contentView);
-                    make.height.mas_equalTo(100);
+                    XZGroupView *groupView = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([XZGroupView class]) owner:self options:nil] firstObject];
                     
-                }];
-                
-                dayHeight += 110;
-                dataHeight += 110;
-                
+                    [self.contentView addSubview:groupView];
+                    
+                    self.groupView = groupView;
+                    
+                    [groupView mas_updateConstraints:^(MASConstraintMaker *make) {
+                        make.top.equalTo(dateView.mas_bottom).offset(dayHeight);
+                        make.left.equalTo(self.contentView);
+                        make.right.equalTo(self.contentView);
+                        make.height.mas_equalTo(75);
+                        
+                    }];
+                    
+                    groupView.archeryModel = archeryModel;
+                    
+                    dayHeight += 85;
+                    dataHeight += 85;
+                    
+                }
+                    break;
+                    
+                case ArcheryTableTypeGround:
+                {
+                    
+                    XZGroundView *groundView = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([XZGroundView class]) owner:self options:nil] firstObject];
+                    [self.contentView addSubview:groundView];
+                    
+                    [groundView mas_updateConstraints:^(MASConstraintMaker *make) {
+                        make.top.equalTo(dateView.mas_bottom).offset(dayHeight);
+                        make.left.equalTo(self.contentView);
+                        make.right.equalTo(self.contentView);
+                        make.height.mas_equalTo(236);
+                        
+                    }];
+                    
+                    dayHeight += 246;
+                    dataHeight += 246;
+                    
+                }
+                    break;
+                    
+                default:
+                    break;
             }
             
         }

@@ -13,6 +13,9 @@
 /** 射箭记录表Id  用于关联查询 */
 @property (copy , nonatomic) NSString *dataDetailId;
 
+/** 每组箭数量 */
+@property (nonatomic , assign) NSInteger eachGroupNum;
+
 /** 数据1 */
 @property (copy , nonatomic) NSString *dataOne;
 

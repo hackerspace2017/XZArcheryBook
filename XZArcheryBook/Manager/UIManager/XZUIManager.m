@@ -19,21 +19,55 @@
 }
 
 
-
-+ (void)getAllArcheryData:(void(^)(NSMutableArray<XZArcheryModel *> *archeryModelArr))archeryModel
+// 首页获取数据列表
++ (void)getAllArcheryData:(void(^)(XZArcheryModel *archeryModel))archeryModel
 {
-    NSMutableArray *archeryModelArr = [NSMutableArray new];
     
-    NSArray *dataArray = [serverLayer().userDatabase getAllArcheryTable];
+    xz_async_block(^{
+        
+        
+        NSMutableDictionary *archeryModelDic = [NSMutableDictionary new];
+        
+        NSMutableArray *archeryModelArr = [NSMutableArray new];
+        
+        NSArray *dataArray = [serverLayer().userDatabase getAllSaveDateTable];
+        
+        XZArcheryModel *dataModel = [[XZArcheryModel alloc] init];
+        
+        for (SaveDateTable * saveDateTable in dataArray) {
+            
+            NSArray *saveDateArr = [saveDateTable.archeryDataIds componentsSeparatedByString:@","];
+            
+            for (NSString *saveDate in saveDateArr) {
+                
+                ArcheryTable *archeryTable = [serverLayer().userDatabase getArcheryTableWithArcheryId:saveDate];
+                
+                XZArcheryModel *tempModel = [[XZArcheryModel alloc] init];
+                
+                tempModel.archeryTable = archeryTable;
+                tempModel.archeryDataTables = [serverLayer().userDatabase getAllArcheryDataTableByDataId:archeryTable.archeryId].mutableCopy;
+                
+                [archeryModelArr addObject:tempModel];
+                
+            }
+            
+            [archeryModelDic setValue:archeryModelArr.mutableCopy forKey:saveDateTable.yearMomentDay];
+            
+            [archeryModelArr removeAllObjects];
+        }
+        
+        dataModel.yearMomentDayDic = archeryModelDic;
+        
+        xz_safe_async_block(^{
+            
+            if (archeryModel) {
+                archeryModel(dataModel);
+            }
+            
+        });
+        
+    });
     
-    for (ArcheryTable * archeryTable in dataArray) {
-        
-        XZArcheryModel *archeryModel = [[XZArcheryModel alloc] init];
-        
-        archeryModel.archeryTable = archeryTable;
-        
-        [archeryModelArr addObject:archeryModel];
-    }
     
 }
 
@@ -104,31 +138,62 @@
         
         archeryTable.isHistory = isHistory;
         archeryTable.type = ArcheryTableTypeGroup;
-        archeryTable.dataGroupNum = 6;
+        archeryTable.dataGroupNum = 1;
         archeryTable.archeryType = archeryModel.archeryType;
         archeryTable.distance = archeryModel.distance;
         archeryTable.loopNum = archeryModel.loopNum;
         
         [serverLayer().userDatabase saveArcheryTable:archeryTable];
         
-        ArcheryDataTable *dataTable = [serverLayer().userDatabase getAllArcheryDataTableByadId:archeryTable.archeryId].firstObject;
-        if (!dataTable) {
+        for (NSDictionary *dic in archeryModel.dataArray) {
             
-            dataTable = [[ArcheryDataTable alloc] init];
+            ArcheryDataTable *dataTable = [serverLayer().userDatabase getAllArcheryDataTableByDataId:archeryTable.archeryId].firstObject;
+            if (!dataTable) {
+                
+                dataTable = [[ArcheryDataTable alloc] init];
+                
+                dataTable.dataDetailId = archeryTable.archeryId;
+                
+                [serverLayer().userDatabase saveArcheryDataTable:dataTable];
+            }
             
-            dataTable.dataDetailId = archeryTable.archeryId;
+            dataTable.dataOne = dic[@"1"];
+            dataTable.dataTwo = dic[@"2"];
+            dataTable.dataThree = dic[@"3"];
+            dataTable.dataFour = dic[@"4"];
+            dataTable.dataFive = dic[@"5"];
+            dataTable.dataSix = dic[@"6"];
+            
+            dataTable.eachGroupNum = [self getNumIsNotNilWithDic:dic];
             
             [serverLayer().userDatabase saveArcheryDataTable:dataTable];
+            
         }
         
-        dataTable.dataOne = archeryModel.dataOne;
-        dataTable.dataTwo = archeryModel.dataTwo;
-        dataTable.dataThree = archeryModel.dataThree;
-        dataTable.dataFour = archeryModel.dataFour;
-        dataTable.dataFive = archeryModel.dataFive;
-        dataTable.dataSix = archeryModel.dataSix;
         
-        [serverLayer().userDatabase saveArcheryDataTable:dataTable];
+        
+        
+        if (!isHistory) {
+            
+            NSString *yearMomentDayStr = [ToolsFunction getCurrentSystemDateSecondString];
+            NSDate *yearMomentDaydate = [ToolsFunction getDateFormString:yearMomentDayStr];
+            
+            SaveDateTable *saveDateTable = [serverLayer().userDatabase getSaveDateTableByDataId:[ToolsFunction getDateYearStr:yearMomentDaydate isZh:YES]];
+            
+            if (!saveDateTable) {
+                
+                saveDateTable = [[SaveDateTable alloc] init];
+                
+                saveDateTable.yearMomentDay = [ToolsFunction getDateYearStr:yearMomentDaydate isZh:YES];
+                
+                [serverLayer().userDatabase saveSaveDateTable:saveDateTable];
+            }
+            
+            saveDateTable.archeryDataIds = saveDateTable.archeryDataIds ? [NSString stringWithFormat:@"%@,%@", saveDateTable.archeryDataIds, archeryTable.archeryId] : archeryTable.archeryId;
+            
+            [serverLayer().userDatabase saveSaveDateTable:saveDateTable];
+            
+        }
         
     }
     else
@@ -138,6 +203,22 @@
         
     }
     
+}
+
+// 获得一组数据中射箭数量
++ (int)getNumIsNotNilWithDic:(NSDictionary *)dic
+{
+    NSArray *array = [dic allKeys];
+    
+    int num = 0;
+    for (NSString *string in array) {
+        
+        NSString *value = dic[string];
+        num = value.length > 0 ? num + 1 : num ;
+        
+    }
+    
+    return num;
 }
 
 

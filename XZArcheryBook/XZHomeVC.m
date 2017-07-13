@@ -13,6 +13,8 @@
 #import "XZHomeView.h"
 #import "XZArcheryBook-Swift.h"
 
+#import "XZUIManager.h"
+
 @interface XZHomeVC ()<XZHeaderViewDelegate>
 
 
@@ -31,15 +33,25 @@
     [self configHomeViewData];
     self.homeView.headerView.delegate = self;
     
+    UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    [rightBtn setTitle:@"保存" forState:UIControlStateNormal];
+    [rightBtn setTitleColor:PureColor(59) forState:UIControlStateNormal];
+    [rightBtn addTarget:self action:@selector(configHomeViewData) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *rightBarBtn = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+    self.navigationItem.rightBarButtonItem = rightBarBtn;
+    
 }
 
 
 - (void)configHomeViewData
 {
     
-    XZArcheryModel *archeryModel = [[XZArcheryModel alloc] init];
+    [XZUIManager getAllArcheryData:^(XZArcheryModel *archeryModel) {
+        
+        self.homeView.archeryModel = archeryModel;
+    }];
     
-    self.homeView.archeryModel = archeryModel;
     
 }
 

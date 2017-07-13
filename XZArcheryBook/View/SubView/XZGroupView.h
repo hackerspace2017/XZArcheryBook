@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class XZArcheryModel;
 @interface XZGroupView : UIView
+
+/** 数据Model */
+@property (nonatomic , strong) XZArcheryModel * archeryModel;
+
 
 @end

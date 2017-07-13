@@ -26,8 +26,13 @@
 }
 
 
-// 根据组数据或场数据Id 获取所有成绩
-- (NSArray *)getAllArcheryDataTableByadId:(NSString *)dataId
+/**
+ 根据组数据或场数据Id 获取所有成绩
+
+ @param dataId 数据Id
+ @return return value description
+ */
+- (NSArray *)getAllArcheryDataTableByDataId:(NSString *)dataId
 {
     if (dataId.length == 0) {
         return nil;
