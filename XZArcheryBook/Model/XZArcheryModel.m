@@ -8,6 +8,7 @@
 
 #import "XZArcheryModel.h"
 
+#import "XZToolHeader.h"
 
 @implementation XZArcheryModel
 
@@ -92,34 +93,34 @@
 }
 
 
-- (void)setYearMomentDayDic:(NSMutableDictionary *)yearMomentDayDic
-{
-    _yearMomentDayDic = yearMomentDayDic;
-    
-    NSArray * array = [yearMomentDayDic allKeys];
-    
-    int archeryNum = 0;
-    int groupNum = 0;
-    
-    for (NSString *dateString in array) {
-        
-        NSArray *archeryModels = yearMomentDayDic[dateString];
-        
-        for (XZArcheryModel *archeryModel in archeryModels) {
-            
-            for (ArcheryDataTable *archeryDataTable in archeryModel.archeryDataTables) {
-                
-                archeryNum += archeryDataTable.eachGroupNum;
-                groupNum ++;
-                
-            }
-            
-        }
-        
-    }
-    
-    self.numGroupSum = [NSString stringWithFormat:@"%d支/%d组", archeryNum, groupNum];
-}
+//- (void)setYearMomentDayDic:(NSMutableDictionary *)yearMomentDayDic
+//{
+//    _yearMomentDayDic = yearMomentDayDic;
+//    
+//    NSArray * array = [yearMomentDayDic allKeys];
+//    
+//    int archeryNum = 0;
+//    int groupNum = 0;
+//    
+//    for (NSString *dateString in array) {
+//        
+//        NSArray *archeryModels = yearMomentDayDic[dateString];
+//        
+//        for (XZArcheryModel *archeryModel in archeryModels) {
+//            
+//            for (ArcheryDataTable *archeryDataTable in archeryModel.archeryDataTables) {
+//                
+//                archeryNum += archeryDataTable.eachGroupNum;
+//                groupNum ++;
+//                
+//            }
+//            
+//        }
+//        
+//    }
+//    
+//    self.numGroupSum = [NSString stringWithFormat:@"%d支/%d组", archeryNum, groupNum];
+//}
 
 
 // 配置组数据
@@ -128,6 +129,14 @@
     self.archeryType = self.archeryTable.archeryType;
     self.distance = self.archeryTable.distance;
     self.loopNum = self.archeryTable.loopNum;
+    
+    self.timeStr = [ToolsFunction getHHSSDateString:self.archeryTable.creatTime];
+    
+    for (NSDictionary *dic in self.dataArray) {
+        
+        self.sumResults += [dic[@"0"] intValue];
+        
+    }
     
 }
 

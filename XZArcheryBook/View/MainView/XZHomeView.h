@@ -12,6 +12,14 @@
 #import "XZHeaderView.h"
 #import "XZTrainNotes.h"
 
+@class XZHomeView;
+@protocol XZHomeViewDelegate <NSObject>
+
+
+- (void)homeView:(XZHomeView *)homeView isGroup:(BOOL)isGroup;
+
+@end
+
 @interface XZHomeView : UIView
 
 /** 射箭数据model */
@@ -20,5 +28,8 @@
 @property (weak, nonatomic) XZHeaderView *headerView;
 
 @property (weak, nonatomic) XZTrainNotes *trainNotes;
+
+/** HeaderView代理 */
+@property (weak , nonatomic) id <XZHomeViewDelegate> delegate;
 
 @end

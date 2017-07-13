@@ -15,7 +15,7 @@
 
 #import "XZToolHeader.h"
 
-@interface XZHomeView ()
+@interface XZHomeView ()<XZHeaderViewDelegate>
 
 @property (weak, nonatomic) UIScrollView *scrollView;
 
@@ -34,19 +34,6 @@
 @end
 
 @implementation XZHomeView
-
-//- (XZDateView *)dateView
-//{
-//    if (!_dateView) {
-//        
-//        XZDateView *dateView = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([XZDateView class]) owner:self options:nil] firstObject];
-//        
-//        [self.contentView addSubview:dateView];
-//        
-//        _dateView = dateView;
-//    }
-//    return _dateView;
-//}
 
 
 - (void)awakeFromNib {
@@ -75,6 +62,7 @@
     
     
     self.headerView = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([XZHeaderView class]) owner:self options:nil] firstObject];
+    self.headerView.delegate = self;
     [self.contentView addSubview:self.headerView];
     
     
@@ -88,7 +76,7 @@
 - (void)layout
 {
     [self.scrollView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self).mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+        make.edges.equalTo(self).mas_equalTo(UIEdgeInsetsMake(64, 0, 0, 0));
     }];
     
     [self.contentView mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -120,18 +108,23 @@
 {
     _archeryModel = archeryModel;
     
-    NSMutableArray *subView = self.contentView.subviews.mutableCopy;
+//    NSMutableArray *subView = self.contentView.subviews.mutableCopy;
+//    
+//    if (subView.count > 2) {
+//        
+//        [subView removeObjectAtIndex:0];
+//        [subView removeObjectAtIndex:1];
+//        [subView removeObject:[XZHeaderView class]];
+//        [subView removeObject:[XZTrainNotes class]];
+//        
+//        [subView makeObjectsPerformSelector:@selector(removeFromSuperview)];
+//        
+//    }
     
+    [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
-    [subView removeObject:[XZHeaderView class]];
-    [subView removeObject:[XZTrainNotes class]];
-    
-    if (subView.count > 0) {
-        
-        [subView makeObjectsPerformSelector:@selector(removeFromSuperview)];
-        
-    }
-    
+    [self configUI];
+    [self layout];
     
     [self configConstraintAndDataWithArcheryModel:archeryModel];
     
@@ -159,7 +152,7 @@
         
         self.dateView = dateView;
         
-        dateView.dateLabel.text = archeryModel.numGroupSum;
+        dateView.dateLabel.text = timeDicKey[i];
         
         if (i > 0) {
             dataHeight -= 10;
@@ -247,6 +240,16 @@
     
 }
 
+
+
+#pragma mark - XZHeaderViewDelegate
+- (void)headerView:(XZHeaderView *)headerView isGroup:(BOOL)isGroup
+{
+    if ([self.delegate respondsToSelector:@selector(homeView:isGroup:)]) {
+        [self.delegate homeView:self isGroup:isGroup];
+    }
+    
+}
 
 
 

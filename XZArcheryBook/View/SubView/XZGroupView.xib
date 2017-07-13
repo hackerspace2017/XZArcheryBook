@@ -42,6 +42,12 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="得分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2k6-HP-OsR">
+                    <rect key="frame" x="22" y="45" width="18.5" height="11"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                    <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="反曲弓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSC-WE-6v4">
                     <rect key="frame" x="87" y="12" width="43" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -49,7 +55,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="90米" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7It-v1-U3q">
-                    <rect key="frame" x="223" y="11.5" width="32" height="17"/>
+                    <rect key="frame" x="223" y="11" width="32" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -189,12 +195,6 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="得分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2k6-HP-OsR">
-                    <rect key="frame" x="22.5" y="45.5" width="18.5" height="11"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                    <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XX-KO-1k8">
                     <rect key="frame" x="368" y="46" width="9.5" height="20"/>
                     <attributedString key="attributedText">
@@ -265,6 +265,19 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="archeryTypeLabel" destination="NSC-WE-6v4" id="edf-E0-LWa"/>
+                <outlet property="dataFiveLabel" destination="1JX-0G-TBb" id="WMe-Rg-Ws2"/>
+                <outlet property="dataFourLabel" destination="vl5-dh-soz" id="lNK-5L-xrw"/>
+                <outlet property="dataOneLabel" destination="YRd-FN-cPP" id="wMT-ud-nZA"/>
+                <outlet property="dataSixLabel" destination="1XX-KO-1k8" id="Lqi-yZ-gfv"/>
+                <outlet property="dataThreeLabel" destination="BNy-XA-6bk" id="Gym-iS-wXS"/>
+                <outlet property="dataTwoLabel" destination="PZV-OQ-7TF" id="cXG-yS-QRc"/>
+                <outlet property="distanceLabel" destination="7It-v1-U3q" id="XK5-QY-kXu"/>
+                <outlet property="loopLabel" destination="Wn9-jD-vMU" id="4eK-N7-OBf"/>
+                <outlet property="sumResultsLabel" destination="KeY-0Z-zhJ" id="ihh-OK-mIK"/>
+                <outlet property="timeLabel" destination="mF0-Kh-IE6" id="6qg-fq-Zc8"/>
+            </connections>
             <point key="canvasLocation" x="71" y="341.5"/>
         </view>
     </objects>

@@ -100,6 +100,10 @@
     
     [XZUIManager saveArcheryResultWithArcheryDataModel:self.archeryModel isGroup:self.isGroup isHistory:NO];
     
+    if ([self.delegate respondsToSelector:@selector(groupVC:)]) {
+        [self.delegate groupVC:self];
+    }
+    
     [self.navigationController popViewControllerAnimated:YES];
     
 }

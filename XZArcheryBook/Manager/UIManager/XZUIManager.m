@@ -34,9 +34,16 @@
         
         XZArcheryModel *dataModel = [[XZArcheryModel alloc] init];
         
+        
         for (SaveDateTable * saveDateTable in dataArray) {
             
             NSArray *saveDateArr = [saveDateTable.archeryDataIds componentsSeparatedByString:@","];
+            
+            // 一天内总共射击的箭数
+            int archeryNum = 0;
+            // 一天内射击的组数
+            int groupNum = 0;
+
             
             for (NSString *saveDate in saveDateArr) {
                 
@@ -44,14 +51,23 @@
                 
                 XZArcheryModel *tempModel = [[XZArcheryModel alloc] init];
                 
-                tempModel.archeryTable = archeryTable;
                 tempModel.archeryDataTables = [serverLayer().userDatabase getAllArcheryDataTableByDataId:archeryTable.archeryId].mutableCopy;
+                
+                tempModel.archeryTable = archeryTable;
                 
                 [archeryModelArr addObject:tempModel];
                 
+                // 获取射击的箭数量和组数量
+                for (ArcheryDataTable *archeryDataTable in tempModel.archeryDataTables) {
+                    
+                    archeryNum += archeryDataTable.eachGroupNum;
+                    groupNum ++;
+                }
+                
+                
             }
-            
-            [archeryModelDic setValue:archeryModelArr.mutableCopy forKey:saveDateTable.yearMomentDay];
+            NSString *dicKey = [NSString stringWithFormat:@"%@  (%d支/%d组)", saveDateTable.yearMomentDay, archeryNum, groupNum];
+            [archeryModelDic setValue:archeryModelArr.mutableCopy forKey:dicKey];
             
             [archeryModelArr removeAllObjects];
         }
@@ -142,6 +158,7 @@
         archeryTable.archeryType = archeryModel.archeryType;
         archeryTable.distance = archeryModel.distance;
         archeryTable.loopNum = archeryModel.loopNum;
+        archeryTable.creatTime = [ToolsFunction getCurrentSystemDateSecondString];
         
         [serverLayer().userDatabase saveArcheryTable:archeryTable];
         
@@ -189,7 +206,7 @@
                 [serverLayer().userDatabase saveSaveDateTable:saveDateTable];
             }
             
-            saveDateTable.archeryDataIds = saveDateTable.archeryDataIds ? [NSString stringWithFormat:@"%@,%@", saveDateTable.archeryDataIds, archeryTable.archeryId] : archeryTable.archeryId;
+            saveDateTable.archeryDataIds = saveDateTable.archeryDataIds ? [NSString stringWithFormat:@"%@,%@", archeryTable.archeryId, saveDateTable.archeryDataIds] : archeryTable.archeryId;
             
             [serverLayer().userDatabase saveSaveDateTable:saveDateTable];
             

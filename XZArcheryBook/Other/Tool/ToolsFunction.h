@@ -27,5 +27,8 @@
 // 时间转换  显示为  xxxx年xx月xx日
 + (NSString *)getDateYearStr:(NSDate *)date isZh:(BOOL)isZh;
 
+// 格式化时间显示格式  HH:SS
++ (NSString *)getHHSSDateString:(NSString *)dateStr;
+
 
 @end

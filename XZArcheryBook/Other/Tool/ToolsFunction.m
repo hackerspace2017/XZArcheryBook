@@ -104,4 +104,25 @@
 
 
 
+// 格式化时间显示格式  HH:SS
++ (NSString *)getHHSSDateString:(NSString *)dateStr
+{
+    if (dateStr == nil) {
+        NSLog(@"WARNING: getDateString date == nil || dataFormatter == nil");
+        return nil;
+    }
+    
+    NSDate *date = [self getDateFormString:dateStr];
+    
+    NSString *famrtString = nil;
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"HH:mm"];
+    famrtString =  [dateFormatter stringFromDate:date];
+    
+    return famrtString;
+}
+
+
+
 @end

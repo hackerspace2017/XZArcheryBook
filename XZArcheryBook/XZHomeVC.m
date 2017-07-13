@@ -15,7 +15,7 @@
 
 #import "XZUIManager.h"
 
-@interface XZHomeVC ()<XZHeaderViewDelegate>
+@interface XZHomeVC ()<XZHomeViewDelegate, XZGroupDelegate>
 
 
 @property (strong, nonatomic) IBOutlet XZHomeView *homeView;
@@ -31,15 +31,15 @@
     // Do any additional setup after loading the view from its nib.
     
     [self configHomeViewData];
-    self.homeView.headerView.delegate = self;
+    self.homeView.delegate = self;
     
-    UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-    [rightBtn setTitle:@"保存" forState:UIControlStateNormal];
-    [rightBtn setTitleColor:PureColor(59) forState:UIControlStateNormal];
-    [rightBtn addTarget:self action:@selector(configHomeViewData) forControlEvents:UIControlEventTouchUpInside];
-    
-    UIBarButtonItem *rightBarBtn = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
-    self.navigationItem.rightBarButtonItem = rightBarBtn;
+//    UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+//    [rightBtn setTitle:@"刷新" forState:UIControlStateNormal];
+//    [rightBtn setTitleColor:PureColor(59) forState:UIControlStateNormal];
+//    [rightBtn addTarget:self action:@selector(configHomeViewData) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    UIBarButtonItem *rightBarBtn = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+//    self.navigationItem.rightBarButtonItem = rightBarBtn;
     
 }
 
@@ -56,8 +56,9 @@
 }
 
 
-#pragma mark - XZHeaderViewDelegate
-- (void)headerView:(XZHeaderView *)headerView isGroup:(BOOL)isGroup {
+#pragma mark - XZHomeViewDelegate
+- (void)homeView:(XZHomeView *)homeView isGroup:(BOOL)isGroup;
+{
     
     if (isGroup == false) {
         TargetViewController *controller = [[TargetViewController alloc] init];
@@ -68,11 +69,18 @@
     XZGroupVC *groupVC = [[XZGroupVC alloc] init];
     
     groupVC.isGroup = isGroup;
+    groupVC.delegate = self;
     
     [self.navigationController pushViewController:groupVC animated:YES];
     
 }
 
+#pragma mark - XZGroupDelegate
+- (void)groupVC:(XZGroupVC *)groupVC
+{
+    [self configHomeViewData];
+    
+}
 
 
 - (void)didReceiveMemoryWarning {

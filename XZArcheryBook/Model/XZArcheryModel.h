@@ -36,10 +36,11 @@ typedef NS_ENUM(NSInteger, XZBasicOptionsType) {
 /** 年月日分组  key:xxxx年xx月xx日  value:当天的数据数组 */
 @property (nonatomic , strong) NSMutableDictionary * yearMomentDayDic;
 
+/** 一条数据的具体时间  HH:SS */
+@property (nonatomic , copy) NSString * timeStr;
 
-/** 一天内射箭总数量和总组数  x支/z组 */
-@property (copy , nonatomic) NSString *numGroupSum;
-
+/** 一次记录的所有组的总成绩 */
+@property (nonatomic , assign) int sumResults;
 
 
 // 基本选项配置

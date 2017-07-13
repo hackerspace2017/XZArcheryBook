@@ -32,11 +32,8 @@ typedef NS_ENUM(NSInteger, ArcheryTableType) {
 /** 数据组数 */
 @property (nonatomic , assign) NSInteger dataGroupNum;
 
-
-
-/** 数据表 */
-//@property (nonatomic , strong) ArcheryDataTable * archeryDataTable;
-
+/** 数据创建时间 */
+@property (nonatomic , copy) NSString * creatTime;
 
 // 基本选项配置
 
