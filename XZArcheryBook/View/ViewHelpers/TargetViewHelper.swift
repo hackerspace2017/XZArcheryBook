@@ -8,6 +8,8 @@
 
 import UIKit
 
+// todo: according to singleSlice width to calculate font size.
+// tode: add target mark
 class TargetViewDrawer {
     private var rect = CGRect.zero
     
@@ -33,6 +35,12 @@ class TargetViewDrawer {
     
     func draw(_ ctx: CGContext, to rect: CGRect) {
         self.rect = rect
+    }
+}
+
+class TargetMarkDrawer: TargetViewDrawer {
+    override func draw(_ ctx: CGContext, to rect: CGRect) {
+        super.draw(ctx, to: rect)
     }
 }
 
@@ -103,28 +111,34 @@ class TargetViewNumbericDrawer: TargetViewDrawer {
 }
 
 class TargetViewBackgroundDrawer: TargetViewDrawer  {
+    let level90Color = #colorLiteral(red: 1, green: 1, blue: 0.2156862745, alpha: 1)
+    let level78Color = #colorLiteral(red: 0.9803921569, green: 0.07843137255, blue: 0.3529411765, alpha: 1)
+    let level56Color = #colorLiteral(red: 0.6078431373, green: 1, blue: 1, alpha: 1)
+    let level34Color = #colorLiteral(red: 0.03921568627, green: 0.03921568627, blue: 0.1960784314, alpha: 1)
+    let level12Color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+    
     override func draw(_ ctx: CGContext, to rect: CGRect) {
         super.draw(ctx, to: rect)
         
         paintBackground(with: ctx, to: rect)
         let whiteRegion = calculate(10, levelWith: rect)
-        paint(.white, with: ctx, to: whiteRegion)
+        paint(level12Color, with: ctx, to: whiteRegion)
         var blackCircle = insetRectangle(whiteRegion)
         stroke(.black, with: ctx, to: blackCircle)
         let blackRegion = insetRectangle(blackCircle)
-        paint(.black, with: ctx, to: blackRegion)
+        paint(level34Color, with: ctx, to: blackRegion)
         let whiteCircle = insetRectangle(blackRegion)
         stroke(.white, with: ctx, to: whiteCircle)
         let cyanRegion = insetRectangle(whiteCircle)
-        paint(.cyan, with: ctx, to: cyanRegion)
+        paint(level56Color, with: ctx, to: cyanRegion)
         blackCircle = insetRectangle(cyanRegion)
         stroke(.black, with: ctx, to: blackCircle)
         let redRegion = insetRectangle(blackCircle)
-        paint(.red, with: ctx, to: redRegion)
+        paint(level78Color, with: ctx, to: redRegion)
         blackCircle = insetRectangle(redRegion)
         stroke(.black, with: ctx, to: blackCircle)
         let yellowRect = insetRectangle(blackCircle)
-        paint(.yellow, with: ctx, to: yellowRect)
+        paint(level90Color, with: ctx, to: yellowRect)
         blackCircle = insetRectangle(yellowRect)
         stroke(.black, with: ctx, to: blackCircle)
     }

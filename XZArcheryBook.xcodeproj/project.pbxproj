@@ -88,7 +88,8 @@
 		E4B5F5E61F14CA6100F6D752 /* TargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F5E51F14CA6100F6D752 /* TargetView.swift */; };
 		E4B5F5EA1F14CC5D00F6D752 /* TargetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F5E91F14CC5D00F6D752 /* TargetViewController.swift */; };
 		E4B5F5ED1F14D22000F6D752 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F5EC1F14D22000F6D752 /* Extensions.swift */; };
-		E4ECB1C61F0FC01A00DD4B9C /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ECB1C51F0FC01A00DD4B9C /* TestViewController.swift */; };
+		E4BB3D901F19D9EA00574EEB /* ToolbarLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BB3D8F1F19D9EA00574EEB /* ToolbarLayoutHelper.swift */; };
+		E4BB3D921F19F1BC00574EEB /* ScoreButtonLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BB3D911F19F1BC00574EEB /* ScoreButtonLayoutHelper.swift */; };
 		F0C7435FCF9380A23E428AB6 /* libPods-XZArcheryBook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC1630348BD2C9AE8E73AD5 /* libPods-XZArcheryBook.a */; };
 /* End PBXBuildFile section */
 
@@ -264,8 +265,9 @@
 		E4B5F5E51F14CA6100F6D752 /* TargetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetView.swift; sourceTree = "<group>"; };
 		E4B5F5E91F14CC5D00F6D752 /* TargetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetViewController.swift; sourceTree = "<group>"; };
 		E4B5F5EC1F14D22000F6D752 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E4BB3D8F1F19D9EA00574EEB /* ToolbarLayoutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarLayoutHelper.swift; sourceTree = "<group>"; };
+		E4BB3D911F19F1BC00574EEB /* ScoreButtonLayoutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreButtonLayoutHelper.swift; sourceTree = "<group>"; };
 		E4ECB1C41F0FC01900DD4B9C /* XZArcheryBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "XZArcheryBook-Bridging-Header.h"; path = "../XZArcheryBook-Bridging-Header.h"; sourceTree = "<group>"; };
-		E4ECB1C51F0FC01A00DD4B9C /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestViewController.swift; path = ../TestViewController.swift; sourceTree = "<group>"; };
 		EEA61FEC189F1C08E3D1DC0A /* Pods-XZArcheryBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XZArcheryBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-XZArcheryBook/Pods-XZArcheryBook.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -657,6 +659,8 @@
 			isa = PBXGroup;
 			children = (
 				E407BD721F17945F00D38CB0 /* TargetViewHelper.swift */,
+				E4BB3D8F1F19D9EA00574EEB /* ToolbarLayoutHelper.swift */,
+				E4BB3D911F19F1BC00574EEB /* ScoreButtonLayoutHelper.swift */,
 			);
 			path = ViewHelpers;
 			sourceTree = "<group>";
@@ -677,7 +681,6 @@
 		E4B5F5E71F14CBFB00F6D752 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E4ECB1C51F0FC01A00DD4B9C /* TestViewController.swift */,
 				E4B5F5E91F14CC5D00F6D752 /* TargetViewController.swift */,
 			);
 			name = Controllers;
@@ -778,7 +781,7 @@
 				TargetAttributes = {
 					C0A7AA2C1F0BC3A200ED1444 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 76364BYDWJ;
+						DevelopmentTeam = U9AU2F93TN;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -909,6 +912,7 @@
 			files = (
 				C0C3F3BC1F0E79C900820BB7 /* XZHomeView.m in Sources */,
 				C0C3F3B51F0E797200820BB7 /* XZHeaderView.m in Sources */,
+				E4BB3D921F19F1BC00574EEB /* ScoreButtonLayoutHelper.swift in Sources */,
 				95BC55221F14D54200F8D3AD /* XZUIManager.m in Sources */,
 				C0A7AA381F0BC3A200ED1444 /* ViewController.m in Sources */,
 				C0C3F4001F0E82BC00820BB7 /* UIColor-SQLitePersistentObject.m in Sources */,
@@ -940,10 +944,10 @@
 				95B726081F170A3800A08F77 /* UserDBManager+ArcheryGroupNumTable.m in Sources */,
 				C0C3F3FC1F0E82BC00820BB7 /* NSString-SQLitePersistence.m in Sources */,
 				95BC55211F14D54200F8D3AD /* XZCustomWindowManager.m in Sources */,
+				E4BB3D901F19D9EA00574EEB /* ToolbarLayoutHelper.swift in Sources */,
 				C0C3F3FB1F0E82BC00820BB7 /* NSString-SQLiteColumnName.m in Sources */,
 				95BC552C1F14EC1B00F8D3AD /* SQLServerManager.m in Sources */,
 				C0C3F3B31F0E797200820BB7 /* XZGroupView.m in Sources */,
-				E4ECB1C61F0FC01A00DD4B9C /* TestViewController.swift in Sources */,
 				C0C3F3AF1F0E797200820BB7 /* XZGroundNumView.m in Sources */,
 				95B7260A1F170A3800A08F77 /* UserDBManager+DistanceTable.m in Sources */,
 				C0C3F3F31F0E82BC00820BB7 /* NSDate-SQLitePersistence.m in Sources */,
@@ -1124,7 +1128,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 76364BYDWJ;
+				DEVELOPMENT_TEAM = U9AU2F93TN;
 				GCC_PREFIX_HEADER = "XZArcheryBook/XZArchery-PrefixHeader.pch";
 				INFOPLIST_FILE = XZArcheryBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1143,7 +1147,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 76364BYDWJ;
+				DEVELOPMENT_TEAM = U9AU2F93TN;
 				GCC_PREFIX_HEADER = "XZArcheryBook/XZArchery-PrefixHeader.pch";
 				INFOPLIST_FILE = XZArcheryBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
