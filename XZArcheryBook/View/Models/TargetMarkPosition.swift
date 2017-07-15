@@ -6,7 +6,9 @@
 //  Copyright © 2017 祥子. All rights reserved.
 //
 
+import CoreGraphics
+
 struct TargetMarkPosition {
-    let x: Float
-    let y: Float
+    let x: CGFloat
+    let y: CGFloat
 }

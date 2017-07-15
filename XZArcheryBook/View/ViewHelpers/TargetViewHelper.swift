@@ -29,6 +29,14 @@ class TargetViewDrawer {
         return min(bounds.width, bounds.height)
     }
     
+    var radius: CGFloat {
+        return diameter / 2
+    }
+    
+    var deviceLongth: CGFloat {
+        return max(bounds.width, bounds.height)
+    }
+    
     var singleSlice: CGFloat {
         return diameter / 20
     }
@@ -39,29 +47,58 @@ class TargetViewDrawer {
 }
 
 class TargetMarkDrawer: TargetViewDrawer {
+    private let targetMarkColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
+    private var targetMarks: [TargetMark]
+    
+    init(with targetMarks: [TargetMark]) {
+        self.targetMarks = targetMarks
+    }
+    
     override func draw(_ ctx: CGContext, to rect: CGRect) {
         super.draw(ctx, to: rect)
         
-        drawTargetMark(ctx, to: rect)
+        drawTargetMarks(ctx, with: targetMarks, to: rect)
     }
     
-    private func drawTargetMark(_ ctx: CGContext, to rect: CGRect) {
+    private func convertLogicPointToDevice(_ position: TargetMarkPosition) -> CGPoint {
+        var x: CGFloat = 0, y: CGFloat = 0
+        let offset = (deviceLongth - diameter) / 2
+        if UIDevice.current.orientation.isPortrait {
+            x = radius * position.x + radius
+            y = radius  * position.y + radius + offset
+        } else {
+            x = radius * position.x + radius + offset
+            y = radius  * position.y + radius
+        }
+        return CGPoint(x: x, y: y)
+    }
+    
+    private func drawTargetMarks(_ ctx: CGContext, with marks: [TargetMark], to rect: CGRect) {
+        for mark in marks {
+            let point = convertLogicPointToDevice(mark.position!)
+            drawTargetMark(ctx, with: point, to: rect)
+        }
+    }
+    
+    private func drawTargetMark(_ ctx: CGContext, with position: CGPoint, to rect: CGRect) {
         let path = CGMutablePath()
-        path.move(to: rect.mid)
-        path.addLine(to: CGPoint(x: rect.mid.x - 10, y: rect.mid.y))
-        path.move(to: rect.mid)
-        path.addLine(to: CGPoint(x: rect.mid.x + 10, y: rect.mid.y))
-        path.move(to: rect.mid)
-        path.addLine(to: CGPoint(x: rect.mid.x, y: rect.mid.y - 10))
-        path.move(to: rect.mid)
-        path.addLine(to: CGPoint(x: rect.mid.x, y: rect.mid.y + 10))
+        path.move(to: position)
+        path.addLine(to: CGPoint(x: position.x - 10, y: position.y))
+        path.move(to: position)
+        path.addLine(to: CGPoint(x: position.x + 10, y: position.y))
+        path.move(to: position)
+        path.addLine(to: CGPoint(x: position.x, y: position.y - 10))
+        path.move(to: position)
+        path.addLine(to: CGPoint(x: position.x, y: position.y + 10))
+        path.move(to: position)
+        path.addEllipse(in: CGRect(x: position.x - 3, y: position.y - 3, width: 6, height: 6))
+        path.move(to: position)
+        path.addEllipse(in: CGRect(x: position.x - 8, y: position.y - 8, width: 16, height: 16))
         ctx.addPath(path)
         ctx.setLineCap(CGLineCap.round)
         ctx.setLineWidth(2)
-        ctx.setStrokeColor(UIColor.blue.cgColor)
+        ctx.setStrokeColor(targetMarkColor.cgColor)
         ctx.strokePath()
-//        ctx.setStrokeColor(UIColor.black.cgColor)
-//        ctx.strokeEllipse(in: CGRect(origin: rect.mid, size: CGSize(width: 10, height: 10)))
     }
 }
 
@@ -132,11 +169,11 @@ class TargetViewNumbericDrawer: TargetViewDrawer {
 }
 
 class TargetViewBackgroundDrawer: TargetViewDrawer  {
-    let level90Color = #colorLiteral(red: 1, green: 1, blue: 0.2156862745, alpha: 1)
-    let level78Color = #colorLiteral(red: 0.9803921569, green: 0.07843137255, blue: 0.3529411765, alpha: 1)
-    let level56Color = #colorLiteral(red: 0.6078431373, green: 1, blue: 1, alpha: 1)
-    let level34Color = #colorLiteral(red: 0.03921568627, green: 0.03921568627, blue: 0.1960784314, alpha: 1)
-    let level12Color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+    private let level90Color = #colorLiteral(red: 1, green: 1, blue: 0.1978097554, alpha: 1)
+    private let level78Color = #colorLiteral(red: 0.9803921569, green: 0.07843137255, blue: 0.3529411765, alpha: 1)
+    private let level56Color = #colorLiteral(red: 0.6078431373, green: 1, blue: 1, alpha: 1)
+    private let level34Color = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+    private let level12Color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     
     override func draw(_ ctx: CGContext, to rect: CGRect) {
         super.draw(ctx, to: rect)
