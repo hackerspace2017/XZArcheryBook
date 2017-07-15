@@ -36,7 +36,7 @@ class ScoreButtonLayoutHelper {
         return [
             button.pinToTop(64 + 8 + 38 + 38),
             button.pinToRight(-8),
-            button.wrapInWidth(100),
+            button.wrapInWidth(0.1, 1),
             button.wrapInHeight(30),
         ]
     }
@@ -45,7 +45,7 @@ class ScoreButtonLayoutHelper {
         return [
             button.pinToTop(64 + 8 + 38),
             button.pinToRight(-8),
-            button.wrapInWidth(100),
+            button.wrapInWidth(0.1, 1),
             button.wrapInHeight(30),
         ]
     }
@@ -54,7 +54,7 @@ class ScoreButtonLayoutHelper {
         return [
             button.pinToTop(64 + 8),
             button.pinToRight(-8),
-            button.wrapInWidth(100),
+            button.wrapInWidth(0.1, 1),
             button.wrapInHeight(30),
         ]
     }
@@ -63,7 +63,7 @@ class ScoreButtonLayoutHelper {
         return [
             button.pinToTop(64 + 8 + 38 + 38),
             button.pinToLeft(8),
-            button.wrapInWidth(100),
+            button.wrapInWidth(0.1, 1),
             button.wrapInHeight(30),
         ]
     }
@@ -72,7 +72,7 @@ class ScoreButtonLayoutHelper {
         return [
             button.pinToTop(64 + 8 + 38),
             button.pinToLeft(8),
-            button.wrapInWidth(100),
+            button.wrapInWidth(0.1, 1),
             button.wrapInHeight(30),
         ]
     }
@@ -81,7 +81,7 @@ class ScoreButtonLayoutHelper {
         return [
             button.pinToTop(64 + 8),
             button.pinToLeft(8),
-            button.wrapInWidth(100),
+            button.wrapInWidth(0.1, 1),
             button.wrapInHeight(30),
         ]
     }

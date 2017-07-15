@@ -40,4 +40,12 @@ public extension UIView {
     public func wrapInHeight(_ constant: CGFloat) -> NSLayoutConstraint {
         return NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: constant)
     }
+    
+    public func wrapInWidth(_ propotion: CGFloat, _ constant: CGFloat) -> NSLayoutConstraint {
+        return NSLayoutConstraint(item: self, attribute: .width, relatedBy: .equal, toItem: superview, attribute: .width, multiplier: propotion, constant: constant)
+    }
+    
+    public func wrapInHeight(_ propotion: CGFloat, _ constant: CGFloat) -> NSLayoutConstraint {
+        return NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: superview, attribute: .height, multiplier: propotion, constant: constant)
+    }
 }

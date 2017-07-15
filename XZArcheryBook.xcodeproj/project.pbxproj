@@ -87,9 +87,12 @@
 		E407BD731F17945F00D38CB0 /* TargetViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E407BD721F17945F00D38CB0 /* TargetViewHelper.swift */; };
 		E4B5F5E61F14CA6100F6D752 /* TargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F5E51F14CA6100F6D752 /* TargetView.swift */; };
 		E4B5F5EA1F14CC5D00F6D752 /* TargetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F5E91F14CC5D00F6D752 /* TargetViewController.swift */; };
-		E4B5F5ED1F14D22000F6D752 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F5EC1F14D22000F6D752 /* Extensions.swift */; };
+		E4B5F5ED1F14D22000F6D752 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F5EC1F14D22000F6D752 /* UIViewExtensions.swift */; };
 		E4BB3D901F19D9EA00574EEB /* ToolbarLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BB3D8F1F19D9EA00574EEB /* ToolbarLayoutHelper.swift */; };
 		E4BB3D921F19F1BC00574EEB /* ScoreButtonLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BB3D911F19F1BC00574EEB /* ScoreButtonLayoutHelper.swift */; };
+		E4F6617B1F1A132100F50B90 /* TargetMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F6617A1F1A132100F50B90 /* TargetMark.swift */; };
+		E4F6617D1F1A138200F50B90 /* TargetMarkPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F6617C1F1A138200F50B90 /* TargetMarkPosition.swift */; };
+		E4F6617F1F1A177D00F50B90 /* CoreGraphicsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F6617E1F1A177D00F50B90 /* CoreGraphicsExtensions.swift */; };
 		F0C7435FCF9380A23E428AB6 /* libPods-XZArcheryBook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC1630348BD2C9AE8E73AD5 /* libPods-XZArcheryBook.a */; };
 /* End PBXBuildFile section */
 
@@ -264,10 +267,13 @@
 		E407BD721F17945F00D38CB0 /* TargetViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetViewHelper.swift; sourceTree = "<group>"; };
 		E4B5F5E51F14CA6100F6D752 /* TargetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetView.swift; sourceTree = "<group>"; };
 		E4B5F5E91F14CC5D00F6D752 /* TargetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetViewController.swift; sourceTree = "<group>"; };
-		E4B5F5EC1F14D22000F6D752 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E4B5F5EC1F14D22000F6D752 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		E4BB3D8F1F19D9EA00574EEB /* ToolbarLayoutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarLayoutHelper.swift; sourceTree = "<group>"; };
 		E4BB3D911F19F1BC00574EEB /* ScoreButtonLayoutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreButtonLayoutHelper.swift; sourceTree = "<group>"; };
 		E4ECB1C41F0FC01900DD4B9C /* XZArcheryBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "XZArcheryBook-Bridging-Header.h"; path = "../XZArcheryBook-Bridging-Header.h"; sourceTree = "<group>"; };
+		E4F6617A1F1A132100F50B90 /* TargetMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetMark.swift; sourceTree = "<group>"; };
+		E4F6617C1F1A138200F50B90 /* TargetMarkPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetMarkPosition.swift; sourceTree = "<group>"; };
+		E4F6617E1F1A177D00F50B90 /* CoreGraphicsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGraphicsExtensions.swift; sourceTree = "<group>"; };
 		EEA61FEC189F1C08E3D1DC0A /* Pods-XZArcheryBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XZArcheryBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-XZArcheryBook/Pods-XZArcheryBook.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -480,12 +486,6 @@
 				E4B5F5E41F14CA4200F6D752 /* Swift */,
 				E4ECB1C31F0FBFF200DD4B9C /* Controllers */,
 				C0A7AA391F0BC3A200ED1444 /* Main.storyboard */,
-				C0A7AA631F0BC9C500ED1444 /* XZHomeVC.h */,
-				C0A7AA641F0BC9C500ED1444 /* XZHomeVC.m */,
-				C0A7AA651F0BC9C500ED1444 /* XZHomeVC.xib */,
-				951203221F0F6E29009F4E4C /* XZGroupVC.h */,
-				951203231F0F6E29009F4E4C /* XZGroupVC.m */,
-				951203241F0F6E29009F4E4C /* XZGroupVC.xib */,
 				C0A7AA681F0BCC0600ED1444 /* View */,
 				95BC55141F14D54200F8D3AD /* Manager */,
 				C0C3F3BD1F0E822900820BB7 /* Model */,
@@ -668,6 +668,7 @@
 		E4B5F5E41F14CA4200F6D752 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
+				E4F661791F1A12AC00F50B90 /* Models */,
 				E4B5F5EB1F14D21100F6D752 /* Utilities */,
 				E407BD711F17942E00D38CB0 /* ViewHelpers */,
 				E4B5F5E81F14CC0E00F6D752 /* Views */,
@@ -697,7 +698,8 @@
 		E4B5F5EB1F14D21100F6D752 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				E4B5F5EC1F14D22000F6D752 /* Extensions.swift */,
+				E4B5F5EC1F14D22000F6D752 /* UIViewExtensions.swift */,
+				E4F6617E1F1A177D00F50B90 /* CoreGraphicsExtensions.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -705,10 +707,25 @@
 		E4ECB1C31F0FBFF200DD4B9C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C0A7AA631F0BC9C500ED1444 /* XZHomeVC.h */,
+				C0A7AA641F0BC9C500ED1444 /* XZHomeVC.m */,
+				C0A7AA651F0BC9C500ED1444 /* XZHomeVC.xib */,
+				951203221F0F6E29009F4E4C /* XZGroupVC.h */,
+				951203231F0F6E29009F4E4C /* XZGroupVC.m */,
+				951203241F0F6E29009F4E4C /* XZGroupVC.xib */,
 				C0A7AA361F0BC3A200ED1444 /* ViewController.h */,
 				C0A7AA371F0BC3A200ED1444 /* ViewController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E4F661791F1A12AC00F50B90 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E4F6617A1F1A132100F50B90 /* TargetMark.swift */,
+				E4F6617C1F1A138200F50B90 /* TargetMarkPosition.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -936,6 +953,7 @@
 				954C434A1F15BDF8005152D1 /* UserDBManager+ArcheryDataTable.m in Sources */,
 				95B726051F170A3800A08F77 /* ArcheryTypeTable.m in Sources */,
 				C0C3F4091F0E833000820BB7 /* UserPersistentObject.m in Sources */,
+				E4F6617D1F1A138200F50B90 /* TargetMarkPosition.swift in Sources */,
 				95B726041F170A3800A08F77 /* ArcheryGroupNumTable.m in Sources */,
 				95BC55201F14D54200F8D3AD /* XZCustomViewManager.m in Sources */,
 				954C434C1F15BDF8005152D1 /* UserDBManager+ArcheryTable.m in Sources */,
@@ -943,6 +961,8 @@
 				95B726091F170A3800A08F77 /* UserDBManager+ArcheryTypeTable.m in Sources */,
 				95B726081F170A3800A08F77 /* UserDBManager+ArcheryGroupNumTable.m in Sources */,
 				C0C3F3FC1F0E82BC00820BB7 /* NSString-SQLitePersistence.m in Sources */,
+				E4F6617B1F1A132100F50B90 /* TargetMark.swift in Sources */,
+				E4F6617F1F1A177D00F50B90 /* CoreGraphicsExtensions.swift in Sources */,
 				95BC55211F14D54200F8D3AD /* XZCustomWindowManager.m in Sources */,
 				E4BB3D901F19D9EA00574EEB /* ToolbarLayoutHelper.swift in Sources */,
 				C0C3F3FB1F0E82BC00820BB7 /* NSString-SQLiteColumnName.m in Sources */,
@@ -953,7 +973,7 @@
 				C0C3F3F31F0E82BC00820BB7 /* NSDate-SQLitePersistence.m in Sources */,
 				954C43521F15C5CD005152D1 /* ToolsFunction.m in Sources */,
 				954C43461F15BDF8005152D1 /* ArcheryTable.m in Sources */,
-				E4B5F5ED1F14D22000F6D752 /* Extensions.swift in Sources */,
+				E4B5F5ED1F14D22000F6D752 /* UIViewExtensions.swift in Sources */,
 				95B7260B1F170A3800A08F77 /* UserDBManager+LoopNumTable.m in Sources */,
 				C0A7AA661F0BC9C500ED1444 /* XZHomeVC.m in Sources */,
 				95B726061F170A3800A08F77 /* DistanceTable.m in Sources */,

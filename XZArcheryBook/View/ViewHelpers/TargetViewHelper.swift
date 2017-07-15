@@ -41,6 +41,27 @@ class TargetViewDrawer {
 class TargetMarkDrawer: TargetViewDrawer {
     override func draw(_ ctx: CGContext, to rect: CGRect) {
         super.draw(ctx, to: rect)
+        
+        drawTargetMark(ctx, to: rect)
+    }
+    
+    private func drawTargetMark(_ ctx: CGContext, to rect: CGRect) {
+        let path = CGMutablePath()
+        path.move(to: rect.mid)
+        path.addLine(to: CGPoint(x: rect.mid.x - 10, y: rect.mid.y))
+        path.move(to: rect.mid)
+        path.addLine(to: CGPoint(x: rect.mid.x + 10, y: rect.mid.y))
+        path.move(to: rect.mid)
+        path.addLine(to: CGPoint(x: rect.mid.x, y: rect.mid.y - 10))
+        path.move(to: rect.mid)
+        path.addLine(to: CGPoint(x: rect.mid.x, y: rect.mid.y + 10))
+        ctx.addPath(path)
+        ctx.setLineCap(CGLineCap.round)
+        ctx.setLineWidth(2)
+        ctx.setStrokeColor(UIColor.blue.cgColor)
+        ctx.strokePath()
+//        ctx.setStrokeColor(UIColor.black.cgColor)
+//        ctx.strokeEllipse(in: CGRect(origin: rect.mid, size: CGSize(width: 10, height: 10)))
     }
 }
 
