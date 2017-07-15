@@ -10,12 +10,12 @@ import UIKit
 
 class TargetView: UIView {
     lazy var backgroundDrawer: TargetViewBackgroundDrawer = {
-        let drawer = TargetViewBackgroundDrawer(self)
+        let drawer = TargetViewBackgroundDrawer()
         return drawer
     }()
     
     lazy var numbericDrawer: TargetViewNumbericDrawer = {
-        let drawer = TargetViewNumbericDrawer(self)
+        let drawer = TargetViewNumbericDrawer()
         return drawer
     }()
     

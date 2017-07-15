@@ -7,21 +7,20 @@
 //
 
 import UIKit
-import CoreGraphics
 
 class TargetViewDrawer {
-    unowned var view: TargetView
-    
-    init(_ view: TargetView) {
-        self.view = view
-    }
+    private var rect = CGRect.zero
     
     var bounds: CGRect {
-        return view.bounds
+        return rect
     }
     
     var center: CGPoint {
-        return view.center
+        return CGPoint(x: rect.midX, y: rect.midY)
+    }
+    
+    var whDifference: CGFloat {
+        return bounds.width - bounds.height
     }
     
     var diameter: CGFloat {
@@ -33,35 +32,80 @@ class TargetViewDrawer {
     }
     
     func draw(_ ctx: CGContext, to rect: CGRect) {
-        assertionFailure()
+        self.rect = rect
     }
 }
 
 class TargetViewNumbericDrawer: TargetViewDrawer {
     override func draw(_ ctx: CGContext, to rect: CGRect) {
+        super.draw(ctx, to: rect)
+        
+        var level = 0
         for i in 0 ..< 20 {
-            let rectToDraw = calculatePosition(atLevel: i)
-            drawString(at: rectToDraw, withColor: .red)
+            var color = UIColor.black
+            let rectHorizontallyToDraw = calculatePosition(atIndex: i)
+            let rectVerticallyToDraw = calculatePosition(atIndex: i, vertically: true)
+            switch i {
+            case 0,1: level += 1
+            case 2,3:
+                color = .white
+                level += 1
+            case 4...8: level += 1
+            case 9,10:
+                draw(string: "10", at: calculateCenterRect(), withColor: color, withFont: UIFont.preferredFont(forTextStyle: .headline))
+                defer { level = 10}
+                continue
+            case 11...15: level -= 1
+            case 16,17:
+                color = .white
+                level -= 1
+            case 18,19: level -= 1
+            default:
+                break
+            }
+            drawString(at: rectHorizontallyToDraw, withColor: color, atLevel: level)
+            drawString(at: rectVerticallyToDraw, withColor: color, atLevel: level)
         }
     }
     
     let stringHeight: CGFloat = 20
     
-    private func calculatePosition(atLevel level: Int) -> CGRect {
-        return CGRect(x: CGFloat(level) * singleSlice, y: center.y - stringHeight / 2, width: singleSlice, height: stringHeight)
+    private func calculateCenterRect() -> CGRect {
+        return CGRect(x: center.x - stringHeight / 2, y: center.y - stringHeight / 2, width: stringHeight, height: stringHeight)
     }
     
-    private func drawString(at rect: CGRect, withColor color: UIColor) {
-        let str: NSString = "1"
+    private func calculatePosition(atIndex level: Int, vertically: Bool = false) -> CGRect {
+        var rect = CGRect.zero
+        
+        if vertically {
+            let offset = min(whDifference / 2, 0)
+            rect = CGRect(x: center.x - stringHeight / 2, y: CGFloat(level) * singleSlice - offset, width: stringHeight, height: singleSlice)
+        } else {
+            let offset = max(whDifference / 2, 0)
+            rect = CGRect(x: CGFloat(level) * singleSlice + offset, y: center.y - stringHeight / 2, width: singleSlice, height: stringHeight)
+        }
+        return rect
+    }
+    
+    private func draw(string str: String, at rect: CGRect, withColor color: UIColor, withFont font: UIFont = UIFont.preferredFont(forTextStyle: .body)) {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
-        let attrs = [NSFontAttributeName: UIFont(name: "Avenir", size: 20)!, NSParagraphStyleAttributeName: paragraphStyle]
+        let attrs = [NSFontAttributeName: font,
+                     NSParagraphStyleAttributeName: paragraphStyle,
+                     NSForegroundColorAttributeName: color]
         str.draw(with: rect, options: .usesLineFragmentOrigin, attributes: attrs, context: nil)
+    }
+    
+    private func drawString(at rect: CGRect, withColor color: UIColor, atLevel level: Int) {
+        let str = "\(level)"
+        draw(string: str, at: rect, withColor: color)
     }
 }
 
 class TargetViewBackgroundDrawer: TargetViewDrawer  {
     override func draw(_ ctx: CGContext, to rect: CGRect) {
+        super.draw(ctx, to: rect)
+        
         paintBackground(with: ctx, to: rect)
         let whiteRegion = calculate(10, levelWith: rect)
         paint(.white, with: ctx, to: whiteRegion)
