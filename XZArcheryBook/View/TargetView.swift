@@ -10,14 +10,7 @@ import UIKit
 
 class TargetView: UIView {
     private var currentTargetMark: TargetMark?
-    private var targetMarks: [TargetMark] = [
-//        TargetMark(score: 0, position: TargetMarkPosition(x: 0.5, y: 0.5)),
-//        TargetMark(score: 0, position: TargetMarkPosition(x: 1.0, y: 0)),
-//        TargetMark(score: 0, position: TargetMarkPosition(x: -0.3, y: -0.4)),
-//        TargetMark(score: 0, position: TargetMarkPosition(x: -0.4, y: -0.2)),
-//        TargetMark(score: 0, position: TargetMarkPosition(x: -0.3, y: -0.9)),
-//        TargetMark(score: 0, position: TargetMarkPosition(x: 0.8, y: 0.6)),
-    ]
+    private var targetMarks: [TargetMark] = []
     
     lazy var backgroundDrawer: TargetViewBackgroundDrawer = {
         let drawer = TargetViewBackgroundDrawer()
@@ -56,13 +49,19 @@ class TargetView: UIView {
     }
     
     @objc private func handlePanGesture(_ pan: UIPanGestureRecognizer) {
-        let point = pan.location(in: self)
+        var point = pan.location(in: self)
+        point = makeOffset(point)
         switch pan.state {
         case .began: specifyMark(withLocation: point)
         case .changed: moveMark(withLocation: point)
         case .ended: complete()
         default: canceledGesture()
         }
+    }
+    
+    // For easily operating. convert device point to offset device point.
+    private func makeOffset(_ point: CGPoint) -> CGPoint {
+        return CGPoint(x: point.x - 26, y: point.y - 26)
     }
     
     private func convertDeviceToLogic(_ point: CGPoint) -> TargetMarkPosition {
