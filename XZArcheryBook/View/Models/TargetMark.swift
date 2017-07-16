@@ -6,7 +6,11 @@
 //  Copyright © 2017 祥子. All rights reserved.
 //
 
-struct TargetMark {
+class TargetMark {
     var score: Int?
     var position: TargetMarkPosition?
+    
+    init(position: TargetMarkPosition) {
+        self.position = position
+    }
 }

@@ -48,16 +48,13 @@ class TargetViewDrawer {
 
 class TargetMarkDrawer: TargetViewDrawer {
     private let targetMarkColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
-    private var targetMarks: [TargetMark]
+//    private var targetMarks: [TargetMark] = []
     
-    init(with targetMarks: [TargetMark]) {
-        self.targetMarks = targetMarks
-    }
-    
-    override func draw(_ ctx: CGContext, to rect: CGRect) {
+    func draw(_ marks: [TargetMark], in ctx: CGContext, to rect: CGRect) {
         super.draw(ctx, to: rect)
+//        targetMarks = marks
         
-        drawTargetMarks(ctx, with: targetMarks, to: rect)
+        drawTargetMarks(ctx, with: marks, to: rect)
     }
     
     private func convertLogicPointToDevice(_ position: TargetMarkPosition) -> CGPoint {

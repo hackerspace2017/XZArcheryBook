@@ -9,13 +9,14 @@
 import UIKit
 
 class TargetView: UIView {
+    private var currentTargetMark: TargetMark?
     private var targetMarks: [TargetMark] = [
-        TargetMark(score: 0, position: TargetMarkPosition(x: 0.5, y: 0.5)),
-        TargetMark(score: 0, position: TargetMarkPosition(x: 1.0, y: 0)),
-        TargetMark(score: 0, position: TargetMarkPosition(x: -0.3, y: -0.4)),
-        TargetMark(score: 0, position: TargetMarkPosition(x: -0.4, y: -0.2)),
-        TargetMark(score: 0, position: TargetMarkPosition(x: -0.3, y: -0.9)),
-        TargetMark(score: 0, position: TargetMarkPosition(x: 0.8, y: 0.6)),
+//        TargetMark(score: 0, position: TargetMarkPosition(x: 0.5, y: 0.5)),
+//        TargetMark(score: 0, position: TargetMarkPosition(x: 1.0, y: 0)),
+//        TargetMark(score: 0, position: TargetMarkPosition(x: -0.3, y: -0.4)),
+//        TargetMark(score: 0, position: TargetMarkPosition(x: -0.4, y: -0.2)),
+//        TargetMark(score: 0, position: TargetMarkPosition(x: -0.3, y: -0.9)),
+//        TargetMark(score: 0, position: TargetMarkPosition(x: 0.8, y: 0.6)),
     ]
     
     lazy var backgroundDrawer: TargetViewBackgroundDrawer = {
@@ -28,8 +29,8 @@ class TargetView: UIView {
         return drawer
     }()
     
-    lazy var markDrawer: TargetMarkDrawer = { [weak self] in
-        let drawer = TargetMarkDrawer(with: self!.targetMarks)
+    lazy var markDrawer: TargetMarkDrawer = {
+        let drawer = TargetMarkDrawer()
         return drawer
     }()
     
@@ -44,11 +45,65 @@ class TargetView: UIView {
     private lazy var scoreLabelLayoutHelper = ScoreLabelLayoutHelper()
     private lazy var scoreLeftLabel: UILabel = self.scoreLabelLayoutHelper.makeScoreLabel(self, at: 0)
     private lazy var scoreRightLabel: UILabel = self.scoreLabelLayoutHelper.makeScoreLabel(self, at: 1)
-        
+    
+    private var panGR: UIPanGestureRecognizer = UIPanGestureRecognizer()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        configureGestureRecognizers()
         configureScoreButtons()
         configureScoreLabels()
+    }
+    
+    @objc private func handlePanGesture(_ pan: UIPanGestureRecognizer) {
+        let point = pan.location(in: self)
+        switch pan.state {
+        case .began: specifyMark(withLocation: point)
+        case .changed: moveMark(withLocation: point)
+        case .ended: complete()
+        default: canceledGesture()
+        }
+    }
+    
+    private func convertDeviceToLogic(_ point: CGPoint) -> TargetMarkPosition {
+        let x = (point.x - bounds.midX) / bounds.midX
+        let y = (point.y - bounds.midY) / bounds.midX
+        return TargetMarkPosition(x: x, y: y)
+    }
+    
+    private func specifyMark(withLocation point: CGPoint) {
+        let position = convertDeviceToLogic(point)
+        let mark = TargetMark(position: position)
+        targetMarks.append(mark)
+        currentTargetMark = mark
+        setNeedsDisplay()
+    }
+    
+    private func moveMark(withLocation point: CGPoint) {
+        let position = convertDeviceToLogic(point)
+        currentTargetMark?.position = position
+        setNeedsDisplay()
+    }
+    
+    private func complete() {
+        determineMarkPosition()
+        addNewMark()
+    }
+    
+    private func determineMarkPosition() {
+    }
+    
+    private func addNewMark() {
+        
+    }
+    
+    private func canceledGesture() {
+        
+    }
+    
+    private func configureGestureRecognizers() {
+        panGR.addTarget(self, action: #selector(handlePanGesture(_:)))
+        addGestureRecognizer(panGR)
     }
     
     private func configureScoreLabels() {
@@ -73,7 +128,7 @@ class TargetView: UIView {
         guard let ctx = UIGraphicsGetCurrentContext() else { return }
         backgroundDrawer.draw(ctx, to: rect)
         numbericDrawer.draw(ctx, to: rect)
-        markDrawer.draw(ctx, to: rect)
+        markDrawer.draw(targetMarks, in: ctx, to: rect)
     }
 }
 
