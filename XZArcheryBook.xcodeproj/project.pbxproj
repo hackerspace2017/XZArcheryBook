@@ -85,6 +85,7 @@
 		C0C3F4081F0E833000820BB7 /* UserDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3F4051F0E833000820BB7 /* UserDBManager.m */; };
 		C0C3F4091F0E833000820BB7 /* UserPersistentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3F4071F0E833000820BB7 /* UserPersistentObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E407BD731F17945F00D38CB0 /* TargetViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E407BD721F17945F00D38CB0 /* TargetViewHelper.swift */; };
+		E488533D1F1B3C3E00A32E16 /* ScoreLabelLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E488533C1F1B3C3E00A32E16 /* ScoreLabelLayoutHelper.swift */; };
 		E4B5F5E61F14CA6100F6D752 /* TargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F5E51F14CA6100F6D752 /* TargetView.swift */; };
 		E4B5F5EA1F14CC5D00F6D752 /* TargetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F5E91F14CC5D00F6D752 /* TargetViewController.swift */; };
 		E4B5F5ED1F14D22000F6D752 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5F5EC1F14D22000F6D752 /* UIViewExtensions.swift */; };
@@ -265,6 +266,7 @@
 		C0C3F4061F0E833000820BB7 /* UserPersistentObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPersistentObject.h; sourceTree = "<group>"; };
 		C0C3F4071F0E833000820BB7 /* UserPersistentObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPersistentObject.m; sourceTree = "<group>"; };
 		E407BD721F17945F00D38CB0 /* TargetViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetViewHelper.swift; sourceTree = "<group>"; };
+		E488533C1F1B3C3E00A32E16 /* ScoreLabelLayoutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreLabelLayoutHelper.swift; sourceTree = "<group>"; };
 		E4B5F5E51F14CA6100F6D752 /* TargetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetView.swift; sourceTree = "<group>"; };
 		E4B5F5E91F14CC5D00F6D752 /* TargetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetViewController.swift; sourceTree = "<group>"; };
 		E4B5F5EC1F14D22000F6D752 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
@@ -661,6 +663,7 @@
 				E407BD721F17945F00D38CB0 /* TargetViewHelper.swift */,
 				E4BB3D8F1F19D9EA00574EEB /* ToolbarLayoutHelper.swift */,
 				E4BB3D911F19F1BC00574EEB /* ScoreButtonLayoutHelper.swift */,
+				E488533C1F1B3C3E00A32E16 /* ScoreLabelLayoutHelper.swift */,
 			);
 			path = ViewHelpers;
 			sourceTree = "<group>";
@@ -950,6 +953,7 @@
 				C0C3F3F71F0E82BC00820BB7 /* NSObject-ClassName.m in Sources */,
 				95BC551F1F14D54200F8D3AD /* XZCusomViewModel.m in Sources */,
 				954C43441F15BDF8005152D1 /* ArcheryDataTable.m in Sources */,
+				E488533D1F1B3C3E00A32E16 /* ScoreLabelLayoutHelper.swift in Sources */,
 				954C434A1F15BDF8005152D1 /* UserDBManager+ArcheryDataTable.m in Sources */,
 				95B726051F170A3800A08F77 /* ArcheryTypeTable.m in Sources */,
 				C0C3F4091F0E833000820BB7 /* UserPersistentObject.m in Sources */,

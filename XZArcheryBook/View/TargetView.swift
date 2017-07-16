@@ -33,18 +33,27 @@ class TargetView: UIView {
         return drawer
     }()
     
-    lazy var score1Button: UIButton = self.scoreButtonLayoutHelper.makeScoreButton(self, at: 1)
-    lazy var score2Button: UIButton = self.scoreButtonLayoutHelper.makeScoreButton(self, at: 2)
-    lazy var score3Button: UIButton = self.scoreButtonLayoutHelper.makeScoreButton(self, at: 3)
-    lazy var score4Button: UIButton = self.scoreButtonLayoutHelper.makeScoreButton(self, at: 4)
-    lazy var score5Button: UIButton = self.scoreButtonLayoutHelper.makeScoreButton(self, at: 5)
-    lazy var score6Button: UIButton = self.scoreButtonLayoutHelper.makeScoreButton(self, at: 6)
+    private lazy var scoreButtonLayoutHelper = ScoreButtonLayoutHelper()
+    private lazy var score1Button: UIButton = self.scoreButtonLayoutHelper.makeScoreButton(self, at: 1)
+    private lazy var score2Button: UIButton = self.scoreButtonLayoutHelper.makeScoreButton(self, at: 2)
+    private lazy var score3Button: UIButton = self.scoreButtonLayoutHelper.makeScoreButton(self, at: 3)
+    private lazy var score4Button: UIButton = self.scoreButtonLayoutHelper.makeScoreButton(self, at: 4)
+    private lazy var score5Button: UIButton = self.scoreButtonLayoutHelper.makeScoreButton(self, at: 5)
+    private lazy var score6Button: UIButton = self.scoreButtonLayoutHelper.makeScoreButton(self, at: 6)
     
-    lazy var scoreButtonLayoutHelper = ScoreButtonLayoutHelper()
-    
+    private lazy var scoreLabelLayoutHelper = ScoreLabelLayoutHelper()
+    private lazy var scoreLeftLabel: UILabel = self.scoreLabelLayoutHelper.makeScoreLabel(self, at: 0)
+    private lazy var scoreRightLabel: UILabel = self.scoreLabelLayoutHelper.makeScoreLabel(self, at: 1)
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureScoreButtons()
+        configureScoreLabels()
+    }
+    
+    private func configureScoreLabels() {
+        scoreLeftLabel.text = "1 - 3:"
+        scoreRightLabel.text = "4 - 6:"
     }
     
     private func configureScoreButtons() {
