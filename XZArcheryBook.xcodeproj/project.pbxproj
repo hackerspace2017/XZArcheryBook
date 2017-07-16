@@ -92,6 +92,7 @@
 		E4BB3D901F19D9EA00574EEB /* ToolbarLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BB3D8F1F19D9EA00574EEB /* ToolbarLayoutHelper.swift */; };
 		E4BB3D921F19F1BC00574EEB /* ScoreButtonLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BB3D911F19F1BC00574EEB /* ScoreButtonLayoutHelper.swift */; };
 		E4DE02601F1B551300E95154 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DE025F1F1B551300E95154 /* Utilities.swift */; };
+		E4DE02621F1B628700E95154 /* TargetViewGestureRegonizerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DE02611F1B628700E95154 /* TargetViewGestureRegonizerHelper.swift */; };
 		E4F6617B1F1A132100F50B90 /* TargetMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F6617A1F1A132100F50B90 /* TargetMark.swift */; };
 		E4F6617D1F1A138200F50B90 /* TargetMarkPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F6617C1F1A138200F50B90 /* TargetMarkPosition.swift */; };
 		E4F6617F1F1A177D00F50B90 /* CoreGraphicsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F6617E1F1A177D00F50B90 /* CoreGraphicsExtensions.swift */; };
@@ -274,6 +275,7 @@
 		E4BB3D8F1F19D9EA00574EEB /* ToolbarLayoutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarLayoutHelper.swift; sourceTree = "<group>"; };
 		E4BB3D911F19F1BC00574EEB /* ScoreButtonLayoutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreButtonLayoutHelper.swift; sourceTree = "<group>"; };
 		E4DE025F1F1B551300E95154 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		E4DE02611F1B628700E95154 /* TargetViewGestureRegonizerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetViewGestureRegonizerHelper.swift; sourceTree = "<group>"; };
 		E4ECB1C41F0FC01900DD4B9C /* XZArcheryBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "XZArcheryBook-Bridging-Header.h"; path = "../XZArcheryBook-Bridging-Header.h"; sourceTree = "<group>"; };
 		E4F6617A1F1A132100F50B90 /* TargetMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetMark.swift; sourceTree = "<group>"; };
 		E4F6617C1F1A138200F50B90 /* TargetMarkPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetMarkPosition.swift; sourceTree = "<group>"; };
@@ -666,6 +668,7 @@
 				E4BB3D8F1F19D9EA00574EEB /* ToolbarLayoutHelper.swift */,
 				E4BB3D911F19F1BC00574EEB /* ScoreButtonLayoutHelper.swift */,
 				E488533C1F1B3C3E00A32E16 /* ScoreLabelLayoutHelper.swift */,
+				E4DE02611F1B628700E95154 /* TargetViewGestureRegonizerHelper.swift */,
 			);
 			path = ViewHelpers;
 			sourceTree = "<group>";
@@ -956,6 +959,7 @@
 				C0C3F3F71F0E82BC00820BB7 /* NSObject-ClassName.m in Sources */,
 				95BC551F1F14D54200F8D3AD /* XZCusomViewModel.m in Sources */,
 				954C43441F15BDF8005152D1 /* ArcheryDataTable.m in Sources */,
+				E4DE02621F1B628700E95154 /* TargetViewGestureRegonizerHelper.swift in Sources */,
 				E488533D1F1B3C3E00A32E16 /* ScoreLabelLayoutHelper.swift in Sources */,
 				954C434A1F15BDF8005152D1 /* UserDBManager+ArcheryDataTable.m in Sources */,
 				95B726051F170A3800A08F77 /* ArcheryTypeTable.m in Sources */,

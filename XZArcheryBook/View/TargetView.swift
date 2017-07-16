@@ -9,8 +9,8 @@
 import UIKit
 
 class TargetView: UIView {
-    private var currentTargetMark: TargetMark?
-    private var targetMarks: [TargetMark] = []
+    var currentTargetMark: TargetMark?
+    var targetMarks: [TargetMark] = []
     
     lazy var backgroundDrawer: TargetViewBackgroundDrawer = {
         let drawer = TargetViewBackgroundDrawer()
@@ -40,6 +40,7 @@ class TargetView: UIView {
     private lazy var scoreRightLabel: UILabel = self.scoreLabelLayoutHelper.makeScoreLabel(self, at: 1)
     
     private var panGR: UIPanGestureRecognizer = UIPanGestureRecognizer()
+    private lazy var gestureHandler = TargetViewGestureHandleHelper(self)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -52,52 +53,16 @@ class TargetView: UIView {
         var point = pan.location(in: self)
         point = makeOffset(point)
         switch pan.state {
-        case .began: specifyMark(withLocation: point)
-        case .changed: moveMark(withLocation: point)
-        case .ended: complete()
-        default: canceledGesture()
+        case .began: gestureHandler.specifyMark(withLocation: point)
+        case .changed: gestureHandler.moveMark(withLocation: point)
+        case .ended: gestureHandler.complete()
+        default: gestureHandler.canceledGesture()
         }
     }
     
     // For easily operating. convert device point to offset device point.
     private func makeOffset(_ point: CGPoint) -> CGPoint {
         return CGPoint(x: point.x - 26, y: point.y - 26)
-    }
-    
-    private func convertDeviceToLogic(_ point: CGPoint) -> TargetMarkPosition {
-        let x = (point.x - bounds.midX) / bounds.midX
-        let y = (point.y - bounds.midY) / bounds.midX
-        return TargetMarkPosition(x: x, y: y)
-    }
-    
-    private func specifyMark(withLocation point: CGPoint) {
-        let position = convertDeviceToLogic(point)
-        let mark = TargetMark(position: position)
-        targetMarks.append(mark)
-        currentTargetMark = mark
-        setNeedsDisplay()
-    }
-    
-    private func moveMark(withLocation point: CGPoint) {
-        let position = convertDeviceToLogic(point)
-        currentTargetMark?.position = position
-        setNeedsDisplay()
-    }
-    
-    private func complete() {
-        determineMarkPosition()
-        addNewMark()
-    }
-    
-    private func determineMarkPosition() {
-    }
-    
-    private func addNewMark() {
-        
-    }
-    
-    private func canceledGesture() {
-        
     }
     
     private func configureGestureRecognizers() {
