@@ -8,8 +8,6 @@
 
 import UIKit
 
-// todo: according to singleSlice width to calculate font size.
-// tode: add target mark
 class TargetViewDrawer {
     private var rect = CGRect.zero
     
@@ -48,12 +46,9 @@ class TargetViewDrawer {
 
 class TargetMarkDrawer: TargetViewDrawer {
     private let targetMarkColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
-//    private var targetMarks: [TargetMark] = []
     
     func draw(_ marks: [TargetMark], in ctx: CGContext, to rect: CGRect) {
         super.draw(ctx, to: rect)
-//        targetMarks = marks
-        
         drawTargetMarks(ctx, with: marks, to: rect)
     }
     
