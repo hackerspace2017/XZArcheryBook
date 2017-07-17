@@ -40,7 +40,7 @@ class TargetView: UIView {
     private lazy var scoreRightLabel: UILabel = self.scoreLabelLayoutHelper.makeScoreLabel(self, at: 1)
     
     private var panGR: UIPanGestureRecognizer = UIPanGestureRecognizer()
-    private lazy var gestureHandler = TargetViewGestureHandleHelper(self)
+    private var gestureHandler: TargetViewGestureHandleHelper?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,10 +53,10 @@ class TargetView: UIView {
         var point = pan.location(in: self)
         point = makeOffset(point)
         switch pan.state {
-        case .began: gestureHandler.specifyMark(withLocation: point)
-        case .changed: gestureHandler.moveMark(withLocation: point)
-        case .ended: gestureHandler.complete()
-        default: gestureHandler.canceledGesture()
+        case .began: gestureHandler?.specifyMark(withLocation: point)
+        case .changed: gestureHandler?.moveMark(withLocation: point)
+        case .ended: gestureHandler?.complete()
+        default: gestureHandler?.canceledGesture()
         }
     }
     
@@ -66,6 +66,7 @@ class TargetView: UIView {
     }
     
     private func configureGestureRecognizers() {
+        gestureHandler = TargetViewGestureHandleHelper(self)
         panGR.addTarget(self, action: #selector(handlePanGesture(_:)))
         addGestureRecognizer(panGR)
     }
