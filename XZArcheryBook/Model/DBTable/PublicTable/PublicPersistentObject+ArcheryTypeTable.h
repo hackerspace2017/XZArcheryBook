@@ -6,11 +6,11 @@
 //  Copyright © 2017年 祥子. All rights reserved.
 //
 
-#import "UserDBManager.h"
+#import "PublicDBManager.h"
 
 #import "ArcheryTypeTable.h"
 
-@interface UserDBManager (ArcheryTypeTable)
+@interface PublicDBManager (ArcheryTypeTable)
 
 
 /**

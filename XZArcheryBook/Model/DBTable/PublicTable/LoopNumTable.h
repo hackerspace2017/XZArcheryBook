@@ -6,9 +6,9 @@
 //  Copyright © 2017年 祥子. All rights reserved.
 //
 
-#import "UserPersistentObject.h"
+#import "PublicPersistentObject.h"
 
-@interface LoopNumTable : UserPersistentObject
+@interface LoopNumTable : PublicPersistentObject
 
 /** 射击圈数 */
 @property (copy , nonatomic) NSString *loopNum;

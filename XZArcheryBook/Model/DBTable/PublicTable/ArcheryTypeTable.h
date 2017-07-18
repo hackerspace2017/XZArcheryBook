@@ -6,9 +6,10 @@
 //  Copyright © 2017年 祥子. All rights reserved.
 //
 
-#import "UserPersistentObject.h"
 
-@interface ArcheryTypeTable : UserPersistentObject
+#import "PublicPersistentObject.h"
+
+@interface ArcheryTypeTable : PublicPersistentObject
 
 /** 射箭类型名字 */
 @property (copy , nonatomic) NSString *archeryName;

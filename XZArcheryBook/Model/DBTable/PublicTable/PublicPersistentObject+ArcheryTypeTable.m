@@ -6,9 +6,9 @@
 //  Copyright © 2017年 祥子. All rights reserved.
 //
 
-#import "UserDBManager+ArcheryTypeTable.h"
+#import "PublicPersistentObject+ArcheryTypeTable.h"
 
-@implementation UserDBManager (ArcheryTypeTable)
+@implementation PublicDBManager (ArcheryTypeTable)
 
 
 /**

@@ -8,6 +8,8 @@
 
 #import "XZGroupVC.h"
 
+#import "XZArcheryBook-Swift.h"
+
 #import "XZUIManager.h"
 #import "XZGroupDataView.h"
 #import "XZGroundDataView.h"
@@ -66,7 +68,14 @@
     [rightBtn addTarget:self action:@selector(saveArcheryResult:) forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem *rightBarBtn = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
-    self.navigationItem.rightBarButtonItem = rightBarBtn;
+    
+    UIButton *changeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    [changeBtn setTitle:@"切换" forState:UIControlStateNormal];
+    [changeBtn setTitleColor:PureColor(59) forState:UIControlStateNormal];
+    [changeBtn addTarget:self action:@selector(modelChange:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *rightChangeBtn = [[UIBarButtonItem alloc] initWithCustomView:changeBtn];
+    self.navigationItem.rightBarButtonItems = @[rightBarBtn, rightChangeBtn];
     
     
     if (self.isGroup) {
@@ -122,7 +131,7 @@
     switch (basicOptionsType) {
         case XZBasicOptionsTypeArcheryType:
         {
-            NSArray *archeryTypeArr = [serverLayer().userDatabase getAllArcheryTypeTable];
+            NSArray *archeryTypeArr = [serverLayer().publicDatabase getAllArcheryTypeTable];
             
             for (ArcheryTypeTable *archeryTypeTable in archeryTypeArr) {
                 [dataArray addObject:archeryTypeTable.archeryName];
@@ -132,7 +141,7 @@
             break;
         case XZBasicOptionsTypeDistance:
         {
-            NSArray *distanceArr = [serverLayer().userDatabase getAllDistanceTable];
+            NSArray *distanceArr = [serverLayer().publicDatabase getAllDistanceTable];
             
             for (DistanceTable *distanceTable in distanceArr) {
                 [dataArray addObject:distanceTable.distance];
@@ -141,7 +150,7 @@
             break;
         case XZBasicOptionsTypeLoopNum:
         {
-            NSArray *loopNumArr = [serverLayer().userDatabase getAllLoopNumTable];
+            NSArray *loopNumArr = [serverLayer().publicDatabase getAllLoopNumTable];
             
             for (LoopNumTable *loopNumTable in loopNumArr) {
                 [dataArray addObject:loopNumTable.loopNum];
@@ -158,11 +167,11 @@
         
         switch (indexType) {
             case XZCustomPickerViewIndexTypeAutoHide:
+            case XZCustomPickerViewIndexTypeCancel :
             {
                 
             }
                 break;
-            case XZCustomPickerViewIndexTypeCancel :
             case XZCustomPickerViewIndexTypeConfirm :
             {
                 //设置内容
@@ -206,6 +215,75 @@
     
 }
 
+
+- (void)modelChange:(UIButton *)btn
+{
+    
+    switch (serverLayer().UserInfo.dataSaveType) {
+        case 1:
+        {
+            serverLayer().UserInfo.dataSaveType = 2;
+            
+            TargetViewController *controller = [[TargetViewController alloc] init];
+            
+            NSMutableArray *array = self.navigationController.viewControllers.mutableCopy;
+            
+            UIViewController *targetVC = nil;
+            for (UIViewController *vc in array) {
+                
+                if ([vc isKindOfClass:[XZGroupVC class]]) {
+                    targetVC = vc;
+                }
+                
+            }
+            
+            if (targetVC) {
+                
+                [array removeObject:targetVC];
+                
+                [array addObject:controller];
+                
+                [self.navigationController setViewControllers:array animated:YES];
+                
+            }
+            
+        }
+            break;
+        case 2:
+        {
+//            serverLayer().UserInfo.dataSaveType = 1;
+//            
+//            TargetViewController *controller = [[TargetViewController alloc] init];
+//            [self.navigationController pushViewController:controller animated:true];
+//            
+//            NSMutableArray *array = self.navigationController.viewControllers.mutableCopy;
+//            
+//            UIViewController *targetVC = nil;
+//            for (UIViewController *vc in array) {
+//                
+//                if ([vc isKindOfClass:[XZGroupVC class]]) {
+//                    targetVC = vc;
+//                }
+//                
+//            }
+//            
+//            if (targetVC) {
+//                
+//                [array removeObject:targetVC];
+//                
+//                [array addObject:controller];
+//                
+//                [self.navigationController setViewControllers:array animated:YES];
+//                
+//            }
+            
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
 
 
 - (void)backHomeVC:(UIButton *)button

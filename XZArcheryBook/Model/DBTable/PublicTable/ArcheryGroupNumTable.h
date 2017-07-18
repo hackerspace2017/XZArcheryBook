@@ -6,9 +6,9 @@
 //  Copyright © 2017年 祥子. All rights reserved.
 //
 
-#import "UserPersistentObject.h"
+#import "PublicPersistentObject.h"
 
-@interface ArcheryGroupNumTable : UserPersistentObject
+@interface ArcheryGroupNumTable : PublicPersistentObject
 
 /** 组数/每组射箭支数/共多少支箭 */
 @property (copy , nonatomic) NSString *archeryGroupNum;

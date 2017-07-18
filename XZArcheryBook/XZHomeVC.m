@@ -60,18 +60,38 @@
 - (void)homeView:(XZHomeView *)homeView isGroup:(BOOL)isGroup;
 {
     
-    if (isGroup == false) {
-        TargetViewController *controller = [[TargetViewController alloc] init];
-        [self.navigationController pushViewController:controller animated:true];
-        return;
+    if (isGroup) // 记一组
+    {
+        switch (serverLayer().UserInfo.dataSaveType) {
+            case 1:
+            {
+                
+                XZGroupVC *groupVC = [[XZGroupVC alloc] init];
+                
+                groupVC.isGroup = isGroup;
+                groupVC.delegate = self;
+                groupVC.dataSaveType = serverLayer().UserInfo.dataSaveType;
+                
+                [self.navigationController pushViewController:groupVC animated:YES];
+            }
+                break;
+            case 2:
+            {
+                TargetViewController *controller = [[TargetViewController alloc] init];
+                [self.navigationController pushViewController:controller animated:true];
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }
+    else // 记一场
+    {
+        
+        
     }
     
-    XZGroupVC *groupVC = [[XZGroupVC alloc] init];
-    
-    groupVC.isGroup = isGroup;
-    groupVC.delegate = self;
-    
-    [self.navigationController pushViewController:groupVC animated:YES];
     
 }
 

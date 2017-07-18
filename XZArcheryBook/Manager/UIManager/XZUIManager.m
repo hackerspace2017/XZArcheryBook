@@ -104,9 +104,9 @@
     {
         historyData = [[ArcheryTable alloc] init];
         
-        historyData.archeryType = [serverLayer().userDatabase getDefaultArcheryType];
-        historyData.distance = [serverLayer().userDatabase getDefaultDistance];
-        historyData.loopNum = [serverLayer().userDatabase getDefaultLoopNum];
+        historyData.archeryType = [serverLayer().publicDatabase getDefaultArcheryType];
+        historyData.distance = [serverLayer().publicDatabase getDefaultDistance];
+        historyData.loopNum = [serverLayer().publicDatabase getDefaultLoopNum];
         
     }
     

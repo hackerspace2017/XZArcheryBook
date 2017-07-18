@@ -6,9 +6,9 @@
 //  Copyright © 2017年 祥子. All rights reserved.
 //
 
-#import "UserDBManager+ArcheryGroupNumTable.h"
+#import "PublicPersistentObject+ArcheryGroupNumTable.h"
 
-@implementation UserDBManager (ArcheryGroupNumTable)
+@implementation PublicDBManager (ArcheryGroupNumTable)
 
 /**
  *  保存ArcheryGroupNumTable

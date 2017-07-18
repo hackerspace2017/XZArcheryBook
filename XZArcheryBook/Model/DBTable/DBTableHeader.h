@@ -9,22 +9,28 @@
 #ifndef DBTableHeader_h
 #define DBTableHeader_h
 
-
+// 用户个人相关数据
 #import "UserDBManager.h"
+
+#import "UserDBManager+UserInfoTable.h"
 
 #import "UserDBManager+ArcheryTable.h"
 
 #import "UserDBManager+ArcheryDataTable.h"
 
-#import "UserDBManager+ArcheryTypeTable.h"
-
-#import "UserDBManager+DistanceTable.h"
-
-#import "UserDBManager+LoopNumTable.h"
-
-#import "UserDBManager+ArcheryGroupNumTable.h"
-
 #import "UserDBManager+SaveDateTable.h"
+
+
+// 公共数据
+#import "PublicDBManager.h"
+
+#import "PublicPersistentObject+ArcheryTypeTable.h"
+
+#import "PublicPersistentObject+DistanceTable.h"
+
+#import "PublicPersistentObject+LoopNumTable.h"
+
+#import "PublicPersistentObject+ArcheryGroupNumTable.h"
 
 
 #endif /* DBTableHeader_h */

@@ -6,9 +6,9 @@
 //  Copyright © 2017年 祥子. All rights reserved.
 //
 
-#import "UserDBManager+LoopNumTable.h"
+#import "PublicPersistentObject+LoopNumTable.h"
 
-@implementation UserDBManager (LoopNumTable)
+@implementation PublicDBManager (LoopNumTable)
 
 
 /**

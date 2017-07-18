@@ -37,6 +37,12 @@
         [serverLayer().userDatabase openDataBase];
         
     }
+    // 这个是PublicDB数据库
+    if (!serverLayer().publicDatabase.isOpenSuccess) {
+        
+        [serverLayer().publicDatabase openDataBase];
+        
+    }
     
     // 存储码表公共数据
     [self savePublicData];
@@ -58,7 +64,7 @@
     xz_async_block(^{
         
         // 1.保存射箭类型公共码表数据
-        NSArray *archeryTypeArr = [serverLayer().userDatabase getAllArcheryTypeTable];
+        NSArray *archeryTypeArr = [serverLayer().publicDatabase getAllArcheryTypeTable];
         
         if (archeryTypeArr.count < 4) {
             archeryTypeArr = @[@"反曲弓", @"复合弓", @"光弓", @"传统弓"];
@@ -69,14 +75,14 @@
                 archeryTypeTable.archeryName = archeryTypeArr[i];
                 archeryTypeTable.archeryCode = [NSString stringWithFormat:@"%d", 100 + i];
                 
-                [serverLayer().userDatabase saveArcheryTypeTable:archeryTypeTable];
+                [serverLayer().publicDatabase saveArcheryTypeTable:archeryTypeTable];
                 
             }
             
         }
         
         // 2.保存射击距离公共码表数据
-        NSArray *distanceArr = [serverLayer().userDatabase getAllDistanceTable];
+        NSArray *distanceArr = [serverLayer().publicDatabase getAllDistanceTable];
         
         if (distanceArr.count < 8) {
             distanceArr = @[@"8米", @"10米", @"18米", @"30米", @"40米", @"50米", @"70米", @"90米"];
@@ -87,14 +93,14 @@
                 distanceTable.distance = distanceArr[i];
                 distanceTable.distanceCode = [NSString stringWithFormat:@"%d", 1000 + i];
                 
-                [serverLayer().userDatabase saveDistanceTable:distanceTable];
+                [serverLayer().publicDatabase saveDistanceTable:distanceTable];
                 
             }
             
         }
         
         // 3.保存射击环数公共码表数据
-        NSArray *loopNumArr = [serverLayer().userDatabase getAllLoopNumTable];
+        NSArray *loopNumArr = [serverLayer().publicDatabase getAllLoopNumTable];
         
         if (loopNumArr.count < 8) {
             loopNumArr = @[@"40三联", @"40全环", @"60半环", @"60全环", @"80半环", @"80全环", @"122全环", @"完美300"];
@@ -105,14 +111,14 @@
                 loopNumTable.loopNum = loopNumArr[i];
                 loopNumTable.loopNumCode = [NSString stringWithFormat:@"%d", 10000 + i];
                 
-                [serverLayer().userDatabase saveLoopNumTable:loopNumTable];
+                [serverLayer().publicDatabase saveLoopNumTable:loopNumTable];
                 
             }
             
         }
         
         // 4.保存 组数/每组箭数量/总共箭数 公共码表数据
-        NSArray *archeryGroupNumArr = [serverLayer().userDatabase getAllArcheryGroupNumTable];
+        NSArray *archeryGroupNumArr = [serverLayer().publicDatabase getAllArcheryGroupNumTable];
         
         if (archeryGroupNumArr.count < 5) {
             archeryGroupNumArr = @[@"5组/每组3支箭/共15支箭", @"5组/每组6支箭/共30支箭", @"6组/每组6支箭/共36支箭", @"10组/每组6支箭/共60支箭", @"12组/每组6支箭/共72支箭"];
@@ -123,7 +129,7 @@
                 archeryGroupNumTable.archeryGroupNum = archeryGroupNumArr[i];
                 archeryGroupNumTable.archeryGroupNumCode = [NSString stringWithFormat:@"%d", 100000 + i];
                 
-                [serverLayer().userDatabase saveArcheryGroupNumTable:archeryGroupNumTable];
+                [serverLayer().publicDatabase saveArcheryGroupNumTable:archeryGroupNumTable];
                 
             }
             

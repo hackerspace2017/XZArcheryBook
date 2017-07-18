@@ -23,5 +23,7 @@
 /** 是否为记一组数据   YES:记一组数据   NO:记一场数据 */
 @property (nonatomic , assign) BOOL isGroup;
 
+/** 数据表现类型  1:数据表类型  2:数据图形类型 */
+@property (nonatomic , assign) int dataSaveType;
 
 @end

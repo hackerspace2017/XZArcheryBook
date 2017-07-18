@@ -6,9 +6,10 @@
 //  Copyright © 2017年 祥子. All rights reserved.
 //
 
-#import "UserPersistentObject.h"
 
-@interface DistanceTable : UserPersistentObject
+#import "PublicPersistentObject.h"
+
+@interface DistanceTable : PublicPersistentObject
 
 /** 射箭距离 */
 @property (copy , nonatomic) NSString *distance;

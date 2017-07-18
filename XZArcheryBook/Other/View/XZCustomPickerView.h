@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 //#import "XZConstHeader.h"
-#import "PickerViewObject.h"
+#import "PublicModelHeader.h"
 
 typedef NS_ENUM(NSUInteger,XZCustomPickerViewIndexType) {
     /// 直接隐藏

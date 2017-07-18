@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+
 #import "DBTableHeader.h"
+#import "PublicModelHeader.h"
+
 
 #import "NSString+SQLPath.h"
 
 
-
-@class UserDBManager,PublicDBManager,UserInfoModel;
 
 @interface SQLServerManager : NSObject
 
@@ -25,7 +26,7 @@
 @property (nonatomic , weak) PublicDBManager *publicDatabase;
 
 /** 用户基础-常驻内存  可以全局调用 */
-@property (nonatomic , strong) UserInfoModel *userInfoModel;
+@property (nonatomic , strong) UserProfilesInfo *UserInfo;
 
 
 

@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class TargetViewController: UIViewController {
     private var overlayViewForTransition: UIView?
     
@@ -36,10 +37,16 @@ class TargetViewController: UIViewController {
         print("add new mark")
     }
     
+    @objc private func changeDataSaveType() {
+        print("change type")
+        
+    }
+    
     private func setupNavigationItems() {
         let backItem = UIBarButtonItem(title: "返回", style: .plain, target: self, action: #selector(back))
         let saveItem = UIBarButtonItem(title: "保存", style: .plain, target: self, action: #selector(addTargetMark))
-        navigationItem.rightBarButtonItem = saveItem
+        let changeItem = UIBarButtonItem(title: "切换", style: .plain, target: self, action: #selector(changeDataSaveType))
+        navigationItem.rightBarButtonItems = [saveItem, changeItem]
         navigationItem.leftBarButtonItem = backItem
     }
     

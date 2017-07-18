@@ -6,9 +6,10 @@
 //  Copyright © 2017年 祥子. All rights reserved.
 //
 
-#import "UserDBManager+DistanceTable.h"
+#import "PublicPersistentObject+DistanceTable.h"
 
-@implementation UserDBManager (DistanceTable)
+@implementation PublicDBManager (DistanceTable)
+
 
 
 /**
