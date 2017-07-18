@@ -26,7 +26,7 @@
 @property (nonatomic , weak) PublicDBManager *publicDatabase;
 
 /** 用户基础-常驻内存  可以全局调用 */
-@property (nonatomic , strong) UserProfilesInfo *UserInfo;
+@property (nonatomic , strong) UserProfilesInfo *userInfo;
 
 
 

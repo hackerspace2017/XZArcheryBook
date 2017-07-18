@@ -219,10 +219,10 @@
 - (void)modelChange:(UIButton *)btn
 {
     
-    switch (serverLayer().UserInfo.dataSaveType) {
+    switch (serverLayer().userInfo.dataSaveType) {
         case 1:
         {
-            serverLayer().UserInfo.dataSaveType = 2;
+            serverLayer().userInfo.dataSaveType = 2;
             
             TargetViewController *controller = [[TargetViewController alloc] init];
             
@@ -251,7 +251,7 @@
             break;
         case 2:
         {
-//            serverLayer().UserInfo.dataSaveType = 1;
+//            serverLayer().userInfo.dataSaveType = 1;
 //            
 //            TargetViewController *controller = [[TargetViewController alloc] init];
 //            [self.navigationController pushViewController:controller animated:true];

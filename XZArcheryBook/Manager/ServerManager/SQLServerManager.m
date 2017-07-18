@@ -37,10 +37,10 @@ static SQLServerManager *server_manager;
         server_manager.publicDatabase = [PublicDBManager sharedManager];
         
         // 常驻内存个人信息
-        server_manager.UserInfo = [[UserProfilesInfo alloc] init];
+        server_manager.userInfo = [[UserProfilesInfo alloc] init];
         
 #warning 暂时将数据存储类型在这里区分  后期加入个人中心  就可以在个人中心进行区分
-        server_manager.UserInfo.dataSaveType = 1;
+        server_manager.userInfo.dataSaveType = 1;
         
         server_manager.userDatabase.delegate = server_manager;
         

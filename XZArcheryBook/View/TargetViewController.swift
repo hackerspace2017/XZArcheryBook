@@ -37,8 +37,50 @@ class TargetViewController: UIViewController {
         print("add new mark")
     }
     
+    // MARK: 数据表格与图形类型切换
     @objc private func changeDataSaveType() {
         print("change type")
+        
+        serverLayer().userInfo.dataSaveType = 1
+        
+        let groupVC = XZGroupVC()
+        
+        groupVC.isGroup = true
+        groupVC.delegate = XZHomeVC.self as! XZGroupDelegate
+        groupVC.dataSaveType = serverLayer().userInfo.dataSaveType
+        
+        var controllerArr = self.navigationController?.viewControllers
+        
+        controllerArr?.removeLast()
+        
+        controllerArr?.append(groupVC)
+        
+        self.navigationController?.setViewControllers(controllerArr!, animated: true)
+        
+        
+        
+        
+//        var targetVC = UIViewController()
+//        
+//        for vc in controllerArr! {
+//            
+//            if (vc as AnyObject) .isKind(of: TargetViewController .classForCoder()) {
+//                
+//                targetVC = vc 
+//                
+//            }
+//            
+//        }
+//        
+//        if targetVC .isKind(of: TargetViewController .classForCoder()) {
+//            
+//            controllerArr?.removeLast()
+//            
+//            controllerArr?.append(groupVC)
+//            
+//            self.navigationController?.setViewControllers(controllerArr!, animated: true)
+//        }
+        
         
     }
     

@@ -62,7 +62,7 @@
     
     if (isGroup) // 记一组
     {
-        switch (serverLayer().UserInfo.dataSaveType) {
+        switch (serverLayer().userInfo.dataSaveType) {
             case 1:
             {
                 
@@ -70,7 +70,7 @@
                 
                 groupVC.isGroup = isGroup;
                 groupVC.delegate = self;
-                groupVC.dataSaveType = serverLayer().UserInfo.dataSaveType;
+                groupVC.dataSaveType = serverLayer().userInfo.dataSaveType;
                 
                 [self.navigationController pushViewController:groupVC animated:YES];
             }
