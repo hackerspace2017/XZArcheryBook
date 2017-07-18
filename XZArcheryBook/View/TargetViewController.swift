@@ -57,31 +57,6 @@ class TargetViewController: UIViewController {
         
         self.navigationController?.setViewControllers(controllerArr!, animated: true)
         
-        
-        
-        
-//        var targetVC = UIViewController()
-//        
-//        for vc in controllerArr! {
-//            
-//            if (vc as AnyObject) .isKind(of: TargetViewController .classForCoder()) {
-//                
-//                targetVC = vc 
-//                
-//            }
-//            
-//        }
-//        
-//        if targetVC .isKind(of: TargetViewController .classForCoder()) {
-//            
-//            controllerArr?.removeLast()
-//            
-//            controllerArr?.append(groupVC)
-//            
-//            self.navigationController?.setViewControllers(controllerArr!, animated: true)
-//        }
-        
-        
     }
     
     private func setupNavigationItems() {
