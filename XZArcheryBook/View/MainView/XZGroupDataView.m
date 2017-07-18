@@ -36,7 +36,7 @@
 @property (weak, nonatomic) IBOutlet UIView *dataView6;
 
 
-/** 数据数组 */
+/** data dictionary */
 @property (nonatomic , strong) NSMutableDictionary * dataDic;
 
 @end
@@ -57,27 +57,21 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    // 默认第一个textField为输入状态
+    // The default textField is the input state
     self.dataView1.backgroundColor = RGB(255, 245, 170);
     [self.textField1 becomeFirstResponder];
     
     self.textField1.delegate = self;
-    self.textField1.returnKeyType = UIReturnKeyNext;
     
     self.textField2.delegate = self;
-    self.textField2.returnKeyType = UIReturnKeyNext;
     
     self.textField3.delegate = self;
-    self.textField3.returnKeyType = UIReturnKeyNext;
     
     self.textField4.delegate = self;
-    self.textField4.returnKeyType = UIReturnKeyNext;
     
     self.textField5.delegate = self;
-    self.textField5.returnKeyType = UIReturnKeyNext;
     
     self.textField6.delegate = self;
-    self.textField6.returnKeyType = UIReturnKeyDone;
     
     
     self.scrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
@@ -107,24 +101,6 @@
     self.archeryTypeLabel.text = archeryModel.archeryType;
     self.distanceLabel.text = archeryModel.distance;
     self.LoopNumLabel.text = archeryModel.loopNum;
-    
-    
-    
-    
-//    for (NSArray *tempArr in self.archeryModel.dataArray) {
-//        
-//        self.textField1.text = tempArr[1];
-//        
-//        self.textField2.text = tempArr[2];
-//        
-//        self.textField3.text = tempArr[3];
-//        
-//        self.textField4.text = tempArr[4];
-//        
-//        self.textField5.text = tempArr[5];
-//        
-//        self.textField6.text = tempArr[6];
-//    }
     
 }
 
@@ -222,7 +198,7 @@
     if ([[[UITextInputMode currentInputMode] primaryLanguage] isEqualToString:@"emoji"]) {
 #pragma clang diagnostic pop
         
-        NSLog(@"不能输入表情");
+        NSLog(@"Cannot enter an expression");
         
         return NO;
         
@@ -378,7 +354,7 @@
 }
 
 
-// 获得数据数组
+// Get data array
 - (NSMutableArray *)getDataDic
 {
     
@@ -386,7 +362,7 @@
 }
 
 
-// 取消第一响应者  退出键盘
+// Cancels the first responder and exits the keyboard
 - (void)resignAllFirstResponser
 {
     [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder)
@@ -398,7 +374,7 @@
 
 
 
-// 弓箭类型选择
+// Bow and arrow type selection
 - (IBAction)archeryTypeView:(id)sender {
     
     [self resignAllFirstResponser];
@@ -409,7 +385,7 @@
     
 }
 
-// 射击距离选择
+// Shooting distance choice
 - (IBAction)distanceView:(id)sender {
     
     [self resignAllFirstResponser];
@@ -420,7 +396,7 @@
     
 }
 
-// 射击环数选择
+// Number of firing rings selected
 - (IBAction)loopNumView:(id)sender {
     
     [self resignAllFirstResponser];

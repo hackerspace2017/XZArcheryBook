@@ -11,7 +11,7 @@
 @class XZArcheryModel;
 @interface XZGroupView : UIView
 
-/** 数据Model */
+/** data model */
 @property (nonatomic , strong) XZArcheryModel * archeryModel;
 
 

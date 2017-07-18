@@ -30,16 +30,16 @@ static SQLServerManager *server_manager;
     dispatch_once(&onceToken, ^{
         server_manager = [super allocWithZone:zone];
         
-        // 用户数据库
+        // User's own database
         server_manager.userDatabase = [UserDBManager sharedManager];
         
-        // 公共数据库
+        // Public database
         server_manager.publicDatabase = [PublicDBManager sharedManager];
         
-        // 常驻内存个人信息
+        // User base data resident memory can be called globally
         server_manager.userInfo = [[UserProfilesInfo alloc] init];
         
-#warning 暂时将数据存储类型在这里区分  后期加入个人中心  就可以在个人中心进行区分
+#warning For the time being, the data storage type is distinguished here, and later the individual center can be distinguished from the individual center
         server_manager.userInfo.dataSaveType = 1;
         
         server_manager.userDatabase.delegate = server_manager;
@@ -50,12 +50,12 @@ static SQLServerManager *server_manager;
 }
 
 
-#pragma mark - 数据库操作代理
+#pragma mark - Database operations agent
 
 /**
- 获得数据库所在文件夹
+ Get the folder where the database is located
  
- @return 数据库文件夹地址
+ @return Database folder path
  */
 - (NSString *)databaseDelegateUserDBDirectory
 {
@@ -66,9 +66,9 @@ static SQLServerManager *server_manager;
 }
 
 /**
- 获取数据库全路径
+ Get full path to database
  
- @return 数据库全路径
+ @return Database full path
  */
 - (NSString *)databaseDelegateUserDBPath
 {

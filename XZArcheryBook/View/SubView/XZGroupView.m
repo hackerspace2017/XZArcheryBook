@@ -12,37 +12,37 @@
 
 @interface XZGroupView ()
 
-// 记录时间
+// Recording time
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
-// 总成绩
+// Total score
 @property (weak, nonatomic) IBOutlet UILabel *sumResultsLabel;
 
-// 1号成绩
+// Number 1 score
 @property (weak, nonatomic) IBOutlet UILabel *dataOneLabel;
 
-// 2号成绩
+// Number 2 score
 @property (weak, nonatomic) IBOutlet UILabel *dataTwoLabel;
 
-// 3号成绩
+// Number 3 score
 @property (weak, nonatomic) IBOutlet UILabel *dataThreeLabel;
 
-// 4号成绩
+// Number 4 score
 @property (weak, nonatomic) IBOutlet UILabel *dataFourLabel;
 
-// 5号成绩
+// Number 5 score
 @property (weak, nonatomic) IBOutlet UILabel *dataFiveLabel;
 
-// 6号成绩
+// Number 6 score
 @property (weak, nonatomic) IBOutlet UILabel *dataSixLabel;
 
-// 弓箭类型
+// Bow and arrow type
 @property (weak, nonatomic) IBOutlet UILabel *archeryTypeLabel;
 
-// 射击距离
+// Firing distance
 @property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 
-// 靶子圈数
+// Number of target circles
 @property (weak, nonatomic) IBOutlet UILabel *loopLabel;
 
 

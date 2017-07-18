@@ -23,7 +23,7 @@
 }
 
 
-// 记一组
+// Remember a set of
 - (IBAction)notesGroupBtn:(id)sender {
     
     if ([self.delegate respondsToSelector:@selector(headerView:isGroup:)]) {
@@ -32,7 +32,7 @@
 }
 
 
-// 记一场
+// Remember a scene
 - (IBAction)notesGroundBtn:(id)sender {
     
     if ([self.delegate respondsToSelector:@selector(headerView:isGroup:)]) {

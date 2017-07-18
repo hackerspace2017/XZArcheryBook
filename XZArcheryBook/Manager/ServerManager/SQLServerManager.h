@@ -19,13 +19,13 @@
 
 @interface SQLServerManager : NSObject
 
-/** 用户自己的数据库*/
+/** User's own database */
 @property (nonatomic , weak) UserDBManager *userDatabase;
 
-/** 公共数据库*/
+/** Public database */
 @property (nonatomic , weak) PublicDBManager *publicDatabase;
 
-/** 用户基础-常驻内存  可以全局调用 */
+/** User base data resident memory can be called globally */
 @property (nonatomic , strong) UserProfilesInfo *userInfo;
 
 

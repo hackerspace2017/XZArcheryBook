@@ -19,7 +19,7 @@
 }
 
 
-// 首页获取数据列表
+// Get a list of home data
 + (void)getAllArcheryData:(void(^)(XZArcheryModel *archeryModel))archeryModel
 {
     
@@ -39,9 +39,9 @@
             
             NSArray *saveDateArr = [saveDateTable.archeryDataIds componentsSeparatedByString:@","];
             
-            // 一天内总共射击的箭数
+            // The number of arrows fired in a single day
             int archeryNum = 0;
-            // 一天内射击的组数
+            // Total group number of shots in a day
             int groupNum = 0;
 
             
@@ -57,7 +57,7 @@
                 
                 [archeryModelArr addObject:tempModel];
                 
-                // 获取射击的箭数量和组数量
+                // Gets the arrow number and group number of shots fired
                 for (ArcheryDataTable *archeryDataTable in tempModel.archeryDataTables) {
                     
                     archeryNum += archeryDataTable.eachGroupNum;
@@ -88,7 +88,7 @@
 }
 
 
-// 射箭成绩输入前的判断
+// Gets unsaved historical data
 + (void)creatArcheryResult:(void(^)(XZArcheryModel *archeryModel))archeryResult
 {
     
@@ -124,11 +124,11 @@
 
 
 /**
- 保存数据
-
- @param archeryModel 数据Model
- @param isGroup 是否为记一组
- @param isHistory 是否存为历史记录  在成绩录入界面 点击返回按钮将自动保存历史记录
+ Save data
+ 
+ @param archeryModel  data Model
+ @param isGroup  Do you want to remember a group?
+ @param isHistory  Save as history?  In the results entry interface, click the back button will automatically save the history
  */
 + (void)saveArcheryResultWithArcheryDataModel:(XZArcheryModel *)archeryModel
                                       isGroup:(BOOL)isGroup
@@ -222,7 +222,8 @@
     
 }
 
-// 获得一组数据中射箭数量
+
+// get a group data shoot an arrow number
 + (int)getNumIsNotNilWithDic:(NSDictionary *)dic
 {
     NSArray *array = [dic allKeys];

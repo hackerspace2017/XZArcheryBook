@@ -17,13 +17,13 @@
 
 @interface XZGroupVC : UIViewController
 
-/** 保存数据后 代理回主界面刷新数据 */
+/** Save the data after the refresh data back to the main interface agent */
 @property (weak , nonatomic) id <XZGroupDelegate> delegate;
 
-/** 是否为记一组数据   YES:记一组数据   NO:记一场数据 */
+/** Do you want to remember a set of data?   YES:Remember a set of data   NO:Take a field of data */
 @property (nonatomic , assign) BOOL isGroup;
 
-/** 数据表现类型  1:数据表类型  2:数据图形类型 */
+/** Data expression type  1:Data table type  2:Data graphics type */
 @property (nonatomic , assign) int dataSaveType;
 
 @end

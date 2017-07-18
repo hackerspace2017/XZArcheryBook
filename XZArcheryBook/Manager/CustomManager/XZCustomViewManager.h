@@ -18,12 +18,13 @@
 
 #pragma  mark - actionSheetView
 /**
- *  自定义actionSheet
- *
- *  @param title
- *  @param cancelButtonTltle
- *  @param titles
- *  @param clickBlock     index＝ 0:取消; －1:点击背景; 1－n ：点击otherButton
+ custom actionSheet
+
+ @param title  title
+ @param cancelButtonTltle cancelButtonTltle
+ @param titles titles
+ @param clickBlock clickBlock
+ @return return value description
  */
 + (XZCustomActionSheetView *)showCustomActionSheetWithTitle:(NSString *)title
                      cancelButtonTitle:(NSString *)cancelButtonTltle
@@ -34,7 +35,7 @@
 
 #pragma  mark - alertView
 
-//自定义样式弹窗
+// Custom style popups
 //+ (XZCustomAlertView *)showCustomAlertViewWithImageArray:(NSArray *)imageArray
 //                                withbuttonArray:(NSArray *)buttonArray
 //                                withStatusImage:(UIImage *)statusImage
@@ -43,7 +44,7 @@
 //                                        handler:(void (^)(XZCustomAlertView *alertView, NSInteger buttonIndex ,MultiAlertViewMode model))block;
 //
 //
-////系统样式弹窗
+//// System style popups
 //+ (XZCustomAlertView *)showSystemAlertViewWithTitle:(NSString *)title
 //                                     message:(NSString *)message
 //                           cancelButtonTitle:(NSString *)cancelTitle

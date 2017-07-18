@@ -16,10 +16,10 @@
 
 @interface XZGroupVC ()<XZGroupDataViewDelegate>
 
-/** 射箭成绩Model */
+/** Archery scores model */
 @property (nonatomic , strong) XZArcheryModel * archeryModel;
 
-/** 记一组View */
+/** Remember a set of view */
 @property (nonatomic , weak) XZGroupDataView *groupDataView;
 
 @end
@@ -37,7 +37,7 @@
     
 }
 
-// 配置数据Model
+// Configuring data Model
 - (void)configDataModel
 {
     [XZUIManager creatArcheryResult:^(XZArcheryModel *archeryModel) {
@@ -49,7 +49,7 @@
 }
 
 
-// 配置界面
+// Configuration interface
 - (void)configView
 {
     
@@ -101,7 +101,7 @@
     
 }
 
-#pragma mark - 保存射箭成绩单
+#pragma mark - Save your archery transcripts
 - (void)saveArcheryResult:(UIButton *)button
 {
     
@@ -120,10 +120,10 @@
 
 #pragma mark - XZGroupDataViewDelegate
 /**
- 选择码表
+ Select the code table
  
  @param groupDataView groupDataView
- @param basicOptionsType 码表类型
+ @param basicOptionsType  code table type
  */
 - (void)groupDataView:(XZGroupDataView *)groupDataView basicOptionsType:(XZBasicOptionsType)basicOptionsType
 {
@@ -174,7 +174,7 @@
                 break;
             case XZCustomPickerViewIndexTypeConfirm :
             {
-                //设置内容
+                // Set code table content
                 switch (basicOptionsType) {
                     case XZBasicOptionsTypeArcheryType:
                     {

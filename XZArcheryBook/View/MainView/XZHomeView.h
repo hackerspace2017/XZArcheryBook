@@ -22,14 +22,14 @@
 
 @interface XZHomeView : UIView
 
-/** 射箭数据model */
+/** Archery data model */
 @property (nonatomic , strong) XZArcheryModel * archeryModel;
 
 @property (weak, nonatomic) XZHeaderView *headerView;
 
 @property (weak, nonatomic) XZTrainNotes *trainNotes;
 
-/** HeaderView代理 */
+/** Header View Delegate */
 @property (weak , nonatomic) id <XZHomeViewDelegate> delegate;
 
 @end

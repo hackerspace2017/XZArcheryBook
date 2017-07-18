@@ -21,13 +21,13 @@
 
 @property (weak, nonatomic) UIView *contentView;
 
-/** 日期View */
+/** Date View */
 @property (nonatomic , weak) XZDateView *dateView;
 
-/** 组数据View */
+/** Group data View */
 @property (nonatomic , weak) XZGroupView *groupView;
 
-/** 场数据View */
+/** Ground data View */
 @property (nonatomic , weak) XZGroundView *groundView;
 
 
@@ -131,16 +131,16 @@
     
 }
 
-// 配置UI约束及界面数据
+// Configuring UI constraints and interface data
 - (void)configConstraintAndDataWithArcheryModel:(XZArcheryModel *)archeryModel
 {
     
     NSArray *timeDicKey = [archeryModel.yearMomentDayDic allKeys];
     
-    // 记录每天数据View高度
+    // Log daily data View height
     int dayHeight = 0;
     
-    // 记录数据View总高度
+    // Record data View total height
     int dataHeight = 0;
     
     for (int i = 0; i < timeDicKey.count; i ++) {
@@ -168,10 +168,10 @@
         
         NSArray *dataModelArr = [archeryModel.yearMomentDayDic objectForKey:timeDicKey[i]];
         
-        // 一天的数据展示完后  要把记录的当天的View高度清零  用于下一天高度的计算
+        // After a day's data is displayed, the View height on the day of the record is cleared to be used for the next day's height calculation
         dayHeight = 0;
         
-        // 总高度是要一直累计  用于最后约束contentView的bottom
+        // The total height is always accumulated for the last bottom bound contentView
         dataHeight += 35;
         
         for (int i = 0; i < dataModelArr.count; i ++) {

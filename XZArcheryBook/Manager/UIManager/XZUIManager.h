@@ -22,20 +22,20 @@
 
 
 
-// 首页获取数据列表
+// Get a list of home data
 + (void)getAllArcheryData:(void(^)(XZArcheryModel *archeryModel))archeryModel;
 
 
-// 射箭成绩输入前的判断
+// Gets unsaved historical data
 + (void)creatArcheryResult:(void(^)(XZArcheryModel *archeryModel))archeryResult;
 
 
 /**
- 保存数据
+ Save data
  
- @param archeryModel 数据Model
- @param isGroup 是否为记一组
- @param isHistory 是否存为历史记录  在成绩录入界面 点击返回按钮将自动保存历史记录
+ @param archeryModel  data Model
+ @param isGroup  Do you want to remember a group?
+ @param isHistory  Save as history?  In the results entry interface, click the back button will automatically save the history
  */
 + (void)saveArcheryResultWithArcheryDataModel:(XZArcheryModel *)archeryModel
                                       isGroup:(BOOL)isGroup

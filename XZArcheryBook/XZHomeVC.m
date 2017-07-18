@@ -60,7 +60,7 @@
 - (void)homeView:(XZHomeView *)homeView isGroup:(BOOL)isGroup;
 {
     
-    if (isGroup) // 记一组
+    if (isGroup) // Write a set of
     {
         switch (serverLayer().userInfo.dataSaveType) {
             case 1:
@@ -86,7 +86,7 @@
                 break;
         }
     }
-    else // 记一场
+    else // Remember a scene
     {
         
         

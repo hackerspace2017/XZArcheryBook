@@ -15,10 +15,10 @@
 
 
 /**
- 选择码表
-
+ Select the code table
+ 
  @param groupDataView groupDataView
- @param basicOptionsType 码表类型
+ @param basicOptionsType  code table type
  */
 - (void)groupDataView:(XZGroupDataView *)groupDataView basicOptionsType:(XZBasicOptionsType)basicOptionsType;
 
@@ -26,14 +26,14 @@
 
 @interface XZGroupDataView : UIView
 
-/** 选择码表代理 */
+/** Select the code table delegate */
 @property (nonatomic , weak) id <XZGroupDataViewDelegate> delegate;
 
-/** 数据Model */
+/** data model */
 @property (nonatomic , strong) XZArcheryModel * archeryModel;
 
 
-// 获得数据数组
+// Get data array
 - (NSMutableArray *)getDataDic;
 
 

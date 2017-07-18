@@ -37,7 +37,7 @@ class TargetViewController: UIViewController {
         print("add new mark")
     }
     
-    // MARK: 数据表格与图形类型切换
+    // MARK: The data table and graph type switch
     @objc private func changeDataSaveType() {
         print("change type")
         

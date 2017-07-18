@@ -25,7 +25,10 @@ implementationSingleton(Manager)
     return _customViews;
 }
 
-
+/**
+ *  Add prompt window
+ *
+ */
 - (BOOL)addCustomView:(UIView *)view withType:(XZCusomViewModelType)type;
 {
     if (view == nil) {
@@ -33,7 +36,7 @@ implementationSingleton(Manager)
     }
 
     if (type != XZCUSTOM_VIEW_MODEL_TYPE_HUD && type != XZCUSTOM_VIEW_MODEL_TYPE_AUTO_HIDE_VIEW) {
-        //先将其它window隐藏
+        // Hide other window
         if (self.customViews.count > 0) {
             for (XZCusomViewModel *model in self.customViews) {
                 if (model.type != XZCUSTOM_VIEW_MODEL_TYPE_HUD) {
@@ -64,7 +67,7 @@ implementationSingleton(Manager)
 }
 
 
-//隐藏wiond显示的键盘
+// Hide the keyboard displayed by wiond
 - (void)hiddenKeybord:(UIView *)view
 {
     for (id viewa in view.subviews) {
@@ -80,7 +83,10 @@ implementationSingleton(Manager)
     }
 }
 
-//移除alertView actionSheetView
+
+/**
+ *  Remove all pop-up windows from the prompt box: do you include HUD?
+ */
 - (void)removeAllCustomView:(BOOL)isHud
 {
     for (int i = 0 ; i < self.customViews.count; i++ ) {
@@ -100,7 +106,10 @@ implementationSingleton(Manager)
 }
 
 
-//移除某一类view :（hud）
+/**
+ *  Remove Certain class pop-up window :（hud）
+ *
+ */
 - (void)removeCustomViewWithType:(XZCusomViewModelType)type
 {
     for (int i = 0 ; i < self.customViews.count; i++ ) {
@@ -112,7 +121,10 @@ implementationSingleton(Manager)
 }
 
 
-//移除当前弹出，并显示上一个弹窗
+/**
+ *  Removes the current prompt window and displays the previous hidden prompt window
+ *
+ */
 - (void)removeCustomView:(UIView *)view
 {
     
@@ -124,14 +136,14 @@ implementationSingleton(Manager)
     
     for (int i = 0 ; i < self.customViews.count; i++ )
     {
-        //从后往前拿model
+        // Get model from the back to the front
         XZCusomViewModel *model = [self.customViews objectAtIndex:self.customViews.count - 1 - i];
         
         if (model.type == XZCUSTOM_VIEW_MODEL_TYPE_HUD) {
             continue;
         }
         
-        //要隐藏的view 肯定在数组末尾
+        // The view to hide must be at the end of the array
         if ([model.view isEqual:view]) {
             [self removeSubView:model];
             break;
@@ -144,7 +156,7 @@ implementationSingleton(Manager)
     }
     
     for (int i = 0 ; i < self.customViews.count; i++ ) {
-        //从后往前拿model
+        // Get model from the back to the front
         XZCusomViewModel *showView = [self.customViews objectAtIndex:self.customViews.count - 1 - i];
         if (showView.type != XZCUSTOM_VIEW_MODEL_TYPE_HUD) {
             showView.view.hidden = NO;
@@ -160,7 +172,7 @@ implementationSingleton(Manager)
 }
 
 
-//view输入框显示键盘
+//The view input box displays the keyboard
 - (void)showKeybord:(UIView *)view
 {
     BOOL isBreak = NO;

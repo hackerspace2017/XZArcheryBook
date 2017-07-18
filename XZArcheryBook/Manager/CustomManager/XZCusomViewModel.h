@@ -13,7 +13,7 @@
 typedef NS_ENUM(NSUInteger, XZCusomViewModelType)
 {
     XZCUSTOM_VIEW_MODEL_TYPE_HUD                    = 0,                    /**< 0 HUD  BOOK*/
-    XZCUSTOM_VIEW_MODEL_TYPE_AUTO_HIDE_VIEW         = 1,                    /**< 1  自动隐藏提示窗*/
+    XZCUSTOM_VIEW_MODEL_TYPE_AUTO_HIDE_VIEW         = 1,                    /**< 1 Auto hide prompt window */
     XZCUSTOM_VIEW_MODEL_TYPE_ALERT                  = 2,                    /**< 2：alertView */
     XZCUSTOM_VIEW_MODEL_TYPE_ACTIONSHEET            = 3,                    /**< 3：actionSheetView */
     XZCUSTOM_VIEW_MODEL_TYPE_PICKERVIEW             = 4,                    /**< 3：pickerView */

@@ -27,7 +27,7 @@
 
 #pragma  mark - alertView
 
-//自定义样式弹窗
+//Custom style popups
 //+ (XZCustomAlertView *)showCustomAlertViewWithImageArray:(NSArray *)imageArray
 //                                       withbuttonArray:(NSArray *)buttonArray
 //                                       withStatusImage:(UIImage *)statusImage
@@ -41,7 +41,7 @@
 //}
 //
 //
-////系统样式弹窗
+//// System style popups
 //+ (XZCustomAlertView *)showSystemAlertViewWithTitle:(NSString *)title
 //                                            message:(NSString *)message
 //                                  cancelButtonTitle:(NSString *)cancelTitle
