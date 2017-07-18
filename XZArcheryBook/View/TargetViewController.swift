@@ -41,15 +41,15 @@ class TargetViewController: UIViewController {
     @objc private func changeDataSaveType() {
         print("change type")
         
+        var controllerArr = self.navigationController?.viewControllers
+        
         serverLayer().userInfo.dataSaveType = 1
         
         let groupVC = XZGroupVC()
-        
         groupVC.isGroup = true
-        groupVC.delegate = XZHomeVC.self as! XZGroupDelegate
+        groupVC.delegate = (controllerArr?.first)! as! XZGroupDelegate
         groupVC.dataSaveType = serverLayer().userInfo.dataSaveType
         
-        var controllerArr = self.navigationController?.viewControllers
         
         controllerArr?.removeLast()
         
