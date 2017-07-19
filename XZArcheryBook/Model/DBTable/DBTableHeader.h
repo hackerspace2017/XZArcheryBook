@@ -9,7 +9,7 @@
 #ifndef DBTableHeader_h
 #define DBTableHeader_h
 
-// 用户个人相关数据
+// User personal data
 #import "UserDBManager.h"
 
 #import "UserDBManager+UserInfoTable.h"
@@ -21,7 +21,7 @@
 #import "UserDBManager+SaveDateTable.h"
 
 
-// 公共数据
+// Public data
 #import "PublicDBManager.h"
 
 #import "PublicPersistentObject+ArcheryTypeTable.h"

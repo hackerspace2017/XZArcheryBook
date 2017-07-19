@@ -14,10 +14,10 @@
 
 typedef NS_ENUM(NSInteger, XZBasicOptionsType) {
     
-    XZBasicOptionsTypeArcheryType      = 0,  // 攻箭类型选择
-    XZBasicOptionsTypeDistance         = 1,  // 射击距离选择
-    XZBasicOptionsTypeLoopNum          = 2,  // 射击环数选择
-    XZBasicOptionsTypeArcheryNum       = 3,  // 射箭数量选择(记一场中使用)
+    XZBasicOptionsTypeArcheryType      = 0,  // Attack arrow type selection
+    XZBasicOptionsTypeDistance         = 1,  // Attack arrow distance choice
+    XZBasicOptionsTypeLoopNum          = 2,  // Attack arrow ring number selection
+    XZBasicOptionsTypeArcheryNum       = 3,  // Archery quantity selection(Remember a scene to use it)
     
 };
 
@@ -27,39 +27,39 @@ typedef NS_ENUM(NSInteger, XZBasicOptionsType) {
 @interface XZArcheryModel : NSObject
 
 
-/** 数据库射箭记录表 */
+/** Database archery log sheet */
 @property (nonatomic , strong) ArcheryTable * archeryTable;
 
-/** 数据库详细数据记录表 */
+/** Database detail data record table */
 @property (nonatomic , strong) NSMutableArray <ArcheryDataTable *> * archeryDataTables;
 
-/** 年月日分组  key:xxxx年xx月xx日  value:当天的数据数组 */
+/** Date groups  key:YYYYMMDD  value:Data array for the day */
 @property (nonatomic , strong) NSMutableDictionary * yearMomentDayDic;
 
-/** 一条数据的具体时间  HH:SS */
+/** The exact time of a data  HH:SS */
 @property (nonatomic , copy) NSString * timeStr;
 
-/** 一次记录的所有组的总成绩 */
+/** The total score of all groups recorded at one time */
 @property (nonatomic , assign) int sumResults;
 
 
-// 基本选项配置
+// Basic options configuration
 
-/** 弓箭类型 */
+/** Bow and arrow type */
 @property (copy , nonatomic) NSString *archeryType;
 
-/** 射击距离 */
+/** Firing distance */
 @property (copy , nonatomic) NSString *distance;
 
-/** 射击环数 */
+/** Number of firing rings */
 @property (copy , nonatomic) NSString *loopNum;
 
-/** 射箭数量选择 */
+/** Archery quantity selection */
 @property (copy , nonatomic) NSString *archeryNum;
 
 
 
-/** 数据数组 */
+/** data array */
 @property (nonatomic , strong) NSMutableArray * dataArray;
 
 

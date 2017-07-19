@@ -12,7 +12,7 @@
 
 
 /**
- *  保存ArcheryDataTable
+ *  save ArcheryDataTable
  */
 - (void)saveArcheryDataTable:(ArcheryDataTable *)archeryDataTable
 {
@@ -27,9 +27,9 @@
 
 
 /**
- 根据组数据或场数据Id 获取所有成绩
-
- @param dataId 数据Id
+ Get all the results according to table Id
+ 
+ @param dataId data Id
  @return return value description
  */
 - (NSArray *)getAllArcheryDataTableByDataId:(NSString *)dataId

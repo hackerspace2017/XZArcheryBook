@@ -12,7 +12,7 @@
 
 @implementation XZArcheryModel
 
-// 射箭记录表
+// Archery log sheet
 - (void)setArcheryTable:(ArcheryTable *)archeryTable
 {
     _archeryTable = archeryTable;
@@ -37,7 +37,7 @@
     
 }
 
-// 射箭数据详细表
+// Archery data details table
 - (void)setArcheryDataTables:(NSMutableArray<ArcheryDataTable *> *)archeryDataTables
 {
     _archeryDataTables = archeryDataTables;
@@ -123,7 +123,7 @@
 //}
 
 
-// 配置组数据
+// Configuring group data
 - (void)configGroupData
 {
     self.archeryType = self.archeryTable.archeryType;
@@ -140,7 +140,7 @@
     
 }
 
-// 配置场数据
+// Configuring field data
 - (void)configGroundData
 {
     

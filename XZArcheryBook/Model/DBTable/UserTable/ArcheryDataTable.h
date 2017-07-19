@@ -10,28 +10,28 @@
 
 @interface ArcheryDataTable : UserPersistentObject
 
-/** 射箭记录表Id  用于关联查询 */
+/** Archery record form Id     For association queries */
 @property (copy , nonatomic) NSString *dataDetailId;
 
-/** 每组箭数量 */
+/** Number of arrows per group */
 @property (nonatomic , assign) NSInteger eachGroupNum;
 
-/** 数据1 */
+/** data1 */
 @property (copy , nonatomic) NSString *dataOne;
 
-/** 数据2 */
+/** data2 */
 @property (copy , nonatomic) NSString *dataTwo;
 
-/** 数据3 */
+/** data3 */
 @property (copy , nonatomic) NSString *dataThree;
 
-/** 数据4 */
+/** data4 */
 @property (copy , nonatomic) NSString *dataFour;
 
-/** 数据5 */
+/** data5 */
 @property (copy , nonatomic) NSString *dataFive;
 
-/** 数据6 */
+/** data6 */
 @property (copy , nonatomic) NSString *dataSix;
 
 @end

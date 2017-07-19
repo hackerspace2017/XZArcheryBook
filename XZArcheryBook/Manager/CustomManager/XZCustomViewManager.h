@@ -18,12 +18,12 @@
 
 #pragma  mark - actionSheetView
 /**
- custom actionSheet
+ custom action Sheet
 
- @param title  title
- @param cancelButtonTltle cancelButtonTltle
- @param titles titles
- @param clickBlock clickBlock
+ @param title title description
+ @param cancelButtonTltle cancelButtonTltle description
+ @param titles titles description
+ @param clickBlock clickBlock description
  @return return value description
  */
 + (XZCustomActionSheetView *)showCustomActionSheetWithTitle:(NSString *)title
