@@ -12,7 +12,18 @@ struct TargetMarkPosition {
     let x: CGFloat
     let y: CGFloat
     
-    public mutating func convertLogicPointToDevice(in rect: CGRect) -> CGPoint {
+    public func convertToScore() -> Int {
+        let distance = sqrt(x * x + y * y)
+        var score = Int(10 - floor(distance * 10))
+        if score > 10 {
+            score = 10
+        } else if score < 0 {
+            score = 0
+        }
+        return score
+    }
+    
+    public func convertLogicPointToDevice(in rect: CGRect) -> CGPoint {
         let diameter: CGFloat = min(rect.width, rect.height)
         let radius: CGFloat = diameter / 2
         let deviceLongth: CGFloat = max(rect.width, rect.height)

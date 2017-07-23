@@ -23,6 +23,7 @@ class TargetViewGestureHandleHelper {
         controlManager.targetMarks.append(mark)
         controlManager.currentTargetMark = mark
         view.setNeedsDisplay()
+        view.score1Button.setTitle("\(position.convertToScore())", for: .normal)
     }
     
     public func moveMark(withLocation point: CGPoint) {
