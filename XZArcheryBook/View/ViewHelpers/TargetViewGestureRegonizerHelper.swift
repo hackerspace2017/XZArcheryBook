@@ -30,6 +30,7 @@ class TargetViewGestureHandleHelper {
         let position = point.convertDevicePointToLogic(with: view.bounds)
         controlManager.currentTargetMark?.position = position
         view.setNeedsDisplay()
+        view.score1Button.setTitle("\(position.convertToScore())", for: .normal)
     }
     
     public func complete() {
