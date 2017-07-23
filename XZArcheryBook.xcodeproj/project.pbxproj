@@ -98,6 +98,7 @@
 		E4BB3D921F19F1BC00574EEB /* ScoreButtonLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BB3D911F19F1BC00574EEB /* ScoreButtonLayoutHelper.swift */; };
 		E4DE02601F1B551300E95154 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DE025F1F1B551300E95154 /* Utilities.swift */; };
 		E4DE02621F1B628700E95154 /* TargetViewGestureRegonizerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DE02611F1B628700E95154 /* TargetViewGestureRegonizerHelper.swift */; };
+		E4F578FD1F24D0550030B072 /* MarksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F578FC1F24D0550030B072 /* MarksManager.swift */; };
 		E4F6617B1F1A132100F50B90 /* TargetMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F6617A1F1A132100F50B90 /* TargetMark.swift */; };
 		E4F6617D1F1A138200F50B90 /* TargetMarkPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F6617C1F1A138200F50B90 /* TargetMarkPosition.swift */; };
 		E4F6617F1F1A177D00F50B90 /* CoreGraphicsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F6617E1F1A177D00F50B90 /* CoreGraphicsExtensions.swift */; };
@@ -293,6 +294,7 @@
 		E4DE025F1F1B551300E95154 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		E4DE02611F1B628700E95154 /* TargetViewGestureRegonizerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetViewGestureRegonizerHelper.swift; sourceTree = "<group>"; };
 		E4ECB1C41F0FC01900DD4B9C /* XZArcheryBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "XZArcheryBook-Bridging-Header.h"; path = "../XZArcheryBook-Bridging-Header.h"; sourceTree = "<group>"; };
+		E4F578FC1F24D0550030B072 /* MarksManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarksManager.swift; sourceTree = "<group>"; };
 		E4F6617A1F1A132100F50B90 /* TargetMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetMark.swift; sourceTree = "<group>"; };
 		E4F6617C1F1A138200F50B90 /* TargetMarkPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetMarkPosition.swift; sourceTree = "<group>"; };
 		E4F6617E1F1A177D00F50B90 /* CoreGraphicsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGraphicsExtensions.swift; sourceTree = "<group>"; };
@@ -704,6 +706,7 @@
 				E4BB3D911F19F1BC00574EEB /* ScoreButtonLayoutHelper.swift */,
 				E488533C1F1B3C3E00A32E16 /* ScoreLabelLayoutHelper.swift */,
 				E4DE02611F1B628700E95154 /* TargetViewGestureRegonizerHelper.swift */,
+				E4F578FC1F24D0550030B072 /* MarksManager.swift */,
 			);
 			path = ViewHelpers;
 			sourceTree = "<group>";
@@ -842,7 +845,7 @@
 				TargetAttributes = {
 					C0A7AA2C1F0BC3A200ED1444 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 76364BYDWJ;
+						DevelopmentTeam = U9AU2F93TN;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -1012,6 +1015,7 @@
 				E4F6617F1F1A177D00F50B90 /* CoreGraphicsExtensions.swift in Sources */,
 				95BC55211F14D54200F8D3AD /* XZCustomWindowManager.m in Sources */,
 				95D847711F1D9F5100CD3795 /* SaveDateTable.m in Sources */,
+				E4F578FD1F24D0550030B072 /* MarksManager.swift in Sources */,
 				E4BB3D901F19D9EA00574EEB /* ToolbarLayoutHelper.swift in Sources */,
 				C0C3F3FB1F0E82BC00820BB7 /* NSString-SQLiteColumnName.m in Sources */,
 				95BC552C1F14EC1B00F8D3AD /* SQLServerManager.m in Sources */,
@@ -1200,7 +1204,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 76364BYDWJ;
+				DEVELOPMENT_TEAM = U9AU2F93TN;
 				GCC_PREFIX_HEADER = "XZArcheryBook/XZArchery-PrefixHeader.pch";
 				INFOPLIST_FILE = XZArcheryBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1219,7 +1223,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 76364BYDWJ;
+				DEVELOPMENT_TEAM = U9AU2F93TN;
 				GCC_PREFIX_HEADER = "XZArcheryBook/XZArchery-PrefixHeader.pch";
 				INFOPLIST_FILE = XZArcheryBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

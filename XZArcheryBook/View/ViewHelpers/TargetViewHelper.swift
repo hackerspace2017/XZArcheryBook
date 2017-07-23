@@ -27,14 +27,6 @@ class TargetViewDrawer {
         return min(bounds.width, bounds.height)
     }
     
-    var radius: CGFloat {
-        return diameter / 2
-    }
-    
-    var deviceLongth: CGFloat {
-        return max(bounds.width, bounds.height)
-    }
-    
     var singleSlice: CGFloat {
         return diameter / 20
     }
@@ -47,27 +39,15 @@ class TargetViewDrawer {
 class TargetMarkDrawer: TargetViewDrawer {
     private let targetMarkColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
     
-    func draw(_ marks: [TargetMark], in ctx: CGContext, to rect: CGRect) {
+    func draw(_ marks: [TargetMark]?, in ctx: CGContext, to rect: CGRect) {
         super.draw(ctx, to: rect)
         drawTargetMarks(ctx, with: marks, to: rect)
     }
     
-    private func convertLogicPointToDevice(_ position: TargetMarkPosition) -> CGPoint {
-        var x: CGFloat = 0, y: CGFloat = 0
-        let offset = (deviceLongth - diameter) / 2
-        if UIDevice.current.orientation.isPortrait {
-            x = radius * position.x + radius
-            y = radius  * position.y + radius + offset
-        } else {
-            x = radius * position.x + radius + offset
-            y = radius  * position.y + radius
-        }
-        return CGPoint(x: x, y: y)
-    }
-    
-    private func drawTargetMarks(_ ctx: CGContext, with marks: [TargetMark], to rect: CGRect) {
+    private func drawTargetMarks(_ ctx: CGContext, with marks: [TargetMark]?, to rect: CGRect) {
+        guard let marks = marks else { return }
         for mark in marks {
-            let point = convertLogicPointToDevice(mark.position!)
+            let point = mark.position!.convertLogicPointToDevice(in: rect)
             drawTargetMark(ctx, with: point, to: rect)
         }
     }

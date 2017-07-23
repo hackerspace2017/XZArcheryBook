@@ -9,33 +9,25 @@
 import UIKit
 
 class TargetViewGestureHandleHelper {
-    unowned var view: TargetView
+    let view: TargetView
+    let controlManager: MarksManager
     
-    init(_ view: TargetView) {
+    init(_ view: TargetView, manager: MarksManager) {
         self.view = view
-    }
-    
-    var bounds: CGRect {
-        return view.bounds
-    }
-    
-    private func convertDeviceToLogic(_ point: CGPoint) -> TargetMarkPosition {
-        let x = (point.x - bounds.midX) / bounds.midX
-        let y = (point.y - bounds.midY) / bounds.midX
-        return TargetMarkPosition(x: x, y: y)
+        self.controlManager = manager
     }
     
     public func specifyMark(withLocation point: CGPoint) {
-        let position = convertDeviceToLogic(point)
+        let position = point.convertDevicePointToLogic(with: view.bounds)
         let mark = TargetMark(position: position)
-        view.targetMarks.append(mark)
-        view.currentTargetMark = mark
+        controlManager.targetMarks.append(mark)
+        controlManager.currentTargetMark = mark
         view.setNeedsDisplay()
     }
     
     public func moveMark(withLocation point: CGPoint) {
-        let position = convertDeviceToLogic(point)
-        view.currentTargetMark?.position = position
+        let position = point.convertDevicePointToLogic(with: view.bounds)
+        controlManager.currentTargetMark?.position = position
         view.setNeedsDisplay()
     }
     

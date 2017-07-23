@@ -91,8 +91,8 @@ class TargetViewController: UIViewController {
         viewWillTransition()
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: { (_) in
-        }) { [weak self] (_) in
-            self?.viewDidTransition()
+        }) { _ in
+            self.viewDidTransition()
         }
     }
 }

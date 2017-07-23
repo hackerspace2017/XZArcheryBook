@@ -9,8 +9,6 @@
 import UIKit
 
 class TargetView: UIView {
-    var currentTargetMark: TargetMark?
-    var targetMarks: [TargetMark] = []
     
     lazy var backgroundDrawer: TargetViewBackgroundDrawer = {
         let drawer = TargetViewBackgroundDrawer()
@@ -38,9 +36,8 @@ class TargetView: UIView {
     private lazy var scoreLabelLayoutHelper = ScoreLabelLayoutHelper()
     private lazy var scoreLeftLabel: UILabel = self.scoreLabelLayoutHelper.makeScoreLabel(self, at: 0)
     private lazy var scoreRightLabel: UILabel = self.scoreLabelLayoutHelper.makeScoreLabel(self, at: 1)
-    
-    private var panGR: UIPanGestureRecognizer = UIPanGestureRecognizer()
-    private var gestureHandler: TargetViewGestureHandleHelper?
+
+    private var controlManager: MarksManager?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,26 +46,8 @@ class TargetView: UIView {
         configureScoreLabels()
     }
     
-    @objc private func handlePanGesture(_ pan: UIPanGestureRecognizer) {
-        var point = pan.location(in: self)
-        point = makeOffset(point)
-        switch pan.state {
-        case .began: gestureHandler?.specifyMark(withLocation: point)
-        case .changed: gestureHandler?.moveMark(withLocation: point)
-        case .ended: gestureHandler?.complete()
-        default: gestureHandler?.canceledGesture()
-        }
-    }
-    
-    // For easily operating. convert device point to offset device point.
-    private func makeOffset(_ point: CGPoint) -> CGPoint {
-        return CGPoint(x: point.x - 26, y: point.y - 26)
-    }
-    
     private func configureGestureRecognizers() {
-        gestureHandler = TargetViewGestureHandleHelper(self)
-        panGR.addTarget(self, action: #selector(handlePanGesture(_:)))
-        addGestureRecognizer(panGR)
+        controlManager = MarksManager(with: self)
     }
     
     private func configureScoreLabels() {
@@ -93,7 +72,12 @@ class TargetView: UIView {
         guard let ctx = UIGraphicsGetCurrentContext() else { return }
         backgroundDrawer.draw(ctx, to: rect)
         numbericDrawer.draw(ctx, to: rect)
-        markDrawer.draw(targetMarks, in: ctx, to: rect)
+        markDrawer.draw(controlManager?.targetMarks, in: ctx, to: rect)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        controlManager?.touchBegin(touches, with: event)
     }
 }
 
