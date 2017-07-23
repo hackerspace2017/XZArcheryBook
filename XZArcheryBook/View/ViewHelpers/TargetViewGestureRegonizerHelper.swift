@@ -12,6 +12,8 @@ class TargetViewGestureHandleHelper {
     let view: TargetView
     let controlManager: MarksManager
     
+    var updateUI: ((String) -> ())?
+    
     init(_ view: TargetView, manager: MarksManager) {
         self.view = view
         self.controlManager = manager
@@ -23,14 +25,16 @@ class TargetViewGestureHandleHelper {
         controlManager.targetMarks.append(mark)
         controlManager.currentTargetMark = mark
         view.setNeedsDisplay()
-        view.score1Button.setTitle("\(position.convertToScore())", for: .normal)
+        updateUI?("\(position.convertToScore())")
+//        view.score1Button.setTitle("\(position.convertToScore())", for: .normal)
     }
     
     public func moveMark(withLocation point: CGPoint) {
         let position = point.convertDevicePointToLogic(with: view.bounds)
         controlManager.currentTargetMark?.position = position
         view.setNeedsDisplay()
-        view.score1Button.setTitle("\(position.convertToScore())", for: .normal)
+        updateUI?("\(position.convertToScore())")
+//        view.score1Button.setTitle("\(position.convertToScore())", for: .normal)
     }
     
     public func complete() {
