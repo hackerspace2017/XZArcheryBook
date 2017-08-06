@@ -33,11 +33,14 @@ class TargetView: UIView {
     public lazy var score5Button: UIButton = self.scoreButtonLayoutHelper.makeScoreButton(self, at: 5)
     public lazy var score6Button: UIButton = self.scoreButtonLayoutHelper.makeScoreButton(self, at: 6)
     
+    private lazy var undoButton: UIButton = self.scoreButtonLayoutHelper.makeScoreButton(self, at: 7)
+    private lazy var redoButton: UIButton = self.scoreButtonLayoutHelper.makeScoreButton(self, at: 8)
+    
     private lazy var scoreLabelLayoutHelper = ScoreLabelLayoutHelper()
     private lazy var scoreLeftLabel: UILabel = self.scoreLabelLayoutHelper.makeScoreLabel(self, at: 0)
     private lazy var scoreRightLabel: UILabel = self.scoreLabelLayoutHelper.makeScoreLabel(self, at: 1)
 
-    private var controlManager: MarksManager?
+    private var marksManager: MarksManager?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,7 +50,7 @@ class TargetView: UIView {
     }
     
     private func configureGestureRecognizers() {
-        controlManager = MarksManager(with: self)
+        marksManager = MarksManager(with: self)
     }
     
     private func configureScoreLabels() {
@@ -60,8 +63,20 @@ class TargetView: UIView {
         score2Button.setTitle("2", for: .normal)
         score3Button.setTitle("3", for: .normal)
         score4Button.setTitle("4", for: .normal)
-        score5Button.setTitle("1", for: .normal)
-        score6Button.setTitle("1", for: .normal)
+        score5Button.setTitle("5", for: .normal)
+        score6Button.setTitle("6", for: .normal)
+        undoButton.setTitle("undo", for: .normal)
+        redoButton.setTitle("redo", for: .normal)
+        undoButton.addTarget(self, action: #selector(undo(_:)), for: .touchUpInside)
+        redoButton.addTarget(self, action: #selector(redo(_:)), for: .touchUpInside)
+    }
+    
+    @objc private func undo(_ sender: UIButton) {
+        marksManager?.undo()
+    }
+    
+    @objc private func redo(_ sender: UIButton) {
+        marksManager?.redo()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -72,12 +87,12 @@ class TargetView: UIView {
         guard let ctx = UIGraphicsGetCurrentContext() else { return }
         backgroundDrawer.draw(ctx, to: rect)
         numbericDrawer.draw(ctx, to: rect)
-        markDrawer.draw(controlManager?.targetMarks, in: ctx, to: rect)
+        markDrawer.draw(marksManager?.targetMarks, in: ctx, to: rect)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        controlManager?.touchBegin(touches, with: event)
+        marksManager?.touchBegin(touches, with: event)
     }
 }
 

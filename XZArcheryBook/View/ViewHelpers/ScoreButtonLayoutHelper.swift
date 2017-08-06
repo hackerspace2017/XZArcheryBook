@@ -28,8 +28,28 @@ class ScoreButtonLayoutHelper {
         case 4: return makeScore4ButtonConstraints(button)
         case 5: return makeScore5ButtonConstraints(button)
         case 6: return makeScore6ButtonConstraints(button)
+        case 7: return makeScore7ButtonConstraints(button)
+        case 8: return makeScore8ButtonConstraints(button)
         default: return [NSLayoutConstraint]()
         }
+    }
+    
+    private func makeScore8ButtonConstraints(_ button: UIButton) -> [NSLayoutConstraint] {
+        return [
+            button.pinToBottom(-49 - 30),
+            button.pinToRight(-8),
+            button.wrapInWidth(0.1, 1),
+            button.wrapInHeight(30),
+        ]
+    }
+    
+    private func makeScore7ButtonConstraints(_ button: UIButton) -> [NSLayoutConstraint] {
+        return [
+            button.pinToBottom(-49 - 30),
+            button.pinToLeft(8),
+            button.wrapInWidth(0.1, 1),
+            button.wrapInHeight(30),
+        ]
     }
     
     private func makeScore6ButtonConstraints(_ button: UIButton) -> [NSLayoutConstraint] {

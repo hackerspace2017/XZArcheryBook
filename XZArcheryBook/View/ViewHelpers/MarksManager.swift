@@ -14,6 +14,8 @@ class MarksManager {
     
     var currentTargetMark: TargetMark?
     var targetMarks: [TargetMark] = []
+    private let maxCount: Int = 6
+    private var redoMarks: [TargetMark] = []
     
     init(with view: TargetView) {
         self.view = view
@@ -32,7 +34,22 @@ class MarksManager {
         return count
     }
     
+    func undo() {
+        guard targetMarks.count > 0 else { return }
+        currentTargetMark = targetMarks.removeLast()
+        redoMarks.append(currentTargetMark!)
+        view.setNeedsDisplay()
+    }
+    
+    func redo() {
+        guard redoMarks.count > 0 else { return }
+        currentTargetMark = redoMarks.removeLast()
+        targetMarks.append(currentTargetMark!)
+        view.setNeedsDisplay()
+    }
+    
     public func touchBegin(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard targetMarks.count < maxCount else { return }
         guard let touch = touches.first else { return }
         let point = touch.location(in: view)
         gestureHandler?.specifyMark(withLocation: point)
