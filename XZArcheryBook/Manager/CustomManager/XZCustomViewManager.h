@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "XZCustomActionSheetView.h"
-//#import "XZCustomAlertView.h"
 #import "XZCustomPickerView.h"
 
 @interface XZCustomViewManager : NSObject

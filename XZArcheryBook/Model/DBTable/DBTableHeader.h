@@ -10,8 +10,6 @@
 #define DBTableHeader_h
 
 // User personal data
-#import "UserDBManager.h"
-
 #import "UserDBManager+UserInfoTable.h"
 
 #import "UserDBManager+ArcheryTable.h"
@@ -22,8 +20,6 @@
 
 
 // Public data
-#import "PublicDBManager.h"
-
 #import "PublicPersistentObject+ArcheryTypeTable.h"
 
 #import "PublicPersistentObject+DistanceTable.h"

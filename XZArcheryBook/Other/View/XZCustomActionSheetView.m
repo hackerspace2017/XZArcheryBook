@@ -8,11 +8,8 @@
 
 #import "XZCustomActionSheetView.h"
 
-#import "AppDelegate.h"
 #import "XZCustomWindowManager.h"
-#import "UIScreen+Extension.h"
 #import "XZToolHeader.h"
-#import "UIImage+XZUtils.h"
 
 static const int LeftRightMargin = 10.0; // 左右边距
 static const int spaceMargin = 8; // 取消按钮间距

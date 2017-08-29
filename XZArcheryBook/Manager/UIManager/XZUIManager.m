@@ -8,8 +8,6 @@
 
 #import "XZUIManager.h"
 
-#import "XZToolHeader.h"
-
 @implementation XZUIManager
 
 + (XZUIManager *)share
@@ -24,7 +22,6 @@
 {
     
     xz_async_block(^{
-        
         
         NSMutableDictionary *archeryModelDic = [NSMutableDictionary new];
         

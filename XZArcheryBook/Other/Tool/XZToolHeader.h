@@ -15,9 +15,19 @@
 
 #import <Masonry.h>
 
-#import "HQStaticInlineFunctionConst.h"
+#import "XZStaticInlineFunctionConst.h"
 
 #import "ToolsFunction.h"
+
+
+// Category
+#import "NSString+SQLPath.h"
+#import "UIScreen+Extension.h"
+#import "UIImage+XZResize.h"
+#import "UIImage+XZUtils.h"
+
+
+
 
 
 #endif /* XZToolHeader_h */

@@ -49,7 +49,6 @@
 		C04F30121F0E850300DCBC2B /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C04F30111F0E850300DCBC2B /* libsqlite3.0.tbd */; };
 		C0A7AA321F0BC3A200ED1444 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A7AA311F0BC3A200ED1444 /* main.m */; };
 		C0A7AA351F0BC3A200ED1444 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A7AA341F0BC3A200ED1444 /* AppDelegate.m */; };
-		C0A7AA381F0BC3A200ED1444 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A7AA371F0BC3A200ED1444 /* ViewController.m */; };
 		C0A7AA3B1F0BC3A200ED1444 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A7AA391F0BC3A200ED1444 /* Main.storyboard */; };
 		C0A7AA3D1F0BC3A200ED1444 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A7AA3C1F0BC3A200ED1444 /* Assets.xcassets */; };
 		C0A7AA401F0BC3A200ED1444 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A7AA3E1F0BC3A200ED1444 /* LaunchScreen.storyboard */; };
@@ -172,7 +171,7 @@
 		95BC54E41F14AB8C00F8D3AD /* UIImage+XZUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XZUtils.m"; sourceTree = "<group>"; };
 		95BC54E81F14B03F00F8D3AD /* PickerViewObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewObject.h; sourceTree = "<group>"; };
 		95BC54E91F14B03F00F8D3AD /* PickerViewObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewObject.m; sourceTree = "<group>"; };
-		95BC55131F14C71400F8D3AD /* HQStaticInlineFunctionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQStaticInlineFunctionConst.h; sourceTree = "<group>"; };
+		95BC55131F14C71400F8D3AD /* XZStaticInlineFunctionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZStaticInlineFunctionConst.h; sourceTree = "<group>"; };
 		95BC55161F14D54200F8D3AD /* XZCusomViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZCusomViewModel.h; sourceTree = "<group>"; };
 		95BC55171F14D54200F8D3AD /* XZCusomViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZCusomViewModel.m; sourceTree = "<group>"; };
 		95BC55181F14D54200F8D3AD /* XZCustomViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZCustomViewManager.h; sourceTree = "<group>"; };
@@ -211,8 +210,6 @@
 		C0A7AA311F0BC3A200ED1444 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C0A7AA331F0BC3A200ED1444 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C0A7AA341F0BC3A200ED1444 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C0A7AA361F0BC3A200ED1444 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C0A7AA371F0BC3A200ED1444 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C0A7AA3A1F0BC3A200ED1444 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C0A7AA3C1F0BC3A200ED1444 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0A7AA3F1F0BC3A200ED1444 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -365,7 +362,6 @@
 			isa = PBXGroup;
 			children = (
 				95BC54C61F14A04100F8D3AD /* View */,
-				95BC54BC1F149FEE00F8D3AD /* Category */,
 				95BC54E71F14B03400F8D3AD /* Model */,
 				95BC54C11F149FEE00F8D3AD /* Tool */,
 			);
@@ -384,7 +380,8 @@
 				95BC54E31F14AB8C00F8D3AD /* UIImage+XZUtils.h */,
 				95BC54E41F14AB8C00F8D3AD /* UIImage+XZUtils.m */,
 			);
-			path = Category;
+			name = Category;
+			path = ../Category;
 			sourceTree = "<group>";
 		};
 		95BC54C11F149FEE00F8D3AD /* Tool */ = {
@@ -393,9 +390,10 @@
 				95BC54C31F149FEE00F8D3AD /* XZToolHeader.h */,
 				95BC54D01F14A54600F8D3AD /* Singleton.h */,
 				95BC54C21F149FEE00F8D3AD /* XZMacro.h */,
-				95BC55131F14C71400F8D3AD /* HQStaticInlineFunctionConst.h */,
+				95BC55131F14C71400F8D3AD /* XZStaticInlineFunctionConst.h */,
 				954C43501F15C5CD005152D1 /* ToolsFunction.h */,
 				954C43511F15C5CD005152D1 /* ToolsFunction.m */,
+				95BC54BC1F149FEE00F8D3AD /* Category */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -524,13 +522,13 @@
 			children = (
 				E4B5F5E41F14CA4200F6D752 /* Swift */,
 				E4ECB1C31F0FBFF200DD4B9C /* Controllers */,
-				C0A7AA391F0BC3A200ED1444 /* Main.storyboard */,
 				C0A7AA681F0BCC0600ED1444 /* View */,
 				95BC55141F14D54200F8D3AD /* Manager */,
 				C0C3F3BD1F0E822900820BB7 /* Model */,
 				95BC54BB1F149FEE00F8D3AD /* Other */,
 				C0C3F3C11F0E82BC00820BB7 /* Database */,
 				C0A7AA3C1F0BC3A200ED1444 /* Assets.xcassets */,
+				C0A7AA391F0BC3A200ED1444 /* Main.storyboard */,
 				C0A7AA301F0BC3A200ED1444 /* Supporting Files */,
 			);
 			path = XZArcheryBook;
@@ -760,8 +758,6 @@
 				951203221F0F6E29009F4E4C /* XZGroupVC.h */,
 				951203231F0F6E29009F4E4C /* XZGroupVC.m */,
 				951203241F0F6E29009F4E4C /* XZGroupVC.xib */,
-				C0A7AA361F0BC3A200ED1444 /* ViewController.h */,
-				C0A7AA371F0BC3A200ED1444 /* ViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -845,7 +841,7 @@
 				TargetAttributes = {
 					C0A7AA2C1F0BC3A200ED1444 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = U9AU2F93TN;
+						DevelopmentTeam = 3LM4E4MSP3;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -980,7 +976,6 @@
 				E4BB3D921F19F1BC00574EEB /* ScoreButtonLayoutHelper.swift in Sources */,
 				95BC55221F14D54200F8D3AD /* XZUIManager.m in Sources */,
 				95D847611F1D966400CD3795 /* PublicPersistentObject.m in Sources */,
-				C0A7AA381F0BC3A200ED1444 /* ViewController.m in Sources */,
 				C0C3F4001F0E82BC00820BB7 /* UIColor-SQLitePersistentObject.m in Sources */,
 				95D847701F1D9F5100CD3795 /* ArcheryTable.m in Sources */,
 				95BC54C41F149FEE00F8D3AD /* NSString+SQLPath.m in Sources */,
@@ -1204,7 +1199,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = U9AU2F93TN;
+				DEVELOPMENT_TEAM = 3LM4E4MSP3;
 				GCC_PREFIX_HEADER = "XZArcheryBook/XZArchery-PrefixHeader.pch";
 				INFOPLIST_FILE = XZArcheryBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1223,7 +1218,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = U9AU2F93TN;
+				DEVELOPMENT_TEAM = 3LM4E4MSP3;
 				GCC_PREFIX_HEADER = "XZArcheryBook/XZArchery-PrefixHeader.pch";
 				INFOPLIST_FILE = XZArcheryBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

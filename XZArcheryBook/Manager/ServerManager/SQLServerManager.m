@@ -8,6 +8,9 @@
 
 #import "SQLServerManager.h"
 
+
+#import "NSString+SQLPath.h"
+
 static SQLServerManager *server_manager;
 
 

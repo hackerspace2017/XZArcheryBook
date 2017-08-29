@@ -12,7 +12,6 @@
 
 #import "DBTableHeader.h"
 #import "XZToolHeader.h"
-#import "UIScreen+Extension.h"
 
 //#import "PublicModelHeader.h"
 

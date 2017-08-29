@@ -13,9 +13,6 @@
 #import "PublicModelHeader.h"
 
 
-#import "NSString+SQLPath.h"
-
-
 
 @interface SQLServerManager : NSObject
 
